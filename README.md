@@ -5,3 +5,5 @@
 <h3> Projeto Trybe Wallet 👛 </h3>
 <a target="_blank" href="https://github.com/andrezoide/Trybe-Projects/tree/main/projeto-trybewallet"><img width="400" height="200" src="src/assets/to_readme/projeto-trybeWallet.gif"></a>
 </div>
+
+<h4> Clique nos projetos para visualizar o código escrito</h4>
