@@ -1,4 +1,4 @@
-<h1 align="center"> Olá, bem vindo ao meu perfil do git hub! 😁 </h1>
+<h1 align="center"> Bem vindo ao meu perfil do git hub! 😁 </h1>
 <h2 align="center"> Aqui vou colocar alguns projetos que venho trabalhando pelo curso da Trybe e também projetos pessoais. </h2>
 <h4 align="center"> Clique no projeto para visualizar o código escrito</h4>
 
