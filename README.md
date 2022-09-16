@@ -11,4 +11,4 @@
 
 <h4 align="right"> 👨‍💻 Tecnologias usadas: </h4>
     <p align="right">🔹JavaScript🔹</p>
-    <p align="right">🔹HOFS🔹</p>
+    
