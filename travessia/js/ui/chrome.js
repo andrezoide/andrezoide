@@ -37,6 +37,7 @@ export class Panel {
     this.el.classList.remove('is-peek');
     requestAnimationFrame(() => this.el.classList.add('is-open'));
     this.#pushTrail(key, view);
+    this.#lazy(view.node);
     // aberto pelo teclado: leva o foco ao conteúdo, sem rolar
     if (document.activeElement?.closest?.('.mk, .sr, .tl-edge, .pn')) this.body.focus({ preventScroll: true });
     const portal = from && !matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -45,6 +46,23 @@ export class Panel {
   }
 
   hide() { this.el.classList.remove('is-open'); this.el.hidden = true; }
+
+  /** imagens só são baixadas quando se aproximam da área visível do painel */
+  #lazy(node) {
+    this.io?.disconnect();
+    const imgs = node.querySelectorAll('img[data-src]');
+    if (!imgs.length) return;
+    this.io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (!en.isIntersecting) continue;
+        const img = en.target;
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+        this.io.unobserve(img);
+      }
+    }, { root: this.body, rootMargin: '400px 0px' });
+    imgs.forEach((i) => this.io.observe(i));
+  }
 
   /**
    * Entrar no acontecimento: um quadro parte do marcador e se expande até
@@ -295,13 +313,17 @@ export function intro(app, onStart) {
         h('button.intro-skip', { type: 'button', onclick: () => close(false) }, 'Explorar livremente'))));
   app.root.append(el);
   requestAnimationFrame(() => el.querySelector('.intro-btn').focus());
+  const onKey = (e) => e.key === 'Escape' && close(false);
+  document.addEventListener('keydown', onKey);
   const close = (guided) => {
+    document.removeEventListener('keydown', onKey);
+    if (!el.isConnected || el.classList.contains('is-out')) return;
     storage.set('introSeen', true);
+    el.inert = true; // sai do caminho do teclado imediatamente
     el.classList.add('is-out');
     setTimeout(() => el.remove(), 500);
     onStart(guided);
   };
-  el.addEventListener('keydown', (e) => e.key === 'Escape' && close(false));
 }
 
 export { yearToU };

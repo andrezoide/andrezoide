@@ -299,7 +299,7 @@ export function media(list) {
       m.url ? h('a.src-url', { href: m.url, target: '_blank', rel: 'noopener' }, 'ver no acervo ↗') : null);
     if (m.type === 'image') {
       return h('figure.media-item', h('a', { href: m.url || m.src, target: '_blank', rel: 'noopener', 'aria-label': `Abrir imagem: ${m.title}` },
-        h('img', { src: m.thumb || m.src, alt: m.alt || m.title, loading: 'lazy', decoding: 'async', width: m.width || null, height: m.height || null })), credit);
+        h('img', { dataset: { src: m.thumb || m.src }, alt: m.alt || m.title, decoding: 'async', width: m.width || null, height: m.height || null })), credit);
     }
     // vídeo e áudio: nada é baixado até o clique
     const slot = h('div.media-slot');
@@ -311,7 +311,7 @@ export function media(list) {
           : h(m.type === 'audio' ? 'audio' : 'video', { src: m.src, controls: true, preload: 'none', autoplay: true });
         slot.replaceChildren(el);
       },
-    }, m.thumb ? h('img', { src: m.thumb, alt: '', loading: 'lazy' }) : null, h('span', m.type === 'audio' ? '▶ Ouvir' : '▶ Carregar vídeo'));
+    }, m.thumb ? h('img', { dataset: { src: m.thumb }, alt: '' }) : null, h('span', m.type === 'audio' ? '▶ Ouvir' : '▶ Carregar vídeo'));
     slot.append(btn);
     return h('figure.media-item.is-' + m.type, slot, credit);
   }));

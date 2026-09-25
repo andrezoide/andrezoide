@@ -80,6 +80,10 @@ for (const e of events) {
     check(c.sources, S, ctx, 'fonte (afirmação)');
   }
   for (const x of e.excerpts || []) if (!S.has(x.source)) fail(`${ctx}: trecho sem fonte válida`);
+  for (const m of e.media || []) {
+    if (!['image', 'video', 'audio', 'document'].includes(m.type)) fail(`${ctx}: mídia com tipo inválido "${m.type}"`);
+    if (!m.title || !m.license || !(m.url || m.src)) fail(`${ctx}: mídia sem título, licença ou origem`);
+  }
   if (!e.sources?.length && e.weight >= 3) warn.push(`${ctx}: evento de peso ${e.weight} sem fontes cadastradas`);
 }
 for (const p of people) for (const r of p.relations || []) if (!PE.has(r.person)) fail(`pessoa ${p.id}: relação com desconhecido "${r.person}"`);
@@ -114,7 +118,7 @@ const light = events.map((e) => {
   if (e.map) o.hasMap = true;
   if (e.sources?.length) o.nSources = e.sources.length;
   if (e.excerpts?.length) o.hasExcerpt = true;
-  if (e.media?.length) o.media = e.media.map((m) => m.type);
+  if (e.media?.length) o.mediaTypes = e.media.map((m) => m.type);
   if (e.claims?.some((c) => c.status === 'controversia')) o.debated = true;
   return o;
 });
@@ -125,5 +129,6 @@ writeFileSync(join(root, 'build', 'index.json'), JSON.stringify({ version: 1, ev
 
 const orphans = light.filter((e) => !relationships.some((r) => r.from === e.id || r.to === e.id));
 if (orphans.length) warn.push(`${orphans.length} evento(s) sem relações: ${orphans.map((o) => o.id).join(', ')}`);
-warn.forEach((w) => console.warn('! ' + w));
+if (process.argv.includes('--verbose')) warn.forEach((w) => console.warn('! ' + w));
+else if (warn.length) console.warn(`! ${warn.length} aviso(s) — rode com --verbose para ver`);
 console.log(`✓ ${light.length} eventos, ${edges.length} relações, ${people.length} pessoas, ${places.length} lugares, ${sources.length} fontes, ${chunkFiles.length} blocos`);

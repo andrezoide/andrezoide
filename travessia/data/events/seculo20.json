@@ -6,12 +6,26 @@
     "end": "1930-11-03",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["politica", "conflitos"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica",
+      "conflitos"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 5,
-    "people": ["getulio-vargas"],
-    "places": ["porto-alegre", "rio-de-janeiro"],
-    "sources": ["fausto-1970", "fausto-1994", "cpdoc-dhbb"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "porto-alegre",
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "fausto-1970",
+      "fausto-1994",
+      "cpdoc-dhbb"
+    ],
     "summary": "Após perder a eleição presidencial, uma aliança de Minas Gerais, Rio Grande do Sul e Paraíba, com apoio de tenentes, derruba o governo. Getúlio Vargas assume a chefia do Governo Provisório.",
     "narrative": [
       "A crise de 1929 derrubou os preços do café. O presidente Washington Luís rompeu a alternância entre paulistas e mineiros ao indicar outro paulista, Júlio Prestes, que venceu a eleição.",
@@ -19,15 +33,30 @@
     ],
     "context": "O mundo vivia a Grande Depressão. Regimes autoritários e nacionalistas ganhavam força na Europa.",
     "claims": [
-      { "status": "controversia", "text": "Se 1930 foi uma 'revolução' — ruptura profunda — ou um rearranjo entre elites é um debate clássico.", "sources": ["fausto-1970"] }
+      {
+        "status": "controversia",
+        "text": "Se 1930 foi uma 'revolução' — ruptura profunda — ou um rearranjo entre elites é um debate clássico.",
+        "sources": [
+          "fausto-1970"
+        ]
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Política do café com leite", "def": "Expressão para a alternância de paulistas e mineiros na presidência, hoje vista como simplificação." },
-        { "term": "Aliança Liberal", "def": "Coalizão que lançou Vargas em 1930." }
+        {
+          "term": "Política do café com leite",
+          "def": "Expressão para a alternância de paulistas e mineiros na presidência, hoje vista como simplificação."
+        },
+        {
+          "term": "Aliança Liberal",
+          "def": "Coalizão que lançou Vargas em 1930."
+        }
       ],
       "questions": [
-        { "q": "Como a crise de 1929 contribuiu para a Revolução de 1930?", "hint": "Café, economia exportadora, oligarquias." }
+        {
+          "q": "Como a crise de 1929 contribuiu para a Revolução de 1930?",
+          "hint": "Café, economia exportadora, oligarquias."
+        }
       ]
     }
   },
@@ -37,16 +66,35 @@
     "start": "1932-02-24",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["direitos", "politica"],
-    "themes": ["direitos", "democracia"],
+    "categories": [
+      "direitos",
+      "politica"
+    ],
+    "themes": [
+      "direitos",
+      "democracia"
+    ],
     "weight": 4,
-    "people": ["bertha-lutz", "getulio-vargas"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["codigo-eleitoral-1932"],
+    "people": [
+      "bertha-lutz",
+      "getulio-vargas"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "codigo-eleitoral-1932"
+    ],
     "summary": "O novo Código Eleitoral institui o voto secreto, a Justiça Eleitoral e o direito de voto das mulheres — conquista de décadas de mobilização feminista.",
     "claims": [
-      { "status": "fato", "text": "O Rio Grande do Norte já havia permitido o voto feminino em 1927, por lei estadual." },
-      { "status": "fato", "text": "Analfabetos continuaram sem direito de voto até 1985." }
+      {
+        "status": "fato",
+        "text": "O Rio Grande do Norte já havia permitido o voto feminino em 1927, por lei estadual."
+      },
+      {
+        "status": "fato",
+        "text": "Analfabetos continuaram sem direito de voto até 1985."
+      }
     ]
   },
   {
@@ -56,12 +104,23 @@
     "end": "1932-10-02",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["conflitos", "politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "conflitos",
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 3,
-    "people": ["getulio-vargas"],
-    "places": ["sao-paulo"],
-    "sources": ["fausto-1994"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "sao-paulo"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
     "summary": "São Paulo pega em armas contra o Governo Provisório, exigindo uma Constituição. É derrotado militarmente, mas Vargas convoca a Constituinte."
   },
   {
@@ -70,12 +129,25 @@
     "start": "1934-07-16",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["politica", "direitos"],
-    "themes": ["democracia", "direitos"],
+    "categories": [
+      "politica",
+      "direitos"
+    ],
+    "themes": [
+      "democracia",
+      "direitos"
+    ],
     "weight": 2,
-    "people": ["getulio-vargas", "bertha-lutz"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["fausto-1994"],
+    "people": [
+      "getulio-vargas",
+      "bertha-lutz"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
     "summary": "Incorpora direitos trabalhistas e o voto feminino ao texto constitucional. Durou pouco mais de três anos."
   },
   {
@@ -85,12 +157,28 @@
     "end": "1945-10-29",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["politica", "direitos"],
-    "themes": ["democracia", "direitos", "economia"],
+    "categories": [
+      "politica",
+      "direitos"
+    ],
+    "themes": [
+      "democracia",
+      "direitos",
+      "economia"
+    ],
     "weight": 5,
-    "people": ["getulio-vargas", "luis-carlos-prestes"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["fausto-1994", "cpdoc-dhbb", "schwarcz-starling-2015"],
+    "people": [
+      "getulio-vargas",
+      "luis-carlos-prestes"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "fausto-1994",
+      "cpdoc-dhbb",
+      "schwarcz-starling-2015"
+    ],
     "summary": "Com o pretexto de um suposto plano comunista, Vargas fecha o Congresso e impõe uma ditadura: censura, polícia política, propaganda — e, ao mesmo tempo, leis trabalhistas e industrialização estatal.",
     "narrative": [
       "O 'Plano Cohen', divulgado como plano comunista, era uma fraude produzida dentro do próprio governo. Serviu para justificar o golpe de 10 de novembro de 1937.",
@@ -99,20 +187,57 @@
     ],
     "context": "Na Europa, fascismo e nazismo; no mundo, a Segunda Guerra. O Brasil, inicialmente ambíguo, alinhou-se aos Aliados em 1942 — contradição que enfraqueceu a ditadura.",
     "claims": [
-      { "status": "fato", "text": "O Plano Cohen foi uma fraude usada como pretexto para o golpe." },
-      { "status": "interpretacao", "text": "Classificar o Estado Novo como fascista é debatido: havia semelhanças, mas também diferenças importantes." },
-      { "status": "interpretacao", "text": "O 'trabalhismo' criou direitos e, ao mesmo tempo, sindicatos atrelados ao Estado." }
+      {
+        "status": "fato",
+        "text": "O Plano Cohen foi uma fraude usada como pretexto para o golpe."
+      },
+      {
+        "status": "interpretacao",
+        "text": "Classificar o Estado Novo como fascista é debatido: havia semelhanças, mas também diferenças importantes."
+      },
+      {
+        "status": "interpretacao",
+        "text": "O 'trabalhismo' criou direitos e, ao mesmo tempo, sindicatos atrelados ao Estado."
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Populismo", "def": "Termo usado para descrever lideranças que buscam apoio direto das massas; seu uso para Vargas é discutido pela historiografia." },
-        { "term": "DIP", "def": "Departamento de Imprensa e Propaganda, responsável por censura e propaganda do regime." },
-        { "term": "Nacional-desenvolvimentismo", "def": "Projeto de industrialização com forte participação do Estado." }
+        {
+          "term": "Populismo",
+          "def": "Termo usado para descrever lideranças que buscam apoio direto das massas; seu uso para Vargas é discutido pela historiografia."
+        },
+        {
+          "term": "DIP",
+          "def": "Departamento de Imprensa e Propaganda, responsável por censura e propaganda do regime."
+        },
+        {
+          "term": "Nacional-desenvolvimentismo",
+          "def": "Projeto de industrialização com forte participação do Estado."
+        }
       ],
-      "dates": [{ "date": "10 nov. 1937", "label": "golpe" }, { "date": "1º mai. 1943", "label": "CLT" }, { "date": "29 out. 1945", "label": "deposição de Vargas" }],
+      "dates": [
+        {
+          "date": "10 nov. 1937",
+          "label": "golpe"
+        },
+        {
+          "date": "1º mai. 1943",
+          "label": "CLT"
+        },
+        {
+          "date": "29 out. 1945",
+          "label": "deposição de Vargas"
+        }
+      ],
       "questions": [
-        { "q": "Como o Estado Novo combinou autoritarismo e ampliação de direitos?", "hint": "CLT, censura, sindicatos oficiais." },
-        { "q": "Por que a entrada na Segunda Guerra enfraqueceu o regime?", "hint": "Lutar contra ditaduras lá fora sendo uma ditadura aqui." }
+        {
+          "q": "Como o Estado Novo combinou autoritarismo e ampliação de direitos?",
+          "hint": "CLT, censura, sindicatos oficiais."
+        },
+        {
+          "q": "Por que a entrada na Segunda Guerra enfraqueceu o regime?",
+          "hint": "Lutar contra ditaduras lá fora sendo uma ditadura aqui."
+        }
       ]
     }
   },
@@ -122,12 +247,24 @@
     "start": "1942-08-22",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["conflitos", "politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "conflitos",
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 3,
-    "people": ["getulio-vargas"],
-    "places": ["rio-de-janeiro", "italia"],
-    "sources": ["fausto-1994"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "rio-de-janeiro",
+      "italia"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
     "summary": "Após o afundamento de navios mercantes brasileiros por submarinos alemães, o Brasil declara guerra ao Eixo. A Força Expedicionária Brasileira combate na Itália em 1944–1945."
   },
   {
@@ -136,16 +273,34 @@
     "start": "1943-05-01",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["direitos", "economia"],
-    "themes": ["direitos", "economia"],
+    "categories": [
+      "direitos",
+      "economia"
+    ],
+    "themes": [
+      "direitos",
+      "economia"
+    ],
     "weight": 4,
-    "people": ["getulio-vargas"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["clt-1943"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "clt-1943"
+    ],
     "summary": "Reúne em um só código a legislação trabalhista: jornada, férias, salário mínimo, carteira de trabalho, Justiça do Trabalho. Trabalhadores rurais e domésticos ficam de fora.",
     "claims": [
-      { "status": "fato", "text": "Trabalhadores rurais e empregados domésticos não eram cobertos pela CLT original." },
-      { "status": "interpretacao", "text": "A CLT é vista tanto como conquista das lutas operárias quanto como instrumento de controle estatal dos sindicatos." }
+      {
+        "status": "fato",
+        "text": "Trabalhadores rurais e empregados domésticos não eram cobertos pela CLT original."
+      },
+      {
+        "status": "interpretacao",
+        "text": "A CLT é vista tanto como conquista das lutas operárias quanto como instrumento de controle estatal dos sindicatos."
+      }
     ]
   },
   {
@@ -154,12 +309,22 @@
     "start": "1945-10-29",
     "period": "era-vargas",
     "region": "brasil",
-    "categories": ["politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 3,
-    "people": ["getulio-vargas"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["cpdoc-dhbb"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "cpdoc-dhbb"
+    ],
     "summary": "Chefes militares depõem Vargas. Eleições em dezembro inauguram a experiência democrática de 1946."
   },
   {
@@ -168,11 +333,18 @@
     "start": "1950-07-16",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["esporte", "cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "esporte",
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
     "people": [],
-    "places": ["rio-de-janeiro"],
+    "places": [
+      "rio-de-janeiro"
+    ],
     "sources": [],
     "summary": "No recém-construído Maracanã, o Brasil perde a final para o Uruguai por 2 a 1 diante de uma multidão. A derrota vira trauma e tema nacional."
   },
@@ -182,11 +354,18 @@
     "start": "1950-09-18",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["tecnologia", "cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "tecnologia",
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
     "people": [],
-    "places": ["sao-paulo"],
+    "places": [
+      "sao-paulo"
+    ],
     "sources": [],
     "summary": "Assis Chateaubriand inaugura em São Paulo a primeira emissora de televisão do Brasil. Por anos, poucos lares teriam um aparelho."
   },
@@ -196,12 +375,23 @@
     "start": "1953-10-03",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["economia", "politica"],
-    "themes": ["economia"],
+    "categories": [
+      "economia",
+      "politica"
+    ],
+    "themes": [
+      "economia"
+    ],
     "weight": 3,
-    "people": ["getulio-vargas"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["skidmore-1967"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "skidmore-1967"
+    ],
     "summary": "Depois da campanha 'O petróleo é nosso', a lei cria a Petrobras e o monopólio estatal da exploração de petróleo."
   },
   {
@@ -210,18 +400,35 @@
     "start": "1954-08-24",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 4,
-    "people": ["getulio-vargas"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["carta-testamento", "skidmore-1967"],
+    "people": [
+      "getulio-vargas"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "carta-testamento",
+      "skidmore-1967"
+    ],
     "summary": "Pressionado por uma grave crise política e pela exigência de renúncia, o presidente se mata no Palácio do Catete. A carta-testamento provoca comoção popular e adia um golpe.",
     "excerpts": [
-      { "text": "Serenamente dou o primeiro passo no caminho da eternidade e saio da vida para entrar na História.", "source": "carta-testamento" }
+      {
+        "text": "Serenamente dou o primeiro passo no caminho da eternidade e saio da vida para entrar na História.",
+        "source": "carta-testamento"
+      }
     ],
     "claims": [
-      { "status": "interpretacao", "text": "A comoção popular após o suicídio teria adiado em dez anos a ruptura que viria em 1964 — leitura frequente, mas contrafactual." }
+      {
+        "status": "interpretacao",
+        "text": "A comoção popular após o suicídio teria adiado em dez anos a ruptura que viria em 1964 — leitura frequente, mas contrafactual."
+      }
     ]
   },
   {
@@ -231,12 +438,24 @@
     "end": "1961",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["economia", "tecnologia"],
-    "themes": ["economia"],
+    "categories": [
+      "economia",
+      "tecnologia"
+    ],
+    "themes": [
+      "economia"
+    ],
     "weight": 3,
-    "people": ["juscelino-kubitschek"],
-    "places": ["sao-paulo", "abc-paulista"],
-    "sources": ["skidmore-1967"],
+    "people": [
+      "juscelino-kubitschek"
+    ],
+    "places": [
+      "sao-paulo",
+      "abc-paulista"
+    ],
+    "sources": [
+      "skidmore-1967"
+    ],
     "summary": "JK acelera a industrialização com investimento estatal e capital estrangeiro — automóveis, energia, estradas — ao custo de inflação e endividamento."
   },
   {
@@ -245,12 +464,22 @@
     "start": "1958",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
-    "people": ["joao-gilberto"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["castro-1990"],
+    "people": [
+      "joao-gilberto"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "castro-1990"
+    ],
     "summary": "A gravação de 'Chega de saudade' por João Gilberto apresenta uma nova batida de violão e um jeito contido de cantar que ganharia o mundo."
   },
   {
@@ -259,10 +488,16 @@
     "start": "1958-06-29",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["esporte"],
-    "themes": ["cultura"],
+    "categories": [
+      "esporte"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
-    "people": ["pele"],
+    "people": [
+      "pele"
+    ],
     "places": [],
     "sources": [],
     "summary": "Na Suécia, a seleção vence a Copa com um Pelé de 17 anos. O futebol se consolida como símbolo de identidade nacional."
@@ -273,18 +508,74 @@
     "start": "1960-04-21",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["territorio", "politica", "cultura"],
-    "themes": ["territorio"],
+    "categories": [
+      "territorio",
+      "politica",
+      "cultura"
+    ],
+    "themes": [
+      "territorio"
+    ],
     "weight": 4,
-    "people": ["juscelino-kubitschek", "oscar-niemeyer"],
-    "places": ["brasilia", "rio-de-janeiro"],
-    "sources": ["skidmore-1967", "schwarcz-starling-2015"],
+    "people": [
+      "juscelino-kubitschek",
+      "oscar-niemeyer"
+    ],
+    "places": [
+      "brasilia",
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "skidmore-1967",
+      "schwarcz-starling-2015"
+    ],
     "summary": "A nova capital, construída em pouco mais de três anos no Planalto Central, simboliza a interiorização e o projeto modernizador.",
     "claims": [
-      { "status": "fato", "text": "A transferência da capital para o interior já estava prevista na Constituição de 1891." },
-      { "status": "interpretacao", "text": "Os candangos, trabalhadores que ergueram a cidade, foram em grande parte empurrados para as cidades-satélite." }
+      {
+        "status": "fato",
+        "text": "A transferência da capital para o interior já estava prevista na Constituição de 1891."
+      },
+      {
+        "status": "interpretacao",
+        "text": "Os candangos, trabalhadores que ergueram a cidade, foram em grande parte empurrados para as cidades-satélite."
+      }
     ],
-    "map": { "routes": [{ "label": "A capital muda de lugar: Salvador → Rio → Brasília", "points": [[-12.97, -38.51], [-22.91, -43.17], [-15.79, -47.88]] }] }
+    "map": {
+      "routes": [
+        {
+          "label": "A capital muda de lugar: Salvador → Rio → Brasília",
+          "points": [
+            [
+              -12.97,
+              -38.51
+            ],
+            [
+              -22.91,
+              -43.17
+            ],
+            [
+              -15.79,
+              -47.88
+            ]
+          ]
+        }
+      ]
+    },
+    "media": [
+      {
+        "type": "image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Constru%C3%A7%C3%A3o_do_Congresso_Nacional_1959-1.jpg/960px-Constru%C3%A7%C3%A3o_do_Congresso_Nacional_1959-1.jpg",
+        "width": 900,
+        "height": 1310,
+        "url": "https://commons.wikimedia.org/wiki/File:Constru%C3%A7%C3%A3o_do_Congresso_Nacional_1959-1.jpg",
+        "title": "Obras do Congresso Nacional em Brasília, 1959. Arquivo Nacional.",
+        "author": "Autor não identificado",
+        "date": "1959",
+        "license": "Domínio público",
+        "institution": "Wikimedia Commons",
+        "alt": "Fotografia em preto e branco da construção do Congresso Nacional."
+      }
+    ]
   },
   {
     "id": "renuncia-janio",
@@ -292,12 +583,24 @@
     "start": "1961-08-25",
     "period": "republica-46",
     "region": "brasil",
-    "categories": ["politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 3,
-    "people": ["joao-goulart"],
-    "places": ["brasilia", "porto-alegre"],
-    "sources": ["skidmore-1967", "fico-2004"],
+    "people": [
+      "joao-goulart"
+    ],
+    "places": [
+      "brasilia",
+      "porto-alegre"
+    ],
+    "sources": [
+      "skidmore-1967",
+      "fico-2004"
+    ],
     "summary": "Jânio Quadros renuncia após sete meses. Ministros militares tentam impedir a posse do vice, João Goulart; a Campanha da Legalidade garante a posse sob parlamentarismo."
   },
   {
@@ -307,12 +610,30 @@
     "dateLabel": "31 mar. – 1º abr. 1964",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["politica", "conflitos", "direitos"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica",
+      "conflitos",
+      "direitos"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 5,
-    "people": ["joao-goulart", "castelo-branco"],
-    "places": ["rio-de-janeiro", "brasilia", "minas-gerais"],
-    "sources": ["fico-2004", "gaspari-2002", "skidmore-1988", "cnv-2014"],
+    "people": [
+      "joao-goulart",
+      "castelo-branco"
+    ],
+    "places": [
+      "rio-de-janeiro",
+      "brasilia",
+      "minas-gerais"
+    ],
+    "sources": [
+      "fico-2004",
+      "gaspari-2002",
+      "skidmore-1988",
+      "cnv-2014"
+    ],
     "summary": "Militares, com apoio de parte do empresariado, da imprensa, da Igreja e de setores da classe média — e do governo dos EUA —, derrubam o presidente João Goulart. Começam 21 anos de ditadura.",
     "narrative": [
       "O governo Goulart propunha 'reformas de base' — agrária, urbana, educacional — num ambiente polarizado pela Guerra Fria. Opositores o acusavam de preparar um regime comunista.",
@@ -320,21 +641,71 @@
     ],
     "context": "Guerra Fria: a Revolução Cubana (1959) fazia Washington temer 'novas Cubas'. Golpes militares ocorreriam também na Argentina, Chile, Uruguai e Bolívia nos anos seguintes.",
     "claims": [
-      { "status": "fato", "text": "O governo dos EUA preparou apoio militar ao golpe (Operação Brother Sam), que acabou não sendo necessário." },
-      { "status": "fato", "text": "O regime instituiu cassações, censura, tortura e assassinatos de opositores, documentados pela Comissão Nacional da Verdade.", "sources": ["cnv-2014"] },
-      { "status": "interpretacao", "text": "O termo 'civil-militar' destaca o apoio de setores civis ao golpe; há historiadores que preferem chamar o regime de 'ditadura militar', dado o comando das Forças Armadas.", "sources": ["fico-2004"] },
-      { "status": "controversia", "text": "A narrativa de que o golpe teria evitado uma ditadura comunista iminente não encontra respaldo na historiografia." }
+      {
+        "status": "fato",
+        "text": "O governo dos EUA preparou apoio militar ao golpe (Operação Brother Sam), que acabou não sendo necessário."
+      },
+      {
+        "status": "fato",
+        "text": "O regime instituiu cassações, censura, tortura e assassinatos de opositores, documentados pela Comissão Nacional da Verdade.",
+        "sources": [
+          "cnv-2014"
+        ]
+      },
+      {
+        "status": "interpretacao",
+        "text": "O termo 'civil-militar' destaca o apoio de setores civis ao golpe; há historiadores que preferem chamar o regime de 'ditadura militar', dado o comando das Forças Armadas.",
+        "sources": [
+          "fico-2004"
+        ]
+      },
+      {
+        "status": "controversia",
+        "text": "A narrativa de que o golpe teria evitado uma ditadura comunista iminente não encontra respaldo na historiografia."
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Reformas de base", "def": "Conjunto de reformas propostas por Goulart: agrária, urbana, bancária, educacional e eleitoral." },
-        { "term": "Guerra Fria", "def": "Disputa global entre EUA e URSS (1947–1991), sem confronto direto entre as duas potências." },
-        { "term": "Ato Institucional", "def": "Decreto com força acima da Constituição, usado pelo regime para ampliar seus poderes." }
+        {
+          "term": "Reformas de base",
+          "def": "Conjunto de reformas propostas por Goulart: agrária, urbana, bancária, educacional e eleitoral."
+        },
+        {
+          "term": "Guerra Fria",
+          "def": "Disputa global entre EUA e URSS (1947–1991), sem confronto direto entre as duas potências."
+        },
+        {
+          "term": "Ato Institucional",
+          "def": "Decreto com força acima da Constituição, usado pelo regime para ampliar seus poderes."
+        }
       ],
-      "dates": [{ "date": "13 mar. 1964", "label": "Comício da Central" }, { "date": "19 mar. 1964", "label": "Marcha da Família com Deus pela Liberdade" }, { "date": "31 mar.–1º abr. 1964", "label": "golpe" }, { "date": "9 abr. 1964", "label": "AI-1" }],
+      "dates": [
+        {
+          "date": "13 mar. 1964",
+          "label": "Comício da Central"
+        },
+        {
+          "date": "19 mar. 1964",
+          "label": "Marcha da Família com Deus pela Liberdade"
+        },
+        {
+          "date": "31 mar.–1º abr. 1964",
+          "label": "golpe"
+        },
+        {
+          "date": "9 abr. 1964",
+          "label": "AI-1"
+        }
+      ],
       "questions": [
-        { "q": "Quais fatores internos e externos ajudam a explicar o golpe de 1964?", "hint": "Polarização, reformas de base, Guerra Fria, EUA." },
-        { "q": "Por que alguns historiadores usam o termo 'civil-militar'?", "hint": "Quem apoiou e quem se beneficiou." }
+        {
+          "q": "Quais fatores internos e externos ajudam a explicar o golpe de 1964?",
+          "hint": "Polarização, reformas de base, Guerra Fria, EUA."
+        },
+        {
+          "q": "Por que alguns historiadores usam o termo 'civil-militar'?",
+          "hint": "Quem apoiou e quem se beneficiou."
+        }
       ]
     }
   },
@@ -345,12 +716,22 @@
     "end": "1968",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
-    "people": ["caetano-veloso"],
-    "places": ["sao-paulo"],
-    "sources": ["veloso-1997"],
+    "people": [
+      "caetano-veloso"
+    ],
+    "places": [
+      "sao-paulo"
+    ],
+    "sources": [
+      "veloso-1997"
+    ],
     "summary": "Músicos e artistas misturam guitarra elétrica, música popular, vanguarda e crítica ao país. O movimento irrita tanto a ditadura quanto parte da esquerda."
   },
   {
@@ -359,12 +740,21 @@
     "start": "1968-06-26",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["politica", "sociedade"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica",
+      "sociedade"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 2,
     "people": [],
-    "places": ["rio-de-janeiro"],
-    "sources": ["gaspari-2002"],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "gaspari-2002"
+    ],
     "summary": "Estudantes, artistas, intelectuais e religiosos marcham no Rio contra a ditadura, após a morte do estudante Edson Luís pela polícia em março."
   },
   {
@@ -373,30 +763,73 @@
     "start": "1968-12-13",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["politica", "direitos"],
-    "themes": ["democracia", "direitos"],
+    "categories": [
+      "politica",
+      "direitos"
+    ],
+    "themes": [
+      "democracia",
+      "direitos"
+    ],
     "weight": 5,
-    "people": ["costa-e-silva", "caetano-veloso"],
-    "places": ["brasilia", "rio-de-janeiro"],
-    "sources": ["ai-5", "gaspari-2002", "cnv-2014"],
+    "people": [
+      "costa-e-silva",
+      "caetano-veloso"
+    ],
+    "places": [
+      "brasilia",
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "ai-5",
+      "gaspari-2002",
+      "cnv-2014"
+    ],
     "summary": "O Ato Institucional nº 5 fecha o Congresso, suspende o habeas corpus para crimes políticos e dá ao presidente poderes quase ilimitados. Começam os anos mais violentos do regime.",
     "narrative": [
       "O ato foi a resposta do governo Costa e Silva às mobilizações de 1968 e à recusa da Câmara em autorizar o processo contra o deputado Márcio Moreira Alves.",
       "Seguiram-se censura prévia, cassações, aposentadorias compulsórias de professores, exílio de artistas e a ampliação da tortura como política de Estado. O AI-5 vigorou até o fim de 1978."
     ],
     "claims": [
-      { "status": "fato", "text": "O AI-5 suspendeu a garantia de habeas corpus nos casos de crimes políticos.", "sources": ["ai-5"] },
-      { "status": "fato", "text": "A Comissão Nacional da Verdade reconheceu 434 mortos e desaparecidos políticos sob responsabilidade do Estado no período investigado.", "sources": ["cnv-2014"] }
+      {
+        "status": "fato",
+        "text": "O AI-5 suspendeu a garantia de habeas corpus nos casos de crimes políticos.",
+        "sources": [
+          "ai-5"
+        ]
+      },
+      {
+        "status": "fato",
+        "text": "A Comissão Nacional da Verdade reconheceu 434 mortos e desaparecidos políticos sob responsabilidade do Estado no período investigado.",
+        "sources": [
+          "cnv-2014"
+        ]
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Habeas corpus", "def": "Garantia contra prisão ilegal; sua suspensão facilitou prisões arbitrárias e tortura." },
-        { "term": "Censura prévia", "def": "Controle do conteúdo antes da publicação ou exibição." },
-        { "term": "Anos de chumbo", "def": "Expressão para o período mais repressivo da ditadura, entre o fim de 1968 e meados dos anos 1970." }
+        {
+          "term": "Habeas corpus",
+          "def": "Garantia contra prisão ilegal; sua suspensão facilitou prisões arbitrárias e tortura."
+        },
+        {
+          "term": "Censura prévia",
+          "def": "Controle do conteúdo antes da publicação ou exibição."
+        },
+        {
+          "term": "Anos de chumbo",
+          "def": "Expressão para o período mais repressivo da ditadura, entre o fim de 1968 e meados dos anos 1970."
+        }
       ],
       "questions": [
-        { "q": "O que mudou na ditadura depois do AI-5?", "hint": "Congresso, habeas corpus, censura, tortura." },
-        { "q": "Por que 1968 é um ano-chave, no Brasil e no mundo?", "hint": "Movimentos estudantis, contracultura, repressão." }
+        {
+          "q": "O que mudou na ditadura depois do AI-5?",
+          "hint": "Congresso, habeas corpus, censura, tortura."
+        },
+        {
+          "q": "Por que 1968 é um ano-chave, no Brasil e no mundo?",
+          "hint": "Movimentos estudantis, contracultura, repressão."
+        }
       ]
     }
   },
@@ -407,16 +840,31 @@
     "end": "1973",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["economia"],
-    "themes": ["economia"],
+    "categories": [
+      "economia"
+    ],
+    "themes": [
+      "economia"
+    ],
     "weight": 3,
     "people": [],
-    "places": ["sao-paulo", "abc-paulista"],
-    "sources": ["skidmore-1988"],
+    "places": [
+      "sao-paulo",
+      "abc-paulista"
+    ],
+    "sources": [
+      "skidmore-1988"
+    ],
     "summary": "Anos de crescimento acelerado, com crédito externo e grandes obras, acompanhados de concentração de renda, arrocho salarial e censura aos críticos.",
     "claims": [
-      { "status": "fato", "text": "O PIB cresceu a taxas superiores a 10% ao ano em parte do período." },
-      { "status": "interpretacao", "text": "O modelo aumentou a desigualdade e o endividamento externo, que cobraria seu preço nos anos 1980." }
+      {
+        "status": "fato",
+        "text": "O PIB cresceu a taxas superiores a 10% ao ano em parte do período."
+      },
+      {
+        "status": "interpretacao",
+        "text": "O modelo aumentou a desigualdade e o endividamento externo, que cobraria seu preço nos anos 1980."
+      }
     ]
   },
   {
@@ -425,15 +873,25 @@
     "start": "1970-06-21",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["esporte", "cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "esporte",
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
-    "people": ["pele"],
+    "people": [
+      "pele"
+    ],
     "places": [],
     "sources": [],
     "summary": "A seleção conquista o tri, transmitido ao vivo pela TV. O regime usa a vitória em sua propaganda.",
     "claims": [
-      { "status": "interpretacao", "text": "O uso político do futebol pelo regime não esgota o significado popular da conquista." }
+      {
+        "status": "interpretacao",
+        "text": "O uso político do futebol pelo regime não esgota o significado popular da conquista."
+      }
     ]
   },
   {
@@ -442,15 +900,31 @@
     "start": "1975-10-25",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["direitos", "politica"],
-    "themes": ["democracia", "direitos"],
+    "categories": [
+      "direitos",
+      "politica"
+    ],
+    "themes": [
+      "democracia",
+      "direitos"
+    ],
     "weight": 2,
-    "people": ["vladimir-herzog"],
-    "places": ["sao-paulo"],
-    "sources": ["cnv-2014", "gaspari-2002"],
+    "people": [
+      "vladimir-herzog"
+    ],
+    "places": [
+      "sao-paulo"
+    ],
+    "sources": [
+      "cnv-2014",
+      "gaspari-2002"
+    ],
     "summary": "O jornalista morre sob tortura no DOI-Codi. A versão oficial de suicídio é contestada, e um ato ecumênico na Catedral da Sé reúne milhares de pessoas.",
     "claims": [
-      { "status": "fato", "text": "Em 2013, o registro de óbito foi retificado para indicar morte decorrente de maus-tratos nas dependências do DOI-Codi." }
+      {
+        "status": "fato",
+        "text": "Em 2013, o registro de óbito foi retificado para indicar morte decorrente de maus-tratos nas dependências do DOI-Codi."
+      }
     ]
   },
   {
@@ -460,12 +934,25 @@
     "end": "1980",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["economia", "direitos", "politica"],
-    "themes": ["economia", "democracia"],
+    "categories": [
+      "economia",
+      "direitos",
+      "politica"
+    ],
+    "themes": [
+      "economia",
+      "democracia"
+    ],
     "weight": 3,
-    "people": ["lula"],
-    "places": ["abc-paulista"],
-    "sources": ["skidmore-1988"],
+    "people": [
+      "lula"
+    ],
+    "places": [
+      "abc-paulista"
+    ],
+    "sources": [
+      "skidmore-1988"
+    ],
     "summary": "Metalúrgicos do ABC paulista fazem greves massivas contra o arrocho salarial, desafiando a legislação da ditadura. Surge uma nova liderança sindical."
   },
   {
@@ -474,16 +961,33 @@
     "start": "1979-08-28",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["politica", "direitos"],
-    "themes": ["democracia", "direitos"],
+    "categories": [
+      "politica",
+      "direitos"
+    ],
+    "themes": [
+      "democracia",
+      "direitos"
+    ],
     "weight": 4,
     "people": [],
-    "places": ["brasilia"],
-    "sources": ["lei-6683-1979", "cnv-2014"],
+    "places": [
+      "brasilia"
+    ],
+    "sources": [
+      "lei-6683-1979",
+      "cnv-2014"
+    ],
     "summary": "Permite a volta de exilados e a libertação de presos políticos. Também foi interpretada como perdão aos agentes do Estado que torturaram e mataram.",
     "claims": [
-      { "status": "fato", "text": "Em 2010, o STF manteve a interpretação de que a lei alcança agentes do Estado." },
-      { "status": "controversia", "text": "Se crimes como tortura e desaparecimento forçado podem ser anistiados é contestado com base no direito internacional." }
+      {
+        "status": "fato",
+        "text": "Em 2010, o STF manteve a interpretação de que a lei alcança agentes do Estado."
+      },
+      {
+        "status": "controversia",
+        "text": "Se crimes como tortura e desaparecimento forçado podem ser anistiados é contestado com base no direito internacional."
+      }
     ]
   },
   {
@@ -493,15 +997,34 @@
     "end": "1984-04-25",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["politica", "sociedade"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica",
+      "sociedade"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 4,
-    "people": ["ulysses-guimaraes", "tancredo-neves", "lula"],
-    "places": ["sao-paulo", "rio-de-janeiro", "brasilia"],
-    "sources": ["skidmore-1988", "schwarcz-starling-2015"],
+    "people": [
+      "ulysses-guimaraes",
+      "tancredo-neves",
+      "lula"
+    ],
+    "places": [
+      "sao-paulo",
+      "rio-de-janeiro",
+      "brasilia"
+    ],
+    "sources": [
+      "skidmore-1988",
+      "schwarcz-starling-2015"
+    ],
     "summary": "Comícios gigantescos reúnem partidos, artistas e movimentos pela eleição direta para presidente. A emenda Dante de Oliveira é derrotada na Câmara em 25 de abril de 1984.",
     "claims": [
-      { "status": "estimativa", "text": "Os maiores comícios, no Rio e em São Paulo, teriam reunido mais de um milhão de pessoas cada, segundo estimativas da época." }
+      {
+        "status": "estimativa",
+        "text": "Os maiores comícios, no Rio e em São Paulo, teriam reunido mais de um milhão de pessoas cada, segundo estimativas da época."
+      }
     ]
   },
   {
@@ -510,12 +1033,23 @@
     "start": "1985-01-15",
     "period": "ditadura",
     "region": "brasil",
-    "categories": ["politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 4,
-    "people": ["tancredo-neves", "ulysses-guimaraes"],
-    "places": ["brasilia"],
-    "sources": ["skidmore-1988"],
+    "people": [
+      "tancredo-neves",
+      "ulysses-guimaraes"
+    ],
+    "places": [
+      "brasilia"
+    ],
+    "sources": [
+      "skidmore-1988"
+    ],
     "summary": "Tancredo Neves vence a eleição indireta. Adoece na véspera da posse e morre em abril; José Sarney, o vice, assume em 15 de março de 1985. Termina o ciclo dos presidentes militares."
   }
 ]

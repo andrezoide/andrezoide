@@ -5,36 +5,101 @@
     "start": "1889-11-15",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 5,
-    "people": ["deodoro", "dom-pedro-ii"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["carvalho-1987", "fausto-1994", "schwarcz-starling-2015"],
+    "people": [
+      "deodoro",
+      "dom-pedro-ii"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "carvalho-1987",
+      "fausto-1994",
+      "schwarcz-starling-2015"
+    ],
     "summary": "Um movimento militar, apoiado por republicanos civis, derruba a monarquia no Rio de Janeiro. A família imperial parte para o exílio dois dias depois.",
     "narrative": [
       "A monarquia havia perdido apoios: parte do Exército se sentia desprestigiada desde a Guerra do Paraguai, a Igreja entrara em conflito com o governo, e muitos fazendeiros não perdoavam a abolição sem indenização.",
       "A República nasceu sem participação popular ampla. O novo regime ampliou pouco o direito de voto e seria dominado pelas oligarquias estaduais."
     ],
     "claims": [
-      { "status": "fato", "text": "Deodoro da Fonseca chefiou o Governo Provisório; a família imperial embarcou para a Europa em 17 de novembro." },
-      { "status": "interpretacao", "text": "José Murilo de Carvalho analisa a pouca participação popular na fundação da República.", "sources": ["carvalho-1987"] }
+      {
+        "status": "fato",
+        "text": "Deodoro da Fonseca chefiou o Governo Provisório; a família imperial embarcou para a Europa em 17 de novembro."
+      },
+      {
+        "status": "interpretacao",
+        "text": "José Murilo de Carvalho analisa a pouca participação popular na fundação da República.",
+        "sources": [
+          "carvalho-1987"
+        ]
+      }
     ],
     "excerpts": [
-      { "text": "O povo assistiu àquilo bestializado, atônito, surpreso, sem conhecer o que significava.", "source": "carvalho-1987", "note": "Aristides Lobo, em artigo de novembro de 1889, citado por José Murilo de Carvalho" }
+      {
+        "text": "O povo assistiu àquilo bestializado, atônito, surpreso, sem conhecer o que significava.",
+        "source": "carvalho-1987",
+        "note": "Aristides Lobo, em artigo de novembro de 1889, citado por José Murilo de Carvalho"
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Questão militar", "def": "Série de atritos entre oficiais do Exército e o governo imperial nos anos 1880." },
-        { "term": "Positivismo", "def": "Doutrina de Auguste Comte, influente entre militares republicanos; inspirou o lema 'Ordem e Progresso'." },
-        { "term": "Oligarquia", "def": "Governo de um pequeno grupo, no caso as elites agrárias estaduais." }
+        {
+          "term": "Questão militar",
+          "def": "Série de atritos entre oficiais do Exército e o governo imperial nos anos 1880."
+        },
+        {
+          "term": "Positivismo",
+          "def": "Doutrina de Auguste Comte, influente entre militares republicanos; inspirou o lema 'Ordem e Progresso'."
+        },
+        {
+          "term": "Oligarquia",
+          "def": "Governo de um pequeno grupo, no caso as elites agrárias estaduais."
+        }
       ],
-      "dates": [{ "date": "15 nov. 1889", "label": "proclamação" }, { "date": "24 fev. 1891", "label": "primeira Constituição republicana" }],
+      "dates": [
+        {
+          "date": "15 nov. 1889",
+          "label": "proclamação"
+        },
+        {
+          "date": "24 fev. 1891",
+          "label": "primeira Constituição republicana"
+        }
+      ],
       "questions": [
-        { "q": "Que grupos deixaram de apoiar a monarquia nos anos 1880?", "hint": "Exército, Igreja, fazendeiros." },
-        { "q": "A República ampliou a participação política? Justifique.", "hint": "Voto dos analfabetos, mulheres, coronelismo." }
+        {
+          "q": "Que grupos deixaram de apoiar a monarquia nos anos 1880?",
+          "hint": "Exército, Igreja, fazendeiros."
+        },
+        {
+          "q": "A República ampliou a participação política? Justifique.",
+          "hint": "Voto dos analfabetos, mulheres, coronelismo."
+        }
       ]
-    }
+    },
+    "media": [
+      {
+        "type": "image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Benedito_Calixto_-_Proclama%C3%A7%C3%A3o_da_Rep%C3%BAblica%2C_1893.jpg",
+        "width": 900,
+        "height": 558,
+        "url": "https://commons.wikimedia.org/wiki/File:Benedito_Calixto_-_Proclama%C3%A7%C3%A3o_da_Rep%C3%BAblica,_1893.jpg",
+        "title": "Proclamação da República, de Benedito Calixto (1893).",
+        "author": "Benedito Calixto",
+        "date": "1893",
+        "license": "Domínio público",
+        "institution": "Wikimedia Commons",
+        "alt": "Pintura de Benedito Calixto que representa a proclamação da República."
+      }
+    ]
   },
   {
     "id": "constituicao-1891",
@@ -42,12 +107,24 @@
     "start": "1891-02-24",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["politica", "direitos"],
-    "themes": ["democracia", "direitos"],
+    "categories": [
+      "politica",
+      "direitos"
+    ],
+    "themes": [
+      "democracia",
+      "direitos"
+    ],
     "weight": 3,
-    "people": ["deodoro"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["fausto-1994"],
+    "people": [
+      "deodoro"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
     "summary": "Primeira Constituição republicana: federalismo, presidencialismo, separação entre Igreja e Estado e fim do voto censitário — mas analfabetos e mulheres continuavam sem votar."
   },
   {
@@ -57,28 +134,57 @@
     "end": "1897-10-05",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["conflitos", "religiao", "sociedade"],
-    "themes": ["democracia"],
+    "categories": [
+      "conflitos",
+      "religiao",
+      "sociedade"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 4,
-    "people": ["antonio-conselheiro", "euclides-da-cunha"],
-    "places": ["canudos"],
-    "sources": ["cunha-1902", "schwarcz-starling-2015"],
+    "people": [
+      "antonio-conselheiro",
+      "euclides-da-cunha"
+    ],
+    "places": [
+      "canudos"
+    ],
+    "sources": [
+      "cunha-1902",
+      "schwarcz-starling-2015"
+    ],
     "summary": "O arraial de Belo Monte, formado por milhares de sertanejos em torno de Antônio Conselheiro, é destruído pelo Exército após quatro expedições militares.",
     "narrative": [
       "Canudos cresceu rapidamente no sertão da Bahia como comunidade religiosa e refúgio para camponeses pobres, ex-escravizados e indígenas. O governo e a imprensa o apresentaram como um foco monarquista contra a República.",
       "Três expedições fracassaram. A quarta, com milhares de soldados e artilharia, arrasou o arraial em outubro de 1897."
     ],
     "claims": [
-      { "status": "estimativa", "text": "A população do arraial e o número de mortos são estimativas; fala-se em dezenas de milhares de habitantes." },
-      { "status": "interpretacao", "text": "A acusação de que Canudos ameaçava a República é hoje vista como exagero da imprensa e do governo." }
+      {
+        "status": "estimativa",
+        "text": "A população do arraial e o número de mortos são estimativas; fala-se em dezenas de milhares de habitantes."
+      },
+      {
+        "status": "interpretacao",
+        "text": "A acusação de que Canudos ameaçava a República é hoje vista como exagero da imprensa e do governo."
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Messianismo", "def": "Movimento religioso em torno de um líder visto como enviado divino, frequentemente ligado à esperança de transformação social." },
-        { "term": "Sertão", "def": "Interior semiárido do Nordeste, marcado pela concentração de terras e pela seca." }
+        {
+          "term": "Messianismo",
+          "def": "Movimento religioso em torno de um líder visto como enviado divino, frequentemente ligado à esperança de transformação social."
+        },
+        {
+          "term": "Sertão",
+          "def": "Interior semiárido do Nordeste, marcado pela concentração de terras e pela seca."
+        }
       ],
       "questions": [
-        { "q": "Por que a República tratou Canudos como uma ameaça?", "hint": "Imprensa, medo de restauração monárquica, controle do território." }
+        {
+          "q": "Por que a República tratou Canudos como uma ameaça?",
+          "hint": "Imprensa, medo de restauração monárquica, controle do território."
+        }
       ]
     }
   },
@@ -88,12 +194,22 @@
     "start": "1902-12",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
-    "people": ["euclides-da-cunha"],
-    "places": ["canudos"],
-    "sources": ["cunha-1902"],
+    "people": [
+      "euclides-da-cunha"
+    ],
+    "places": [
+      "canudos"
+    ],
+    "sources": [
+      "cunha-1902"
+    ],
     "summary": "Euclides da Cunha publica sua obra sobre Canudos, que denuncia o massacre ao mesmo tempo que carrega o determinismo racial da ciência da época."
   },
   {
@@ -103,15 +219,34 @@
     "end": "1904-11-16",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["saude", "sociedade", "conflitos"],
-    "themes": ["ciencia-saude"],
+    "categories": [
+      "saude",
+      "sociedade",
+      "conflitos"
+    ],
+    "themes": [
+      "ciencia-saude"
+    ],
     "weight": 3,
-    "people": ["oswaldo-cruz"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["sevcenko-1984", "carvalho-1987"],
+    "people": [
+      "oswaldo-cruz"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "sevcenko-1984",
+      "carvalho-1987"
+    ],
     "summary": "A lei da vacinação obrigatória contra a varíola desencadeia uma semana de revolta no Rio, em meio à reforma urbana que demolia cortiços e expulsava a população pobre do centro.",
     "claims": [
-      { "status": "interpretacao", "text": "A revolta expressava menos uma rejeição à vacina em si do que a revolta contra a forma autoritária das reformas urbanas e sanitárias.", "sources": ["sevcenko-1984"] }
+      {
+        "status": "interpretacao",
+        "text": "A revolta expressava menos uma rejeição à vacina em si do que a revolta contra a forma autoritária das reformas urbanas e sanitárias.",
+        "sources": [
+          "sevcenko-1984"
+        ]
+      }
     ]
   },
   {
@@ -120,15 +255,25 @@
     "start": "1906-10-23",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["tecnologia", "ciencia"],
+    "categories": [
+      "tecnologia",
+      "ciencia"
+    ],
     "themes": [],
     "weight": 2,
-    "people": ["santos-dumont"],
-    "places": ["paris"],
+    "people": [
+      "santos-dumont"
+    ],
+    "places": [
+      "paris"
+    ],
     "sources": [],
     "summary": "Em Paris, Santos-Dumont voa com o 14-bis diante de público e comissão oficial.",
     "claims": [
-      { "status": "controversia", "text": "A primazia do voo em relação aos irmãos Wright é disputada e depende dos critérios adotados (decolagem autônoma, testemunhas, registro oficial)." }
+      {
+        "status": "controversia",
+        "text": "A primazia do voo em relação aos irmãos Wright é disputada e depende dos critérios adotados (decolagem autônoma, testemunhas, registro oficial)."
+      }
     ]
   },
   {
@@ -137,12 +282,24 @@
     "start": "1909",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["ciencia", "saude"],
-    "themes": ["ciencia-saude"],
+    "categories": [
+      "ciencia",
+      "saude"
+    ],
+    "themes": [
+      "ciencia-saude"
+    ],
     "weight": 2,
-    "people": ["carlos-chagas", "oswaldo-cruz"],
-    "places": ["minas-gerais"],
-    "sources": ["chagas-1909"],
+    "people": [
+      "carlos-chagas",
+      "oswaldo-cruz"
+    ],
+    "places": [
+      "minas-gerais"
+    ],
+    "sources": [
+      "chagas-1909"
+    ],
     "summary": "Pesquisador do Instituto Oswaldo Cruz, Chagas identifica o parasita, o inseto transmissor e a doença que levaria seu nome."
   },
   {
@@ -152,15 +309,45 @@
     "end": "1910-11-26",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["conflitos", "direitos"],
-    "themes": ["escravidao", "direitos"],
+    "categories": [
+      "conflitos",
+      "direitos"
+    ],
+    "themes": [
+      "escravidao",
+      "direitos"
+    ],
     "weight": 3,
-    "people": ["joao-candido"],
-    "places": ["rio-de-janeiro"],
-    "sources": ["morel-1959"],
+    "people": [
+      "joao-candido"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "morel-1959"
+    ],
     "summary": "Marinheiros, em sua maioria negros, tomam navios na Baía de Guanabara exigindo o fim dos castigos físicos. Conseguem a anistia, mas depois são presos, expulsos e mortos.",
     "claims": [
-      { "status": "interpretacao", "text": "A chibata na Marinha, duas décadas após a abolição, é vista como continuidade de práticas escravistas." }
+      {
+        "status": "interpretacao",
+        "text": "A chibata na Marinha, duas décadas após a abolição, é vista como continuidade de práticas escravistas."
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Joao_Candido.jpg/960px-Joao_Candido.jpg",
+        "width": 900,
+        "height": 551,
+        "url": "https://commons.wikimedia.org/wiki/File:Joao_Candido.jpg",
+        "title": "João Cândido (ao centro) com repórteres, oficiais e marinheiros no encouraçado Minas Geraes, 26 de novembro de 1910, último dia da revolta. Publicada em O Malho.",
+        "author": "Autor não identificado",
+        "date": "1910",
+        "license": "Domínio público",
+        "institution": "Wikimedia Commons",
+        "alt": "Fotografia de grupo no convés de um encouraçado; João Cândido ao centro."
+      }
     ]
   },
   {
@@ -170,12 +357,22 @@
     "end": "1916",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["conflitos", "territorio", "religiao"],
-    "themes": ["territorio"],
+    "categories": [
+      "conflitos",
+      "territorio",
+      "religiao"
+    ],
+    "themes": [
+      "territorio"
+    ],
     "weight": 2,
     "people": [],
-    "places": ["contestado"],
-    "sources": ["fausto-1994"],
+    "places": [
+      "contestado"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
     "summary": "Camponeses expulsos pela construção de uma ferrovia e pela exploração madeireira, reunidos em torno de líderes religiosos, enfrentam o Exército na divisa entre Paraná e Santa Catarina."
   },
   {
@@ -184,15 +381,26 @@
     "start": "1916-11-27",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
-    "people": ["donga"],
-    "places": ["rio-de-janeiro"],
+    "people": [
+      "donga"
+    ],
+    "places": [
+      "rio-de-janeiro"
+    ],
     "sources": [],
     "summary": "Donga registra 'Pelo telefone' na Biblioteca Nacional; gravada no ano seguinte, a música se torna um marco do samba no disco.",
     "claims": [
-      { "status": "controversia", "text": "A autoria foi disputada por outros músicos que frequentavam a casa de Tia Ciata, onde a canção teria sido criada coletivamente." }
+      {
+        "status": "controversia",
+        "text": "A autoria foi disputada por outros músicos que frequentavam a casa de Tia Ciata, onde a canção teria sido criada coletivamente."
+      }
     ]
   },
   {
@@ -201,12 +409,23 @@
     "start": "1917-07",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["economia", "direitos", "sociedade"],
-    "themes": ["economia", "direitos"],
+    "categories": [
+      "economia",
+      "direitos",
+      "sociedade"
+    ],
+    "themes": [
+      "economia",
+      "direitos"
+    ],
     "weight": 3,
     "people": [],
-    "places": ["sao-paulo"],
-    "sources": ["fausto-1994"],
+    "places": [
+      "sao-paulo"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
     "summary": "Operários, muitos deles imigrantes, paralisam São Paulo por melhores salários e condições de trabalho — num país sem legislação trabalhista."
   },
   {
@@ -216,15 +435,26 @@
     "end": "1918-12",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["saude", "cotidiano"],
-    "themes": ["ciencia-saude"],
+    "categories": [
+      "saude",
+      "cotidiano"
+    ],
+    "themes": [
+      "ciencia-saude"
+    ],
     "weight": 2,
     "people": [],
-    "places": ["rio-de-janeiro", "sao-paulo"],
+    "places": [
+      "rio-de-janeiro",
+      "sao-paulo"
+    ],
     "sources": [],
     "summary": "A pandemia de influenza atinge as cidades brasileiras no fim de 1918, com hospitais lotados e enterros em massa no Rio de Janeiro.",
     "claims": [
-      { "status": "fato", "text": "O presidente eleito Rodrigues Alves morreu em janeiro de 1919, antes de tomar posse, em decorrência da gripe." }
+      {
+        "status": "fato",
+        "text": "O presidente eleito Rodrigues Alves morreu em janeiro de 1919, antes de tomar posse, em decorrência da gripe."
+      }
     ]
   },
   {
@@ -234,29 +464,60 @@
     "end": "1922-02-17",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 4,
-    "people": ["mario-de-andrade", "oswald-de-andrade", "anita-malfatti"],
-    "places": ["sao-paulo"],
-    "sources": ["amaral-1970", "schwarcz-starling-2015"],
+    "people": [
+      "mario-de-andrade",
+      "oswald-de-andrade",
+      "anita-malfatti"
+    ],
+    "places": [
+      "sao-paulo"
+    ],
+    "sources": [
+      "amaral-1970",
+      "schwarcz-starling-2015"
+    ],
     "summary": "No Theatro Municipal de São Paulo, escritores, músicos e artistas apresentam uma arte que rompe com o academicismo e busca uma linguagem brasileira moderna.",
     "narrative": [
       "A Semana aconteceu no ano do centenário da independência. Seus participantes queriam 'atualizar' a arte brasileira e, ao mesmo tempo, descobrir o Brasil — suas línguas, músicas, cores e mitos.",
       "Nos anos seguintes, o modernismo se desdobrou em manifestos como o Pau-Brasil (1924) e o Antropófago (1928) e em obras como Macunaíma (1928)."
     ],
     "claims": [
-      { "status": "interpretacao", "text": "A importância da Semana foi amplificada depois pelos próprios modernistas; houve modernismos em outras cidades e antes de 1922." },
-      { "status": "fato", "text": "Tarsila do Amaral, frequentemente associada ao evento, estava em Paris e não participou da Semana." }
+      {
+        "status": "interpretacao",
+        "text": "A importância da Semana foi amplificada depois pelos próprios modernistas; houve modernismos em outras cidades e antes de 1922."
+      },
+      {
+        "status": "fato",
+        "text": "Tarsila do Amaral, frequentemente associada ao evento, estava em Paris e não participou da Semana."
+      }
     ],
     "study": {
       "concepts": [
-        { "term": "Modernismo", "def": "Conjunto de movimentos artísticos que rompiam com padrões acadêmicos e buscavam novas linguagens." },
-        { "term": "Antropofagia", "def": "Proposta de Oswald de Andrade: 'devorar' a cultura estrangeira e transformá-la em algo próprio." }
+        {
+          "term": "Modernismo",
+          "def": "Conjunto de movimentos artísticos que rompiam com padrões acadêmicos e buscavam novas linguagens."
+        },
+        {
+          "term": "Antropofagia",
+          "def": "Proposta de Oswald de Andrade: 'devorar' a cultura estrangeira e transformá-la em algo próprio."
+        }
       ],
       "questions": [
-        { "q": "Por que a data de 1922 foi simbólica para os modernistas?", "hint": "Centenário da independência." },
-        { "q": "O que significava buscar uma arte 'brasileira' em 1922?", "hint": "Cultura popular, indígena, africana; crítica à cópia europeia." }
+        {
+          "q": "Por que a data de 1922 foi simbólica para os modernistas?",
+          "hint": "Centenário da independência."
+        },
+        {
+          "q": "O que significava buscar uma arte 'brasileira' em 1922?",
+          "hint": "Cultura popular, indígena, africana; crítica à cópia europeia."
+        }
       ]
     }
   },
@@ -266,11 +527,18 @@
     "start": "1922-09-07",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["tecnologia", "cultura"],
-    "themes": ["cultura"],
+    "categories": [
+      "tecnologia",
+      "cultura"
+    ],
+    "themes": [
+      "cultura"
+    ],
     "weight": 2,
     "people": [],
-    "places": ["rio-de-janeiro"],
+    "places": [
+      "rio-de-janeiro"
+    ],
     "sources": [],
     "summary": "Na Exposição do Centenário da Independência, no Rio, é feita uma demonstração pública de radiodifusão, com o discurso do presidente Epitácio Pessoa."
   },
@@ -281,12 +549,25 @@
     "end": "1927",
     "period": "primeira-republica",
     "region": "brasil",
-    "categories": ["conflitos", "politica"],
-    "themes": ["democracia"],
+    "categories": [
+      "conflitos",
+      "politica"
+    ],
+    "themes": [
+      "democracia"
+    ],
     "weight": 3,
-    "people": ["luis-carlos-prestes"],
-    "places": ["rio-de-janeiro", "sao-paulo"],
-    "sources": ["fausto-1994", "fausto-1970"],
+    "people": [
+      "luis-carlos-prestes"
+    ],
+    "places": [
+      "rio-de-janeiro",
+      "sao-paulo"
+    ],
+    "sources": [
+      "fausto-1994",
+      "fausto-1970"
+    ],
     "summary": "Jovens oficiais se rebelam contra as oligarquias: o levante do Forte de Copacabana (1922), a revolta de 1924 em São Paulo e a longa marcha da Coluna Prestes pelo interior."
   }
 ]

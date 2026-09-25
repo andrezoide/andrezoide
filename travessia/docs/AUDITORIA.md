@@ -49,3 +49,23 @@ Registro do estado do projeto antes da segunda etapa de evolução e do que foi 
 - Filtros enfatizam em vez de apagar (com opção de ocultar).
 - Tokens de design e temas por época em `css/tokens.css`.
 - Mídia com carregamento sob demanda (vídeo/áudio só ao clicar).
+
+## Avaliação depois da etapa 2
+
+| Critério | Resultado | Como foi verificado |
+| --- | --- | --- |
+| **Navegação** — o usuário sabe onde está? | Trilha "Você está aqui" (Brasil › era › período › década/ano › evento), clicável em cada nível; "toda a história" na visão geral. | Capturas em todas as escalas. |
+| **Orientação** — sabe em que período está? | Faixa de períodos fixa, eras na faixa superior, nível de detalhe e meio de registro da época sob a trilha. | Idem. |
+| **Descoberta** — descobre algo sem pesquisar? | Notas "Você sabia?" / "Documento da época" / "Descubra uma conexão" após alguns segundos parado; pistas no rodapé; relações discretas de perto; rastro do percurso. | Teste com espera de 8 s. |
+| **Compreensão** — entende as relações? | Evento em 8 camadas (antes → fato → depois), arcos animados, constelação com pessoas, lugares e documentos, destaque na linha do tempo ao passar o cursor numa conexão. | Navegação completa pela Independência e pela Lei Áurea. |
+| **Estudo** — um estudante aprende algo? | Modo estudo com ficha, checkpoint de escolha (causas) ou de ordem cronológica, gerado das conexões cadastradas; estado salvo localmente. | Checkpoints abertos em eventos com e sem causas. |
+| **Controle** — quem controla? | Roda e teclado deslizam até o destino (sem travar); arraste e pinça são diretos; voos longos com no máximo ~1,1 s e interrompíveis; `prefers-reduced-motion` desliga interpolações. | Teste com `reducedMotion: 'reduce'`. |
+| **Desempenho** | 0,5–2 ms/quadro com os dados reais; 1–7,4 ms com 5.164 eventos; ≤ ~120 marcadores no DOM. | `perf2` (60 quadros por escala). |
+| **Celular** | Trilha compacta, controles no palco, Viajar para rolável, folha inferior com camadas, filtros em gaveta, mapa. | Capturas a 390 × 844. |
+| **Acessibilidade** | Atalho para a lista (1º Tab), marcadores focáveis, Enter abre e leva o foco ao painel, controles com `aria-label`, imagens com `alt`, versão em lista. | Script de teclado: 0 botões sem rótulo, 0 imagens sem `alt`. |
+
+### Limitações conhecidas
+
+- Faixas "Enquanto isso na ciência" e "no cotidiano" ficam vazias em muitas épocas: faltam registros cadastrados, e a interface diz isso em vez de preencher.
+- As imagens vêm do Wikimedia Commons (licenças conferidas na API); dependem de rede. Não há vídeos cadastrados — o componente existe e só carrega ao clique.
+- Sons não foram adicionados: nada no conteúdo atual justificava áudio.

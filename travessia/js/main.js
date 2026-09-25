@@ -12,6 +12,8 @@ import { VIEWS } from './views/views.js';
 import { Search } from './ui/search.js';
 import { Panel, Clues, Filters, Atlas, intro } from './ui/chrome.js';
 import { WhereAmI, ZoomControls, TravelBar } from './ui/nav.js';
+import { MapMode } from './ui/mapmode.js';
+import { Discover } from './ui/discover.js';
 
 class App extends Emitter {
   state = { study: storage.get('study', false), filters: { cats: new Set(), region: 'all', mode: 'enfatizar' } };
@@ -33,14 +35,16 @@ class App extends Emitter {
     this.plate = new WhereAmI(this, $('#plate'));
     this.zoom = new ZoomControls(this, this.stage);
     this.travel = new TravelBar(this, $('#travel'));
+    this.mapMode = new MapMode(this, this.stage);
     this.clues = new Clues(this, $('#clues'));
     this.panel = new Panel(this);
     this.search = new Search(this);
     this.filters = new Filters(this);
     this.atlas = new Atlas(this);
     this.#wireHeader();
+    this.discover = new Discover(this);
     new ResizeObserver(() => this.#syncSheet()).observe(this.panel.el);
-    this.on('view', (v) => { this.overview.update(); this.plate.update(v); this.zoom.update(v); this.clues.update(v); this.atlas.update(v); });
+    this.on('view', (v) => { this.lastView = v; this.mapMode.update(v); this.overview.update(); this.plate.update(v); this.zoom.update(v); this.clues.update(v); this.atlas.update(v); });
     this.#keys();
     window.addEventListener('hashchange', () => this.route());
     document.body.classList.toggle('is-study', this.state.study);
@@ -77,6 +81,7 @@ class App extends Emitter {
 
   #wireHeader() {
     $('#btn-search').addEventListener('click', () => this.search.open());
+    $('#skip').addEventListener('click', (e) => { e.preventDefault(); this.openList(); });
     this.btnFilters = $('#btn-filters');
     this.btnFilters.addEventListener('click', () => this.filters.toggle());
     this.btnAtlas = $('#btn-atlas');
@@ -101,7 +106,8 @@ class App extends Emitter {
       if (typing || !this.search.el.hidden) return;
       const tl = this.timeline;
       const inPanel = e.target.closest?.('.pn, .fl');
-      if (e.key === 'Escape') { if (!this.filters.el.hidden) this.filters.toggle(false); else this.close(); return; }
+      if (e.key === 'Escape') { if (!this.filters.el.hidden) this.filters.toggle(false); else if (this.mapMode.on && !this.focus) this.mapMode.toggle(false); else this.close(); return; }
+      if (e.key === 'm' && !e.metaKey && !e.ctrlKey && !inPanel) { this.mapMode.toggle(); return; }
       if (inPanel) return;
       if (e.key === 'ArrowRight') tl.panBy(tl.W * 0.18);
       else if (e.key === 'ArrowLeft') tl.panBy(-tl.W * 0.18);
@@ -157,6 +163,7 @@ class App extends Emitter {
 
   #clear() {
     this.focus = null;
+    if (this.mapMode) this.mapMode.focusId = null;
     this.panel.hide();
     this.#setInset(0);
     this.timeline.setInsetBottom(0);

@@ -158,8 +158,10 @@ export function drawAtmosphere(ctx, W, H, dpr, weights, panPx, inkRgb) {
       const ox = ((off % S) + S) % S;
       ctx.translate(ox - S, 0);
       // tinge a textura com a tinta atual
-      const pat = ctx.createPattern(tinted(t, inkRgb), 'repeat');
-      pat.setTransform(new DOMMatrix().scale(1 / dpr));
+      // o padrão é criado uma vez por textura e cor, não a cada quadro
+      const src = tinted(t, inkRgb);
+      let pat = patterns.get(src);
+      if (!pat) { pat = ctx.createPattern(src, 'repeat'); pat.setTransform(new DOMMatrix().scale(1 / dpr)); patterns.set(src, pat); }
       ctx.fillStyle = pat;
       ctx.fillRect(0, 0, W + S * 2, H);
     }
@@ -168,6 +170,7 @@ export function drawAtmosphere(ctx, W, H, dpr, weights, panPx, inkRgb) {
 }
 
 const tintCache = new Map();
+const patterns = new WeakMap();
 function tinted(t, rgb) {
   const key = t.dataset.kind + ':' + rgb.join(',');
   if (tintCache.has(key)) return tintCache.get(key);

@@ -30,6 +30,8 @@ inválida ou status epistemológico desconhecido, e avisa sobre eventos importan
 
 ## O que dá para fazer
 
+> Etapa 2: veja também `docs/AUDITORIA.md` (auditoria, decisões e avaliação).
+
 | Interação | Desktop | Celular |
 | --- | --- | --- |
 | Avançar/voltar no tempo | rolar a roda, arrastar, ← → | arrastar (horizontal **ou** vertical) |
@@ -37,7 +39,18 @@ inválida ou status epistemológico desconhecido, e avisa sobre eventos importan
 | Abrir um acontecimento | clique no marcador (ou nos pontos de eventos agrupados) | toque; abre uma folha inferior arrastável |
 | Buscar | `/` ou ⌘K — pessoas, eventos, lugares, temas, **anos** (`1964`), **décadas** (`anos 60`), **séculos** (`século XVIII`), `9500 a.C.` | ícone ⌕ |
 
-Ao abrir um acontecimento:
+**Orientação e navegação**: trilha *Você está aqui* (Brasil › era › período › década/ano › evento),
+controles de escala no palco (− milênios séculos décadas anos meses + · visão geral · lista),
+*Viajar para* (Antes de 1500, 1500, 1808, 1822, 1889, 1930, 1964, 1985, 2000, Hoje), tecla `0` para a
+visão geral, `M` para o mapa, ↑ ↓ para a escala.
+
+**Nível de detalhe (LOD)**: de longe, só os grandes marcos e as grandes eras; no zoom médio,
+acontecimentos importantes e a faixa de personagens (vidas); de perto, todos os acontecimentos e as
+relações entre eles; no zoom máximo, fichas com data completa, resumo e indícios de documentos.
+
+Ao abrir um acontecimento (ele "abre como um portal" a partir do marcador), o painel é organizado
+em **8 camadas** — o que aconteceu, contexto, causas, o acontecimento, consequências, longo prazo,
+relações e fontes — com navegação própria. Além disso:
 
 - **Arcos na própria linha do tempo** ligam o evento às suas causas, consequências e relações; as que
   estão fora da tela viram atalhos nas bordas.
@@ -54,6 +67,15 @@ Outras entradas na rede: **pessoa** (linha da vida, pessoas conectadas), **lugar
 do trecho visível e o **percurso** de navegação fica registrado no painel. O **Atlas** mostra, em
 mapa, os lugares dos acontecimentos visíveis e acompanha o deslocamento no tempo.
 
+**Modo mapa**: alterna Linha do tempo ⇄ Mapa; o mapa mostra os lugares do trecho de tempo visível e
+acompanha a rolagem. Um acontecimento pode ser levado ao mapa com suas rotas e linhas históricas.
+
+**Descoberta**: ao parar de navegar, uma nota discreta aparece junto a um acontecimento visível
+("Você sabia?", "Documento da época", "Descubra uma conexão"). Some ao primeiro movimento.
+
+**Filtros**: enfatizam as camadas escolhidas mantendo o resto como contexto (ou ocultam, se
+preferir). **Busca**: agrupa por tipo e mostra os resultados na linha do tempo enquanto você digita.
+
 A própria interface atravessa os séculos: paleta, textura (curvas de nível → linhas de rumo das
 cartas náuticas → gravura → colunas de jornal → retícula fotográfica → grade de dados) e a
 tipografia do painel mudam **gradualmente** conforme a posição no tempo.
@@ -63,7 +85,7 @@ tipografia do painel mudam **gradualmente** conforme a posição no tempo.
 ```
 travessia/
 ├── index.html
-├── css/            base (tokens), timeline, panel, chrome
+├── css/            tokens (design system e temas por época), base, timeline, panel, chrome
 ├── js/
 │   ├── main.js             app, rotas (#/evento/<id>, #/pessoa/<id>, …), orquestração
 │   ├── core/
@@ -75,7 +97,8 @@ travessia/
 │   │   ├── atmosphere.js   eras: tokens de cor e texturas interpoladas
 │   │   └── overview.js     régua geral com densidade
 │   ├── views/              painéis (evento, pessoa, lugar, tema, período, ano) e widgets
-│   └── ui/                 busca, mapa (SVG), painel, pistas, filtros, atlas, abertura
+│   ├── views/event.js      evento em 8 camadas; views/study.js: checkpoints
+│   └── ui/                 busca, mapa (SVG), modo mapa, navegação, descoberta, painel, filtros, atlas
 ├── data/
 │   ├── periods.json  categories.json  themes.json
 │   ├── people.json   places.json      sources.json
@@ -135,7 +158,11 @@ simplificado.
   "claims": [{ "status": "interpretacao", "text": "…", "sources": ["…"] }],
   "excerpts": [{ "text": "…", "source": "…", "note": "…" }],
   "study": { "concepts": [{ "term": "…", "def": "…" }], "dates": [], "questions": [{ "q": "…", "hint": "…" }] },
-  "map": { "routes": [{ "label": "…", "points": [[lat, lon], …] }], "lines": [] }
+  "map": { "routes": [{ "label": "…", "points": [[lat, lon], …] }], "lines": [] },
+  "media": [{ "type": "image",            // image | video | audio | document
+              "src": "…", "url": "página no acervo", "title": "…", "author": "…",
+              "date": "…", "license": "…", "institution": "…", "alt": "…",
+              "embed": "…" }]             // vídeo/áudio: só carrega ao clique
 }
 ```
 

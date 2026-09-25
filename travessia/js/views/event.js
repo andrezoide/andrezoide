@@ -106,7 +106,7 @@ export async function eventView(app, id) {
         farRelated.length ? h('div', h('h4.lyr-sub', 'Ecos distantes no tempo'), chainList(app, farRelated)) : null),
       layer(LAYERS[6],
         constellation(app, ev),
-        h('div.lyr-block', h('h4.lyr-sub', 'Enquanto isso…'), simultaneity(app, ev), whileElsewhere(app, ev)),
+        h('div.lyr-block', simultaneity(app, ev), whileElsewhere(app, ev)),
         people.length ? h('div.lyr-block', h('h4.lyr-sub', 'Pessoas'), h('div.pchips', people.map((p) => personChip(app, p)))) : null,
         nearRelated.length ? h('div.lyr-block', h('h4.lyr-sub', 'Outras conexões'), h('div.evchips', nearRelated.map((n) => eventChip(app, n.event, n.edge.note)))) : null),
       layer(LAYERS[7],

@@ -27,7 +27,8 @@ export async function renderMap(o = {}) {
   const g = await loadGeo();
   const [x0, y0, x1, y1] = o.bbox || [-76, -35, -32, 7];
   const vb = [px(x0), py(y1), px(x1) - px(x0), py(y0) - py(y1)];
-  const unit = vb[2] / 100; // escala relativa para traços e textos
+  // escala de traços e textos em pixels de tela quando a largura é conhecida
+  const unit = o.pxWidth ? (vb[2] / o.pxWidth) * 3 : vb[2] / 100;
   const svg = s('svg', { viewBox: vb.join(' '), class: 'map', role: 'img', 'aria-label': o.ariaLabel || 'Mapa' });
   // graticule
   const grid = s('g', { class: 'map-grid' });
@@ -39,11 +40,11 @@ export async function renderMap(o = {}) {
 
   for (const l of o.lines || []) {
     const d = 'M' + l.points.map(([la, lo]) => `${px(lo)},${py(la)}`).join('L');
-    svg.append(s('path', { d, class: 'map-line' + (l.status ? ' is-' + l.status : ''), 'stroke-width': unit * 0.5 }, s('title', {}, l.label)));
+    svg.append(s('path', { d, class: 'map-line' + (l.status ? ' is-' + l.status : '') }, s('title', {}, l.label)));
   }
   for (const r of o.routes || []) {
     const d = 'M' + r.points.map(([la, lo]) => `${px(lo)},${py(la)}`).join('L');
-    const path = s('path', { d, class: 'map-route', 'stroke-width': unit * 0.45, 'stroke-dasharray': `${unit * 1.4} ${unit}` }, s('title', {}, r.label));
+    const path = s('path', { d, class: 'map-route' }, s('title', {}, r.label));
     svg.append(path);
   }
   const pts = s('g', { class: 'map-points' });
@@ -53,7 +54,8 @@ export async function renderMap(o = {}) {
       s('circle', { r: r * 1.9, class: 'map-halo' }),
       s('circle', { r }),
       s('title', {}, p.label));
-    if (o.labels !== false && (p.active || o.labels === 'all')) {
+    const labeled = o.labels === 'all' || (o.labels === 'top' ? p.active && (p.rank ?? 0) < (o.maxLabels ?? 8) : p.active);
+    if (o.labels !== false && labeled) {
       node.append(s('text', { x: r * 1.6, y: unit * 0.9, 'font-size': unit * 3.1 }, p.label));
     }
     if (o.onPick) {

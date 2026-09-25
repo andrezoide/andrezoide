@@ -128,3 +128,7 @@ kbd { font: 500 10px/1 var(--f-mono); border: 1px solid rgb(var(--ink-rgb) / .35
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* atalho para quem navega pelo teclado ou leitor de tela */
+.skip { position: absolute; z-index: 200; left: 8px; top: -60px; padding: 10px 14px; background: var(--ink); color: var(--paper); font: 600 14px var(--f-cond); border-radius: var(--radius); }
+.skip:focus { top: 8px; }

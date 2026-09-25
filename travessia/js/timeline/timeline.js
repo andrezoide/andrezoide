@@ -853,13 +853,14 @@ export class Timeline {
       const e = store.byId.get(id); const c = this.collapsed.find((q) => q.ev.id === id);
       return c ? [c.x, c.y] : [this.x(e.u0), this.geo.axisY - 4];
     });
-    ctx.strokeStyle = this.rgba('accent', 0.45); ctx.lineWidth = 1.6; ctx.setLineDash([]);
+    ctx.strokeStyle = this.rgba('accent', 0.38); ctx.lineWidth = 1.4; ctx.setLineDash([]); ctx.lineJoin = 'round';
     ctx.beginPath();
+    // curvas suaves: a tangente em cada ponto segue a direção geral do fio
     pts.forEach(([x, y], i) => {
       if (!i) return ctx.moveTo(x, y);
       const [px, py] = pts[i - 1];
-      const mx = (px + x) / 2;
-      ctx.bezierCurveTo(mx, py, mx, y, x, y);
+      const dx = (x - px) * 0.4;
+      ctx.bezierCurveTo(px + dx, py, x - dx, y, x, y);
     });
     ctx.stroke();
   }
@@ -1051,6 +1052,7 @@ export class Timeline {
       const p = store.personById.get(focus.id);
       const evs = store.eventsOfPerson(focus.id);
       this.highlight = new Set(evs.map((e) => e.id));
+      this.thread = evs.map((e) => e.id); // a trajetória costurada no território
       const a = p.b?.y ?? (evs[0] ? evs[0].s.y - 30 : null), b = p.d?.y ?? (p.b ? Math.min(new Date().getFullYear(), p.b.y + 80) : evs.at(-1)?.s.y);
       if (a != null && b != null) this.span = [a, b + 1];
     } else if (focus?.type === 'lugar') {
@@ -1074,7 +1076,7 @@ function cardBody(e) {
   const badges = [];
   if (e.nSources) badges.push(`§ ${e.nSources} fonte${e.nSources > 1 ? 's' : ''}`);
   if (e.hasExcerpt) badges.push('❝ documento da época');
-  if (e.media?.length) badges.push('▣ imagem');
+  if (e.mediaTypes?.length) badges.push('▣ imagem');
   if (e.hasMap || e.places.length) badges.push('◎ mapa');
   if (e.hasStudy) badges.push('✎ estudo');
   return h('span.mk-card', h('span.mk-sum', e.summary), badges.length ? h('span.mk-badges', badges.join('  ·  ')) : null);

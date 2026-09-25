@@ -30,13 +30,35 @@ export async function personView(app, id) {
       life ? h('p.pv-date', (p.circa ? 'c. ' : '') + life) : p.b ? null : null),
     h('p.pv-lead', p.summary),
     lifeline(app, p, evs),
-    section('Na história', h('ol.pv-timeline', evs.map((e) => h('li', eventChip(app, e))))),
+    section('Trajetória', trajectory(app, p, evs, around)),
     section('Pessoas conectadas', around.length ? h('div.pchips', around.map((a) => personChip(app, a.person, a.rel || (a.n > 1 ? `${a.n} acontecimentos em comum` : 'acontecimento em comum')))) : null),
     section('Lugares', map),
     section('Períodos', h('ul.pv-tags', periods.map((pe) => h('li', link(app, 'periodo', pe.id, pe.short))))),
     h('p.pv-note', 'A pessoa aparece aqui pelo que fez e viveu dentro dos acontecimentos — não como biografia isolada.'),
   );
   return { kind: 'Pessoa', title: p.name, node, year: p.b?.y ?? evs[0]?.t };
+}
+
+/**
+ * A pessoa atravessando a história: nascimento, acontecimentos, conflitos,
+ * documentos, relações e morte, na ordem do tempo.
+ */
+function trajectory(app, p, evs, around) {
+  const age = (y) => (p.b ? ` · ${Math.max(0, Math.round(y - p.b.y))} anos` : '');
+  const steps = [];
+  if (p.b) steps.push(h('li.tj.is-birth', h('span.tj-k', 'Nascimento'), h('span.tj-d', formatDate(p.b, { long: true }))));
+  for (const e of evs) {
+    const conflict = e.categories.includes('conflitos');
+    const docs = (e.sources || []).map((id) => store.sourceById.get(id)).filter((x) => x && ['documento', 'carta', 'lei', 'obra', 'jornal'].includes(x.type));
+    const others = e.people.filter((x) => x !== p.id).map((x) => store.personById.get(x)).filter(Boolean).slice(0, 3);
+    steps.push(h(`li.tj${conflict ? '.is-conflict' : ''}`,
+      h('span.tj-k', conflict ? 'Conflito' : 'Acontecimento', h('span.tj-age', age(e.t))),
+      eventChip(app, e),
+      docs.length ? h('p.tj-docs', '§ ', docs.map((d) => d.title).join('; ')) : null,
+      others.length ? h('p.tj-with', 'com ', others.map((o, i) => [i ? ', ' : '', link(app, 'pessoa', o.id, o.name)])) : null));
+  }
+  if (p.d) steps.push(h('li.tj.is-death', h('span.tj-k', 'Morte'), h('span.tj-d', formatDate(p.d, { long: true }) + age(p.d.y))));
+  return h('ol.tj-list', steps);
 }
 
 /** linha da vida: nascimento, morte e acontecimentos numa régua própria */

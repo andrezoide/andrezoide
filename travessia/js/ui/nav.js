@@ -116,7 +116,12 @@ export class ZoomControls {
         type: 'button', dataset: { lvl: l.id }, title: `Escala: ${l.label}`, 'aria-pressed': 'false',
         onclick: () => this.goLevel(l.id),
       }, l.label)));
+    this.modes = h('div.zc-modes', { role: 'group', 'aria-label': 'Modo de visualização' },
+      h('button.zc-m', { type: 'button', dataset: { mode: 'linha' }, 'aria-pressed': 'true', title: 'Linha do tempo', onclick: () => app.mapMode.toggle(false) }, 'Linha do tempo'),
+      h('button.zc-m', { type: 'button', dataset: { mode: 'mapa' }, 'aria-pressed': 'false', title: 'Mapa do trecho visível (tecla M)', onclick: () => app.mapMode.toggle(true) }, 'Mapa'));
+    app.on('mode', (m) => this.modes.querySelectorAll('.zc-m').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === m))));
     this.el = h('div.tl-ctrl.zc', { role: 'toolbar', 'aria-label': 'Controles de navegação no tempo' },
+      this.modes,
       btn('zc-out', 'Afastar (menos detalhe)', '−', () => tl.zoomBy(1 / 2.2)),
       this.levels,
       btn('zc-in', 'Aproximar (mais detalhe)', '+', () => tl.zoomBy(2.2)),
