@@ -6,7 +6,8 @@
     "start": -50000,
     "end": 1500,
     "era": "originarios",
-    "summary": "Milhares de anos de ocupação humana, com sociedades, línguas, paisagens transformadas e redes de troca muito antes da chegada europeia. O território ainda não se chamava Brasil — e não era um vazio à espera de ser descoberto."
+    "summary": "Milhares de anos de ocupação humana, com sociedades, línguas, paisagens transformadas e redes de troca muito antes da chegada europeia. O território ainda não se chamava Brasil — e não era um vazio à espera de ser descoberto.",
+    "group": "antes-1500"
   },
   {
     "id": "colonia",
@@ -15,7 +16,8 @@
     "start": 1500,
     "end": 1808,
     "era": "colonia",
-    "summary": "Três séculos de conquista, escravização de indígenas e africanos, economia exportadora, resistência e expansão territorial muito além de Tordesilhas."
+    "summary": "Três séculos de conquista, escravização de indígenas e africanos, economia exportadora, resistência e expansão territorial muito além de Tordesilhas.",
+    "group": "colonia"
   },
   {
     "id": "periodo-joanino",
@@ -24,7 +26,8 @@
     "start": 1808,
     "end": 1822,
     "era": "imperio",
-    "summary": "Fugindo das tropas napoleônicas, a corte portuguesa se instala no Rio. A colônia vira sede do império português — e isso muda tudo."
+    "summary": "Fugindo das tropas napoleônicas, a corte portuguesa se instala no Rio. A colônia vira sede do império português — e isso muda tudo.",
+    "group": "monarquia"
   },
   {
     "id": "primeiro-reinado",
@@ -33,7 +36,8 @@
     "start": 1822,
     "end": 1831,
     "era": "imperio",
-    "summary": "Um país independente, mas monárquico e escravista, governado por um imperador português. Guerras, uma Constituição outorgada e revoltas regionais."
+    "summary": "Um país independente, mas monárquico e escravista, governado por um imperador português. Guerras, uma Constituição outorgada e revoltas regionais.",
+    "group": "monarquia"
   },
   {
     "id": "regencias",
@@ -42,7 +46,8 @@
     "start": 1831,
     "end": 1840,
     "era": "imperio",
-    "summary": "Com um imperador criança, regentes governam em meio às maiores revoltas do século XIX — de escravizados, pobres livres, elites provinciais e povos indígenas."
+    "summary": "Com um imperador criança, regentes governam em meio às maiores revoltas do século XIX — de escravizados, pobres livres, elites provinciais e povos indígenas.",
+    "group": "monarquia"
   },
   {
     "id": "segundo-reinado",
@@ -51,7 +56,8 @@
     "start": 1840,
     "end": 1889,
     "era": "imperio",
-    "summary": "Meio século de D. Pedro II: café, ferrovias, Guerra do Paraguai e a longa e disputada trajetória até a abolição."
+    "summary": "Meio século de D. Pedro II: café, ferrovias, Guerra do Paraguai e a longa e disputada trajetória até a abolição.",
+    "group": "monarquia"
   },
   {
     "id": "primeira-republica",
@@ -60,7 +66,8 @@
     "start": 1889,
     "end": 1930,
     "era": "republica",
-    "summary": "República sem povo? Oligarquias do café, coronelismo, violência contra Canudos e o Contestado, greves operárias e modernismo."
+    "summary": "República sem povo? Oligarquias do café, coronelismo, violência contra Canudos e o Contestado, greves operárias e modernismo.",
+    "group": "republica"
   },
   {
     "id": "era-vargas",
@@ -69,7 +76,8 @@
     "start": 1930,
     "end": 1946,
     "era": "seculo20",
-    "summary": "Centralização, leis trabalhistas, voto feminino, rádio, propaganda — e a ditadura do Estado Novo."
+    "summary": "Centralização, leis trabalhistas, voto feminino, rádio, propaganda — e a ditadura do Estado Novo.",
+    "group": "republica"
   },
   {
     "id": "republica-46",
@@ -78,7 +86,8 @@
     "start": 1946,
     "end": 1964,
     "era": "seculo20",
-    "summary": "Eleições, desenvolvimentismo, Petrobras, Brasília, bossa nova — e uma democracia sob pressão crescente da Guerra Fria."
+    "summary": "Eleições, desenvolvimentismo, Petrobras, Brasília, bossa nova — e uma democracia sob pressão crescente da Guerra Fria.",
+    "group": "republica"
   },
   {
     "id": "ditadura",
@@ -87,7 +96,8 @@
     "start": 1964,
     "end": 1985,
     "era": "seculo20",
-    "summary": "Vinte e um anos de regime autoritário: cassações, censura, tortura, crescimento com concentração de renda e, por fim, a luta pela abertura."
+    "summary": "Vinte e um anos de regime autoritário: cassações, censura, tortura, crescimento com concentração de renda e, por fim, a luta pela abertura.",
+    "group": "republica"
   },
   {
     "id": "nova-republica",
@@ -96,6 +106,7 @@
     "start": 1985,
     "end": 2031,
     "era": "contemporaneo",
-    "summary": "Constituição de 1988, estabilização da moeda, políticas sociais, crises políticas, pandemia e novos debates sobre democracia, território e meio ambiente."
+    "summary": "Constituição de 1988, estabilização da moeda, políticas sociais, crises políticas, pandemia e novos debates sobre democracia, território e meio ambiente.",
+    "group": "republica"
   }
 ]

@@ -27,9 +27,14 @@ export const chipDate = (ev) => ev.isRange
   : ev.label;
 
 export function eventChip(app, ev, extra) {
+  // passar o cursor mostra onde a conexão está na linha do tempo
   return h('a.evchip', {
     href: `#/evento/${ev.id}`,
     onclick: (e) => { e.preventDefault(); app.open('evento', ev.id); },
+    onmouseenter: () => app.timeline?.peek(ev.id),
+    onmouseleave: () => app.timeline?.peek(null),
+    onfocus: () => app.timeline?.peek(ev.id),
+    onblur: () => app.timeline?.peek(null),
   }, h('span.evchip-date', chipDate(ev)), h('span.evchip-title', ev.title), extra ? h('span.evchip-note', extra) : null);
 }
 
@@ -171,7 +176,14 @@ export function constellation(app, ev) {
     });
   };
   row(people.slice(0, 4), 40, 'person', (p) => app.open('pessoa', p.id));
-  row(places.slice(0, 4), H - 40, 'place', (p) => app.open('lugar', p.id));
+  // lugares e documentos na base: evento → lugar, evento → documento
+  const docs = (ev.sources || []).map((id) => store.sourceById.get(id)).filter((x) => x && ['documento', 'carta', 'lei', 'obra', 'jornal'].includes(x.type));
+  const base = [...places.slice(0, 3).map((p) => ({ id: p.id, name: p.name, kind: 'place' })), ...docs.slice(0, 2).map((d) => ({ id: d.id, name: d.title, kind: 'doc' }))];
+  base.forEach((it, i) => {
+    const m = base.length, x = m === 1 ? cx : 130 + (340 * i) / (m - 1), y = H - 40;
+    edges.append(s('line', { x1: cx, y1: cy, x2: x, y2: y, class: 'ce t-' + it.kind }));
+    addNode(x, y, it.name, it.kind === 'doc' ? 'documento' : null, it.kind, () => (it.kind === 'place' ? app.open('lugar', it.id) : app.panel.scrollTo('#l8')), 'middle', m > 3 ? 16 : 22);
+  });
   const c = s('g', { class: 'cn is-center', transform: `translate(${cx},${cy})` });
   c.append(s('circle', { r: 11 }), s('text', { y: 30, 'text-anchor': 'middle', class: 'cn-l' }, ev.title.length > 30 ? ev.title.slice(0, 29) + '…' : ev.title));
   nodes.append(c);
@@ -179,7 +191,7 @@ export function constellation(app, ev) {
     h('div.const-wrap', svg),
     h('ul.const-legend',
       h('li.t-causa', 'causa'), h('li.t-sucessao', 'sucessão'), h('li.t-reacao', 'reação'), h('li.t-contexto', 'contexto'), h('li.t-relacionado', 'relação'),
-      h('li.t-person', 'pessoa'), h('li.t-place', 'lugar')));
+      h('li.t-person', 'pessoa'), h('li.t-place', 'lugar'), h('li.t-doc', 'documento')));
 }
 
 // -------------------------------------------------------- evidências
@@ -247,6 +259,62 @@ function autoQuestions(ev, causes, cons) {
   if (cons.length) q.push({ q: `Que mudanças decorreram de “${ev.title}”?`, hint: cons.map((c) => c.event.title).join('; ') });
   q.push({ q: `O que acontecia no mundo na mesma época? Há relação com “${ev.title}”?`, hint: 'Veja o bloco “Enquanto isso”.' });
   return q;
+}
+
+// -------------------------------------------------------- enquanto isso, por dimensão
+
+const DIMENSIONS = [
+  { id: 'brasil', label: 'Enquanto isso no Brasil', test: (e) => e.region === 'brasil' && !e.categories.some((c) => ['cultura', 'esporte', 'ciencia', 'tecnologia', 'saude', 'cotidiano', 'educacao', 'religiao'].includes(c)) },
+  { id: 'mundo', label: 'Enquanto isso no mundo', test: (e) => e.region === 'mundo' },
+  { id: 'cultura', label: 'Enquanto isso na cultura', test: (e) => e.categories.some((c) => ['cultura', 'esporte'].includes(c)) },
+  { id: 'ciencia', label: 'Enquanto isso na ciência e na técnica', test: (e) => e.categories.some((c) => ['ciencia', 'tecnologia', 'saude'].includes(c)) },
+  { id: 'cotidiano', label: 'Enquanto isso no cotidiano', test: (e) => e.categories.some((c) => ['cotidiano', 'educacao', 'religiao'].includes(c)) },
+];
+
+/** simultaneidade separada por dimensões: a história não é só política */
+export function whileElsewhere(app, ev) {
+  const y = ev.t;
+  const win = y < 0 ? 1500 : y < 1500 ? 80 : y < 1800 ? 15 : y < 1950 ? 5 : 3;
+  const others = store.simultaneous(ev, win);
+  const near = (e) => Math.abs(e.t - ev.t) - e.weight * win * 0.05;
+  const cols = DIMENSIONS.map((d) => {
+    const list = others.filter(d.test).sort((a, b) => near(a) - near(b)).slice(0, 4);
+    return h(`div.we-col.is-${d.id}`, h('h4.we-h', d.label),
+      list.length ? h('div.evchips', list.map((o) => eventChip(app, o))) : h('p.we-empty', 'Ainda não há registros cadastrados para esta época.'));
+  });
+  return h('div.we', h('p.we-window', `Janela: ${yearLabel(Math.round(ev.t0 - win))} a ${yearLabel(Math.round(ev.t1 + win))}`), ...cols);
+}
+
+// -------------------------------------------------------- multimídia
+
+/**
+ * Imagens carregam de forma preguiçosa; vídeo e áudio só são incorporados
+ * quando o usuário pede. Todo item exige crédito e fonte.
+ */
+export function media(list) {
+  if (!list?.length) return null;
+  return h('div.media', list.map((m) => {
+    const credit = h('figcaption', h('span.media-title', m.title), [m.author, m.date, m.license].filter(Boolean).length ? h('span.media-credit', [m.author, m.date, m.license].filter(Boolean).join(' · ')) : null,
+      m.institution ? h('span.media-credit', m.institution) : null,
+      m.url ? h('a.src-url', { href: m.url, target: '_blank', rel: 'noopener' }, 'ver no acervo ↗') : null);
+    if (m.type === 'image') {
+      return h('figure.media-item', h('a', { href: m.url || m.src, target: '_blank', rel: 'noopener', 'aria-label': `Abrir imagem: ${m.title}` },
+        h('img', { src: m.thumb || m.src, alt: m.alt || m.title, loading: 'lazy', decoding: 'async', width: m.width || null, height: m.height || null })), credit);
+    }
+    // vídeo e áudio: nada é baixado até o clique
+    const slot = h('div.media-slot');
+    const btn = h('button.media-play', {
+      type: 'button',
+      onclick: () => {
+        const el = m.embed
+          ? h('iframe', { src: m.embed, title: m.title, loading: 'lazy', allow: 'fullscreen; picture-in-picture', referrerpolicy: 'strict-origin-when-cross-origin' })
+          : h(m.type === 'audio' ? 'audio' : 'video', { src: m.src, controls: true, preload: 'none', autoplay: true });
+        slot.replaceChildren(el);
+      },
+    }, m.thumb ? h('img', { src: m.thumb, alt: '', loading: 'lazy' }) : null, h('span', m.type === 'audio' ? '▶ Ouvir' : '▶ Carregar vídeo'));
+    slot.append(btn);
+    return h('figure.media-item.is-' + m.type, slot, credit);
+  }));
 }
 
 export { EDGE_TYPES };

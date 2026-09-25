@@ -1,0 +1,119 @@
+/* Travessia — design tokens
+ *
+ * Duas camadas:
+ *  1. Tokens estruturais, iguais em toda a travessia (espaço, escala, tempo, z-index).
+ *  2. Temas históricos (.theme-*), que redefinem só a "voz" da época:
+ *     tipografia de títulos, bordas, fios, ornamento e o meio de registro.
+ *
+ * As cores NÃO são definidas aqui: são interpoladas continuamente pela
+ * posição no tempo (js/timeline/atmosphere.js) e escritas como --paper,
+ * --ink, --accent… Assim a paleta muda gradualmente, e a tipografia e a
+ * linguagem dos componentes mudam por época — sempre com a mesma estrutura.
+ */
+
+:root {
+  /* espaço */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px;
+
+  /* famílias */
+  --f-display: Fraunces, Georgia, 'Times New Roman', serif;
+  --f-text: Fraunces, Georgia, serif;
+  --f-ui: 'IBM Plex Sans', system-ui, sans-serif;
+  --f-cond: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* tipografia de título — redefinida por tema */
+  --f-title: var(--f-display);
+  --title-style: normal;
+  --title-weight: 600;
+  --title-case: none;
+  --title-tracking: -.018em;
+
+  /* bordas e fios */
+  --radius: 2px;
+  --rule-w: 1px;
+  --rule-style: solid;
+  --rule: 1px solid rgb(var(--ink-rgb) / .9);
+  --rule-soft: 1px solid rgb(var(--ink-rgb) / .16);
+
+  /* sombra "de impressão": deslocada e sem desfoque */
+  --shadow-print: 4px 4px 0 rgb(var(--ink-rgb) / .14);
+  --shadow-lift: 8px 8px 0 rgb(var(--ink-rgb) / .18);
+
+  /* tempo */
+  --dur-1: .15s; --dur-2: .3s; --dur-3: .5s;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+
+  /* camadas */
+  --z-markers: 5; --z-callout: 14; --z-ctrl: 12; --z-foot: 20; --z-panel: 25; --z-top: 30;
+  --z-sheet: 35; --z-overlay: 60; --z-intro: 80;
+
+  /* ornamento e meio de registro da época */
+  --ornament: '◦';
+  --record: 'vestígios';
+}
+
+/* ------------------------------------------------------------------ temas */
+
+/* Antes de 1500: terra, vestígio, oralidade. Fios pontilhados como trilhas. */
+.theme-pre-colonial {
+  --title-weight: 600;
+  --radius: 0;
+  --rule-style: dotted;
+  --ornament: '◦ ◦ ◦';
+}
+
+/* Colônia: tinta ferrogálica, cartas e cartografia. Itálico manuscrito,
+   rosa dos ventos como ornamento. */
+.theme-colonial {
+  --title-style: italic;
+  --title-weight: 500;
+  --title-tracking: -.01em;
+  --radius: 0;
+  --rule-style: solid;
+  --ornament: '✢';
+}
+
+/* Corte e Império: documento oficial e gravura. Fio duplo, títulos
+   de alto contraste. */
+.theme-imperio {
+  --title-weight: 600;
+  --radius: 0;
+  --rule-style: double;
+  --rule-w: 3px;
+  --ornament: '❦';
+}
+
+/* Primeira República: imprensa. Títulos condensados, pesados, como manchete. */
+.theme-republica {
+  --f-title: var(--f-cond);
+  --title-weight: 700;
+  --title-tracking: -.005em;
+  --radius: 0;
+  --rule-style: double;
+  --rule-w: 3px;
+  --ornament: '■';
+}
+
+/* Século XX: fotografia documental, rádio, televisão, cartaz. */
+.theme-seculo-xx {
+  --f-title: var(--f-cond);
+  --title-weight: 600;
+  --title-tracking: -.01em;
+  --radius: 2px;
+  --ornament: '●';
+}
+
+/* Contemporâneo: interface digital, dados, mapas. */
+.theme-contemporaneo {
+  --f-title: var(--f-ui);
+  --title-weight: 600;
+  --title-tracking: -.02em;
+  --radius: 4px;
+  --ornament: '▪';
+}
+
+/* troca de tema: títulos fazem um crossfade curto, nunca um salto */
+.is-shifting .pv-title, .is-shifting .wa-crumbs, .is-shifting .mk-title { animation: shift var(--dur-3) var(--ease); }
+@keyframes shift { 0% { opacity: .35; } 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .is-shifting * { animation: none !important; } }

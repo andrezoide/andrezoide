@@ -60,7 +60,14 @@ export class Search {
     this.run();
     requestAnimationFrame(() => this.input.focus());
   }
-  close() { this.el.hidden = true; this.app.stage.focus?.(); }
+  close() { this.el.hidden = true; this.#preview(null); this.app.stage.focus?.(); }
+
+  /** enquanto se digita, a linha do tempo mostra onde estão os resultados */
+  #preview(ids) {
+    const tl = this.app.timeline;
+    tl.preview = ids?.size ? ids : null;
+    tl.requestRender();
+  }
 
   query(q) {
     const nq = norm(q).trim();
@@ -97,18 +104,34 @@ export class Search {
     return out.sort((a, b) => b.score - a.score).filter((r) => {
       const k = r.type + r.id + r.title;
       if (seen.has(k)) return false; seen.add(k); return true;
-    }).slice(0, 18).map((r) => ({ ...r, go: r.go || (() => { this.close(); this.app.open(r.type, r.id); }) }));
+    }).slice(0, 24).map((r) => ({ ...r, go: r.go || (() => { this.close(); this.app.open(r.type, r.id, { pulse: r.type === 'evento' }); }) }));
   }
 
   run() {
     const q = this.input.value;
-    this.results = this.query(q);
+    const flat = this.query(q);
+    // agrupa por tipo, na ordem do melhor resultado de cada grupo
+    const GROUP = { tempo: 'Ir para', pessoa: 'Pessoas — trajetória na linha do tempo', tema: 'Temas — linhas que atravessam períodos', evento: 'Acontecimentos', periodo: 'Períodos', lugar: 'Lugares' };
+    const groups = new Map();
+    for (const r of flat) { if (!groups.has(r.type)) groups.set(r.type, []); groups.get(r.type).push(r); }
+    this.results = [...groups.values()].flatMap((g) => g.slice(0, g[0].type === 'evento' ? 10 : 5));
     this.sel = this.results.length ? 0 : null;
     this.hint.hidden = !!q.trim();
     const LABEL = { evento: 'acontecimento', pessoa: 'pessoa', lugar: 'lugar', tema: 'tema', periodo: 'período', tempo: 'tempo' };
-    this.list.replaceChildren(...this.results.map((r, i) => h('li', { role: 'option' },
-      h('button.sr-item', { type: 'button', onclick: r.go, onmouseenter: () => { this.sel = i; this.#mark(); } },
-        h(`span.sr-type.t-${r.type}`, LABEL[r.type]), h('span.sr-title', r.title), h('span.sr-meta', r.meta || '')))));
+    let i = -1;
+    this.list.replaceChildren(...[...groups.entries()].map(([type, list]) => h('li.sr-group', { role: 'presentation' },
+      h('p.sr-group-h', GROUP[type]),
+      h('ul', { role: 'group' }, list.slice(0, type === 'evento' ? 10 : 5).map((r) => { const idx = ++i; return h('li', { role: 'option' },
+        h('button.sr-item', { type: 'button', onclick: r.go, onmouseenter: () => { this.sel = idx; this.#mark(); } },
+          h(`span.sr-type.t-${r.type}`, LABEL[r.type]), h('span.sr-title', r.title), h('span.sr-meta', r.meta || ''))); })))));
+    // prévia: acontecimentos encontrados, trajetória da pessoa ou linha do tema
+    const ids = new Set();
+    for (const r of this.results.slice(0, 12)) {
+      if (r.type === 'evento') ids.add(r.id);
+      else if (r.type === 'pessoa') store.eventsOfPerson(r.id).forEach((e) => ids.add(e.id));
+      else if (r.type === 'tema') store.eventsOfTheme(r.id).forEach((e) => ids.add(e.id));
+    }
+    this.#preview(q.trim() ? ids : null);
     if (q.trim() && !this.results.length) this.list.append(h('li.sr-empty', 'Nada encontrado. Tente outro nome, um ano ou um tema.'));
     this.#mark();
   }

@@ -16,15 +16,6 @@
   --accent2: rgb(47 93 80);
   --accent2-rgb: 47 93 80;
 
-  --f-display: Fraunces, Georgia, 'Times New Roman', serif;
-  --f-text: Fraunces, Georgia, serif;
-  --f-ui: 'IBM Plex Sans', system-ui, sans-serif;
-  --f-cond: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
-  --f-mono: 'IBM Plex Mono', ui-monospace, monospace;
-
-  --rule: 1px solid rgb(var(--ink-rgb) / .9);
-  --rule-soft: 1px solid rgb(var(--ink-rgb) / .16);
-  --shadow-print: 4px 4px 0 rgb(var(--ink-rgb) / .14);
   --top-h: 56px;
   --foot-h: 84px;
   --gutter: 16px;
@@ -107,7 +98,7 @@ kbd { font: 500 10px/1 var(--f-mono); border: 1px solid rgb(var(--ink-rgb) / .35
 
 /* ------------------------------------------------------------ rodapé */
 .foot { border-top: 1.5px solid var(--ink); display: grid; grid-template-rows: 32px 1fr; background: rgb(var(--paper-rgb) / .96); position: relative; z-index: 20; }
-.clues { display: flex; align-items: center; gap: 4px; padding: 0 var(--gutter); overflow-x: auto; scrollbar-width: none; border-bottom: var(--rule-soft); white-space: nowrap; }
+.clues { display: flex; align-items: center; gap: 4px; padding: 0 var(--gutter); overflow-x: auto; scrollbar-width: none; white-space: nowrap; min-width: 0; }
 .clues::-webkit-scrollbar { display: none; }
 .overview { position: relative; cursor: pointer; touch-action: none; overflow: hidden; }
 .overview canvas { display: block; }

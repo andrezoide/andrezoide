@@ -2,8 +2,9 @@
 //   h('a.link', { href: '#', onclick }, 'texto', filho)
 
 export function h(tag, props, ...children) {
-  const [head, ...classes] = tag.split('.');
-  const [name, id] = head.split('#');
+  let id = null;
+  tag = tag.replace(/#([\w-]+)/, (_, x) => { id = x; return ''; });
+  const [name, ...classes] = tag.split('.');
   const el = document.createElement(name || 'div');
   if (id) el.id = id;
   if (classes.length) el.className = classes.join(' ');

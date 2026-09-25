@@ -5,15 +5,16 @@
 
 import { store } from './core/store.js';
 import { h, $, Emitter, storage } from './core/dom.js';
-import { yearToU, U_MAX } from './core/time.js';
+import { yearToU, U_MAX, YEAR_MIN, YEAR_MAX, uToYear } from './core/time.js';
 import { Timeline } from './timeline/timeline.js';
 import { Overview } from './timeline/overview.js';
 import { VIEWS } from './views/views.js';
 import { Search } from './ui/search.js';
-import { Panel, EraPlate, Clues, Filters, Atlas, intro } from './ui/chrome.js';
+import { Panel, Clues, Filters, Atlas, intro } from './ui/chrome.js';
+import { WhereAmI, ZoomControls, TravelBar } from './ui/nav.js';
 
 class App extends Emitter {
-  state = { study: storage.get('study', false), filters: { cats: new Set(), region: 'all' } };
+  state = { study: storage.get('study', false), filters: { cats: new Set(), region: 'all', mode: 'enfatizar' } };
   visited = new Set(storage.get('visited', []));
   trail = [];
   focus = null;
@@ -29,7 +30,9 @@ class App extends Emitter {
     }
     this.timeline = new Timeline(this.stage, this);
     this.overview = new Overview($('#overview'), this.timeline);
-    this.plate = new EraPlate(this, $('#plate'));
+    this.plate = new WhereAmI(this, $('#plate'));
+    this.zoom = new ZoomControls(this, this.stage);
+    this.travel = new TravelBar(this, $('#travel'));
     this.clues = new Clues(this, $('#clues'));
     this.panel = new Panel(this);
     this.search = new Search(this);
@@ -37,7 +40,7 @@ class App extends Emitter {
     this.atlas = new Atlas(this);
     this.#wireHeader();
     new ResizeObserver(() => this.#syncSheet()).observe(this.panel.el);
-    this.on('view', (v) => { this.overview.update(); this.plate.update(v); this.clues.update(v); this.atlas.update(v); });
+    this.on('view', (v) => { this.overview.update(); this.plate.update(v); this.zoom.update(v); this.clues.update(v); this.atlas.update(v); });
     this.#keys();
     window.addEventListener('hashchange', () => this.route());
     document.body.classList.toggle('is-study', this.state.study);
@@ -88,7 +91,7 @@ class App extends Emitter {
       this.timeline.requestRender();
       if (this.focus) this.#render(this.focus.type, this.focus.id, { keepCamera: true });
     });
-    $('#brand').addEventListener('click', (e) => { e.preventDefault(); this.close(); this.timeline.flyTo(U_MAX / 2, this.timeline.kMin); });
+    $('#brand').addEventListener('click', (e) => { e.preventDefault(); this.close(); this.goOverview(); });
   }
 
   #keys() {
@@ -97,15 +100,38 @@ class App extends Emitter {
       if ((e.key === 'k' && (e.metaKey || e.ctrlKey)) || (e.key === '/' && !typing)) { e.preventDefault(); this.search.open(); return; }
       if (typing || !this.search.el.hidden) return;
       const tl = this.timeline;
-      const step = (tl.W / tl.k) * 0.18;
-      if (e.key === 'Escape') { if (!this.filters.el.hidden) this.filters.toggle(false); else this.close(); }
-      else if (e.key === 'ArrowRight' && !e.target.closest?.('.pn')) tl.flyTo(tl.cu + step - (tl.W / 2 - tl.viewCenterX) / tl.k, tl.k, { duration: 260 });
-      else if (e.key === 'ArrowLeft' && !e.target.closest?.('.pn')) tl.flyTo(tl.cu - step - (tl.W / 2 - tl.viewCenterX) / tl.k, tl.k, { duration: 260 });
-      else if (e.key === '+' || e.key === '=') tl.zoomAtAnimated(tl.viewCenterX, 2.2);
-      else if (e.key === '-' || e.key === '_') tl.zoomAtAnimated(tl.viewCenterX, 1 / 2.2);
+      const inPanel = e.target.closest?.('.pn, .fl');
+      if (e.key === 'Escape') { if (!this.filters.el.hidden) this.filters.toggle(false); else this.close(); return; }
+      if (inPanel) return;
+      if (e.key === 'ArrowRight') tl.panBy(tl.W * 0.18);
+      else if (e.key === 'ArrowLeft') tl.panBy(-tl.W * 0.18);
+      else if (e.key === '+' || e.key === '=' || e.key === 'ArrowUp') tl.zoomBy(e.key === 'ArrowUp' ? 1.5 : 2.2);
+      else if (e.key === '-' || e.key === '_' || e.key === 'ArrowDown') tl.zoomBy(e.key === 'ArrowDown' ? 1 / 1.5 : 1 / 2.2);
+      else if (e.key === '0') this.goOverview();
       else if (e.key === 'Home') tl.flyTo(0, tl.k);
       else if (e.key === 'End') tl.flyTo(yearToU(new Date().getFullYear()), tl.k);
+      else return;
+      if (e.key.startsWith('Arrow')) e.preventDefault();
+      this.emit('interact');
     });
+  }
+
+  /** sair de qualquer ponto e ver toda a história */
+  goOverview() { this.timeline.frameYears(YEAR_MIN, YEAR_MAX, 0.005); this.emit('interact'); }
+
+  /** leva o acontecimento para o mapa */
+  showMap(id) { this.mapMode ? this.mapMode.show(id) : this.atlas.toggle(true); }
+
+  /** alternativa textual: o trecho visível como lista */
+  openList() {
+    const tl = this.timeline;
+    const y0 = Math.floor(uToYear(tl.u(0))), y1 = Math.ceil(uToYear(tl.u(tl.W - tl.inset.right)));
+    this.open('lista', `${y0},${y1}`, { keepCamera: true });
+  }
+
+  #setInset(px) {
+    this.timeline.inset.right = px;
+    this.stage.style.setProperty('--inset-right', px + 'px');
   }
 
   /** navegação: toda abertura passa pela URL, então voltar/avançar funciona */
@@ -132,7 +158,7 @@ class App extends Emitter {
   #clear() {
     this.focus = null;
     this.panel.hide();
-    this.timeline.inset.right = 0;
+    this.#setInset(0);
     this.timeline.setInsetBottom(0);
     this.timeline.setFocus(null);
     this.stage.classList.remove('has-panel');
@@ -152,7 +178,7 @@ class App extends Emitter {
     if (!view) { this.#clear(); return; }
     this.focus = { type, id };
     const wide = !this.timeline.compact;
-    this.timeline.inset.right = wide ? Math.min(560, this.timeline.W * 0.44) : 0;
+    this.#setInset(wide ? Math.min(560, this.timeline.W * 0.44) : 0);
     this.stage.classList.toggle('has-panel', wide);
     this.panel.show(view, `${type}/${id}`);
     this.#syncSheet();
@@ -168,6 +194,11 @@ class App extends Emitter {
       else if (view.year != null) this.timeline.flyTo(yearToU(view.year), Math.max(this.timeline.k, 6));
     }
     if (opts.section) setTimeout(() => this.panel.scrollTo(opts.section), 300);
+    if (opts.pulse) {
+      // chegou pela busca: aponta o acontecimento por alguns instantes
+      setTimeout(() => this.timeline.peek(id), 700);
+      setTimeout(() => this.timeline.peek(null), 2600);
+    }
     document.title = `${view.title} · Travessia`;
   }
 

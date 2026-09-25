@@ -28,6 +28,8 @@ export class Panel {
   }
 
   show(view, key) {
+    const from = this.app.portalFrom; this.app.portalFrom = null;
+    const wasOpen = !this.el.hidden;
     this.el.hidden = false;
     this.kind.textContent = view.kind;
     this.body.replaceChildren(view.node);
@@ -37,10 +39,27 @@ export class Panel {
     this.#pushTrail(key, view);
     // aberto pelo teclado: leva o foco ao conteúdo, sem rolar
     if (document.activeElement?.closest?.('.mk, .sr, .tl-edge, .pn')) this.body.focus({ preventScroll: true });
-    view.node.animate?.([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.7,.2,1)' });
+    const portal = from && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (portal) this.#portal(from, wasOpen);
+    view.node.animate?.([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 260, delay: portal ? 200 : 0, fill: 'backwards', easing: 'cubic-bezier(.2,.7,.2,1)' });
   }
 
   hide() { this.el.classList.remove('is-open'); this.el.hidden = true; }
+
+  /**
+   * Entrar no acontecimento: um quadro parte do marcador e se expande até
+   * o painel. Dá continuidade espacial — o conteúdo vem de dentro da linha.
+   */
+  #portal(from, wasOpen) {
+    requestAnimationFrame(() => {
+      const to = this.body.getBoundingClientRect();
+      const g = h('div.portal', { 'aria-hidden': 'true' });
+      document.body.append(g);
+      const frame = (r) => ({ left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' });
+      const a = g.animate([{ ...frame(from), opacity: 1 }, { ...frame(to), opacity: 1 }], { duration: wasOpen ? 320 : 400, easing: 'cubic-bezier(.3,.7,.1,1)', fill: 'forwards' });
+      a.onfinish = () => g.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 180, fill: 'forwards' }).onfinish = () => g.remove();
+    });
+  }
 
   #pushTrail(key, view) {
     const t = this.app.trail;
@@ -55,7 +74,9 @@ export class Panel {
   scrollTo(sel) {
     const el = this.body.querySelector(sel);
     if (!el) return;
-    const top = el.getBoundingClientRect().top - this.body.getBoundingClientRect().top + this.body.scrollTop - 12;
+    const nav = this.body.querySelector('.lyr-nav');
+    const off = nav && !nav.contains(el) ? nav.offsetHeight + 8 : 12;
+    const top = el.getBoundingClientRect().top - this.body.getBoundingClientRect().top + this.body.scrollTop - off;
     this.body.scrollTo({ top, behavior: 'smooth' });
   }
 
@@ -183,12 +204,14 @@ export class Filters {
     this.regions = h('div.fl-seg', ['all', 'brasil', 'mundo'].map((r) => h('button.fl-chip', { type: 'button', dataset: { region: r }, onclick: () => { f.region = r; this.sync(); app.refresh(); } }, { all: 'Tudo', brasil: 'Brasil', mundo: 'Mundo' }[r])));
     this.el = h('div.fl', { hidden: true, role: 'dialog', 'aria-label': 'Filtros' },
       h('div.fl-head', h('strong', 'Filtrar o território'), h('button.pn-btn', { type: 'button', 'aria-label': 'Fechar', onclick: () => this.toggle(false) }, '×')),
+      h('p.fl-h', 'Como filtrar'),
+      h('div.fl-seg', ['enfatizar', 'ocultar'].map((m) => h('button.fl-chip', { type: 'button', dataset: { mode: m }, onclick: () => { f.mode = m; this.sync(); app.refresh(); } }, { enfatizar: 'Enfatizar (manter o contexto)', ocultar: 'Ocultar os demais' }[m]))),
       h('p.fl-h', 'Onde'), this.regions,
-      h('p.fl-h', 'Temas do acontecimento ', h('button.fl-clear', { type: 'button', onclick: () => { f.cats.clear(); this.sync(); app.refresh(); } }, 'limpar')),
+      h('p.fl-h', 'Camadas temáticas ', h('button.fl-clear', { type: 'button', onclick: () => { f.cats.clear(); this.sync(); app.refresh(); } }, 'limpar')),
       h('div.fl-chips', store.categories.map(chip)),
       h('p.fl-h', 'Linhas temáticas'),
       h('div.fl-themes', store.themes.map((t) => h('button.fl-theme', { type: 'button', onclick: () => { this.toggle(false); app.open('tema', t.id); } }, '↝ ', t.name))),
-      h('p.fl-note', 'Sem nenhum tema marcado, todos aparecem.'));
+      h('p.fl-note', 'Sem nenhum tema marcado, todos aparecem. Ao enfatizar, os demais acontecimentos continuam como pontos discretos — o contexto não some.'));
     app.root.append(this.el);
     this.sync();
   }
@@ -197,6 +220,7 @@ export class Filters {
     const f = this.app.state.filters;
     this.el.querySelectorAll('[data-cat]').forEach((b) => b.setAttribute('aria-pressed', String(f.cats.has(b.dataset.cat))));
     this.el.querySelectorAll('[data-region]').forEach((b) => b.setAttribute('aria-pressed', String(f.region === b.dataset.region)));
+    this.el.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(f.mode === b.dataset.mode)));
     const n = f.cats.size + (f.region !== 'all' ? 1 : 0);
     this.app.btnFilters && (this.app.btnFilters.dataset.count = n || '');
   }

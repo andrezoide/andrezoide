@@ -9,40 +9,9 @@ import {
   section, link, eventChip, personChip, causalChain, simultaneity, constellation,
   claims, excerpts, sources, studySheet, statusBadge,
 } from './widgets.js';
+import { eventView } from './event.js';
 
 const catNames = (ids) => ids.map((id) => store.catById.get(id)?.name).filter(Boolean);
-
-export async function eventView(app, id) {
-  const ev = store.byId.get(id);
-  if (!ev) return null;
-  const d = await store.detail(id);
-  const period = store.period(ev.period);
-  const people = ev.people.map((p) => store.personById.get(p)).filter(Boolean);
-  const study = app.state.study;
-  const related = store.neighbors(id).filter((n) => n.edge.type === 'relacionado');
-  const map = ev.places.length || d.map ? await placesMap(ev.places, { routes: d.map?.routes, lines: d.map?.lines, onPick: (p) => app.open('lugar', p.id) }) : null;
-
-  const node = h('article.pv.pv-event',
-    h('header.pv-head',
-      h('p.pv-kicker', h('span.pv-date', d.label), ' · ', link(app, 'periodo', period.id, period.short), ev.region === 'mundo' ? ' · contexto mundial' : ''),
-      h('h2.pv-title', ev.title),
-      h('ul.pv-tags', catNames(ev.categories).map((c) => h('li', c)), ev.themes.map((t) => h('li.is-theme', link(app, 'tema', t, '↝ ' + store.themeById.get(t).name))))),
-    h('p.pv-lead', ev.summary),
-    study ? studySheet(app, ev, d, true) : null,
-    d.narrative?.length ? h('div.pv-body', d.narrative.map((p) => h('p', p))) : null,
-    causalChain(app, ev, d),
-    simultaneity(app, ev),
-    constellation(app, ev),
-    section('Pessoas', people.length ? h('div.pchips', people.map((p) => personChip(app, p))) : null),
-    section('Lugares', map, ev.places.length ? h('p.pv-places', ev.places.map((pid, i) => [i ? ', ' : '', link(app, 'lugar', pid, store.placeById.get(pid)?.name)])) : null),
-    claims(d.claims, app),
-    excerpts(d.excerpts),
-    sources(ev.sources ?? d.sources),
-    related.length ? section('Outras conexões', h('div.evchips', related.map((n) => eventChip(app, n.event, n.edge.note)))) : null,
-    study ? null : studySheet(app, ev, d, false),
-  );
-  return { kind: 'Acontecimento', title: ev.title, node, year: ev.t };
-}
 
 export async function personView(app, id) {
   const p = store.personById.get(id);
@@ -169,5 +138,24 @@ export async function yearView(app, id) {
   return { kind: 'Ano', title: yearLabel(y), node, frame: [y - 2, y + 3] };
 }
 
-export const VIEWS = { evento: eventView, pessoa: personView, lugar: placeView, tema: themeView, periodo: periodView, ano: yearView };
+/** alternativa textual ao canvas: o trecho visível como lista navegável */
+export async function listView(app, id) {
+  const [y0, y1] = String(id).split(',').map(Number);
+  if (!Number.isFinite(y0) || !Number.isFinite(y1)) return null;
+  const evs = store.events.filter((e) => e.t1 >= y0 && e.t0 <= y1).sort((a, b) => a.t - b.t);
+  const byPeriod = new Map();
+  for (const e of evs) { if (!byPeriod.has(e.period)) byPeriod.set(e.period, []); byPeriod.get(e.period).push(e); }
+  const node = h('article.pv.pv-list',
+    h('header.pv-head', h('p.pv-kicker', 'Lista · trecho visível'), h('h2.pv-title', `${yearLabel(y0)} – ${yearLabel(y1)}`)),
+    h('p.pv-lead', `${evs.length} acontecimento${evs.length === 1 ? '' : 's'} neste trecho, em ordem cronológica. Use Tab para percorrer e Enter para abrir.`),
+    ...[...byPeriod.entries()].map(([pid, list]) => section(store.period(pid).name,
+      h('ul.pv-listing', list.map((e) => h('li',
+        eventChip(app, e, e.region === 'mundo' ? 'no mundo' : null),
+        h('p.pv-listing-sum', e.summary)))))),
+    !evs.length ? h('p.pv-empty', 'Nenhum acontecimento cadastrado neste trecho.') : null,
+  );
+  return { kind: 'Lista', title: `${yearLabel(y0)} – ${yearLabel(y1)}`, node };
+}
+
+export const VIEWS = { lista: listView, evento: eventView, pessoa: personView, lugar: placeView, tema: themeView, periodo: periodView, ano: yearView };
 export { statusBadge, yearToU };

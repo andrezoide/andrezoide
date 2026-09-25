@@ -29,10 +29,12 @@ export const STATUS = {
 
 class Store {
   async load() {
-    const [index, periods, categories, themes, people, places, sources] = await Promise.all([
+    const [index, periods, categories, themes, people, places, sources, groups] = await Promise.all([
       json('build/index.json'), json('periods.json'), json('categories.json'), json('themes.json'),
-      json('people.json'), json('places.json'), json('sources.json'),
+      json('people.json'), json('places.json'), json('sources.json'), json('groups.json'),
     ]);
+    this.groups = groups;
+    this.groupById = new Map(groups.map((g) => [g.id, g]));
     this.periods = periods.map((p) => ({ ...p, u0: yearToU(p.start), u1: yearToU(p.end) }));
     this.categories = categories;
     this.catById = new Map(categories.map((c) => [c.id, c]));

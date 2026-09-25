@@ -8,17 +8,17 @@
 import { yearToU } from '../core/time.js';
 
 export const ERAS = [
-  { id: 'originarios', name: 'Povos originários', start: -50000, end: 1500, texture: 'contours',
+  { id: 'originarios', theme: 'pre-colonial', name: 'Povos originários', start: -50000, end: 1500, texture: 'contours', mk: '600 15px Fraunces, Georgia, serif',
     paper: '#e7dac2', paper2: '#dccbad', ink: '#2b1d14', muted: '#6f5a47', accent: '#a4412a', accent2: '#2f5d50' },
-  { id: 'colonia', name: 'Colônia', start: 1500, end: 1808, texture: 'rhumb',
+  { id: 'colonia', theme: 'colonial', name: 'Colônia', start: 1500, end: 1808, texture: 'rhumb', mk: 'italic 500 15.5px Fraunces, Georgia, serif',
     paper: '#ece1c8', paper2: '#e0d2b3', ink: '#2a2118', muted: '#6e5f4b', accent: '#8c2f1b', accent2: '#35597a' },
-  { id: 'imperio', name: 'Império', start: 1808, end: 1889, texture: 'engraving',
+  { id: 'imperio', theme: 'imperio', name: 'Império', start: 1808, end: 1889, texture: 'engraving', mk: '600 15px Fraunces, Georgia, serif',
     paper: '#efeadb', paper2: '#e3dcc8', ink: '#1e2a22', muted: '#5d665c', accent: '#1f5c3a', accent2: '#a07c24' },
-  { id: 'republica', name: 'Primeira República', start: 1889, end: 1930, texture: 'newsprint',
+  { id: 'republica', theme: 'republica', name: 'Primeira República', start: 1889, end: 1930, texture: 'newsprint', mk: '700 14.5px "IBM Plex Sans Condensed", "Arial Narrow", sans-serif',
     paper: '#ebe9e2', paper2: '#dedbd2', ink: '#1b1b1b', muted: '#5f5d58', accent: '#a8261e', accent2: '#2f4a6d' },
-  { id: 'seculo20', name: 'Século XX', start: 1930, end: 1985, texture: 'halftone',
+  { id: 'seculo20', theme: 'seculo-xx', name: 'Século XX', start: 1930, end: 1985, texture: 'halftone', mk: '600 14.5px "IBM Plex Sans Condensed", "Arial Narrow", sans-serif',
     paper: '#e7e5df', paper2: '#d9d6ce', ink: '#161616', muted: '#5b5a57', accent: '#c4501e', accent2: '#1e6e8c' },
-  { id: 'contemporaneo', name: 'Brasil contemporâneo', start: 1985, end: 2031, texture: 'grid',
+  { id: 'contemporaneo', theme: 'contemporaneo', name: 'Brasil contemporâneo', start: 1985, end: 2031, texture: 'grid', mk: '600 14px "IBM Plex Sans", system-ui, sans-serif',
     paper: '#f3f4f1', paper2: '#e5e8e4', ink: '#111418', muted: '#59616b', accent: '#0b62c4', accent2: '#0c8a62' },
 ];
 ERAS.forEach((e) => { e.u0 = yearToU(e.start); e.u1 = yearToU(e.end); e.rgb = {}; for (const k of TOKENS()) e.rgb[k] = hex(e[k]); });
@@ -55,6 +55,8 @@ export function blendTokens(weights) {
 }
 
 let lastKey = '';
+let lastEra = null, shiftT = 0;
+export let currentEra = null;
 export function applyTokens(tokens, weights) {
   const key = Object.values(tokens).join('|');
   if (key === lastKey) return;
@@ -65,7 +67,20 @@ export function applyTokens(tokens, weights) {
     r.setProperty(`--${k}-rgb`, `${a} ${b} ${c}`);
   }
   const dom = weights.indexOf(Math.max(...weights));
-  document.documentElement.dataset.era = ERAS[dom].id;
+  const era = ERAS[dom];
+  const root = document.documentElement;
+  if (currentEra !== era) {
+    // o tema da época: tipografia, fios e ornamentos (a cor já é contínua)
+    ERAS.forEach((e) => root.classList.toggle('theme-' + e.theme, e === era));
+    root.dataset.era = era.id;
+    root.style.setProperty('--mk-big', era.mk);
+    currentEra = era;
+    if (lastEra) {
+      document.body.classList.add('is-shifting');
+      clearTimeout(shiftT); shiftT = setTimeout(() => document.body.classList.remove('is-shifting'), 520);
+    }
+    lastEra = era;
+  }
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.content = `rgb(${tokens.paper.join(' ')})`;
 }

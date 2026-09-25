@@ -11,7 +11,11 @@
 import { store } from '../core/store.js';
 import { U_MAX, U_MIN, SEGMENTS, uToYear, yearToU, ticksFor, scaleLevel, yearLabel } from '../core/time.js';
 import { clamp, lerp, ease, h } from '../core/dom.js';
-import { eraWeights, blendTokens, applyTokens, drawAtmosphere } from './atmosphere.js';
+import { eraWeights, blendTokens, applyTokens, drawAtmosphere, currentEra } from './atmosphere.js';
+import { lodOf } from '../ui/nav.js';
+
+// peso mínimo para um acontecimento ganhar rótulo em cada nível de detalhe
+const LOD_MIN_WEIGHT = [4, 3, 1, 1];
 
 export const LANES = [
   { id: 'poder', name: 'Poder e conflitos', short: 'Poder' },
@@ -84,16 +88,20 @@ export class Timeline {
     const bandH = this.compact ? 30 : 36;
     const axisH = this.compact ? 34 : 40;
     const worldH = Math.max(this.compact ? 56 : 96, Math.round(Hv * 0.17));
-    const top = bandH + 6;
+    // faixa de "vidas" (pessoas) logo abaixo dos períodos; no celular não cabe
+    const stripH = this.compact ? 0 : 30;
+    const top = bandH + stripH + 6;
     const brazilH = Hv - top - axisH - worldH - 6;
     const laneH = brazilH / 5;
     this.rowH = this.compact ? 24 : 27;
-    this.geo = { bandH, axisH, top, axisY: top + brazilH, worldTop: top + brazilH + axisH, H: Hv };
+    this.cardH = this.compact ? 54 : 70;
+    this.geo = { bandH, stripH, axisH, top, axisY: top + brazilH, worldTop: top + brazilH + axisH, H: Hv };
     this.lanes = LANES.map((l, i) => {
       const y0 = l.world ? this.geo.worldTop : top + i * laneH;
       const hgt = l.world ? worldH : laneH;
       const rows = clamp(Math.floor((hgt - 24) / this.rowH), 1, 5);
-      return { ...l, y0, h: hgt, rows, rowTop: Math.min(19, Math.max(0, hgt - rows * this.rowH - 2)) };
+      const cardRows = clamp(Math.floor((hgt - 20) / this.cardH), 1, 3);
+      return { ...l, y0, h: hgt, rows, cardRows, rowTop: Math.min(19, Math.max(0, hgt - rows * this.rowH - 2)), cardTop: Math.min(18, Math.max(0, hgt - cardRows * this.cardH - 2)) };
     });
     this.lanes.forEach((l, i) => Object.assign(this.laneEls[i].style, { top: l.y0 + 'px', height: l.h + 'px' }));
     this.root.classList.toggle('is-squeezed', this.lanes[0].h < 48);
@@ -135,6 +143,51 @@ export class Timeline {
     this.setView(ua - (px - this.W / 2) / k, k);
   }
 
+  get reducedMotion() { return matchMedia('(prefers-reduced-motion: reduce)').matches; }
+
+  /**
+   * Câmera com alvo: roda e teclado definem um destino e a câmera desliza
+   * até ele (amortecimento exponencial). Nada é travado — cada novo gesto
+   * apenas atualiza o destino, e arrastar cancela o deslize na hora.
+   */
+  glide(cu, k) {
+    k = clamp(k, this.kMin, this.kMax);
+    const half = this.W / 2 / k;
+    cu = clamp(cu, U_MIN - half * 0.5, U_MAX + half * 0.5);
+    if (this.reducedMotion) { this.setView(cu, k); return; }
+    cancelAnimationFrame(this.flyRaf); this.inertia = null;
+    this.goal = { cu, k };
+    if (this.glideRaf) return;
+    let last = performance.now();
+    const step = (now) => {
+      const g = this.goal;
+      if (!g) { this.glideRaf = 0; return; }
+      const a = 1 - Math.exp(-(now - last) / 75);
+      last = now;
+      const lk = Math.log(this.k) + (Math.log(g.k) - Math.log(this.k)) * a;
+      const ncu = this.cu + (g.cu - this.cu) * a;
+      const done = Math.abs(g.cu - ncu) * this.k < 0.4 && Math.abs(Math.log(g.k) - lk) < 0.002;
+      this.setView(done ? g.cu : ncu, done ? g.k : Math.exp(lk));
+      if (done) { this.goal = null; this.glideRaf = 0; return; }
+      this.glideRaf = requestAnimationFrame(step);
+    };
+    this.glideRaf = requestAnimationFrame(step);
+  }
+
+  /** destino atual (ou posição atual, se parado) */
+  get aim() { return this.goal || { cu: this.cu, k: this.k }; }
+
+  panBy(px) { const a = this.aim; this.glide(a.cu + px / a.k, a.k); }
+
+  zoomBy(factor, px = this.viewCenterX) {
+    const a = this.aim;
+    const ua = a.cu + (px - this.W / 2) / a.k;
+    const k = clamp(a.k * factor, this.kMin, this.kMax);
+    this.glide(ua - (px - this.W / 2) / k, k);
+  }
+
+  stopMotion() { cancelAnimationFrame(this.flyRaf); this.goal = null; this.inertia = null; }
+
   /** voo com afastamento proporcional à distância (sensação de mapa) */
   flyTo(uT, kT, { duration } = {}) {
     kT = clamp(kT ?? this.k, this.kMin, this.kMax);
@@ -143,11 +196,10 @@ export class Timeline {
     const u0 = this.cu, k0 = this.k;
     const dist = Math.abs(uT - u0) * Math.min(k0, kT) / this.W;
     const bump = dist > 1.4 ? Math.log(dist / 1.4) * 0.9 : 0;
-    const dur = duration ?? clamp(520 + 300 * Math.log2(1 + dist), 520, 1700);
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { this.setView(uT, kT); return; }
+    const dur = duration ?? clamp(480 + 220 * Math.log2(1 + dist), 480, 1150);
+    if (this.reducedMotion) { this.setView(uT, kT); return; }
     const t0 = performance.now();
-    cancelAnimationFrame(this.flyRaf);
-    this.inertia = null;
+    this.stopMotion();
     const step = (now) => {
       const t = clamp((now - t0) / dur, 0, 1), e = ease(t);
       const lk = lerp(Math.log(k0), Math.log(kT), e) - bump * Math.sin(Math.PI * e);
@@ -193,26 +245,28 @@ export class Timeline {
     let drag = null;
 
     el.addEventListener('wheel', (e) => {
+      if (e.target.closest?.('.tl-ctrl')) return;
       e.preventDefault();
-      cancelAnimationFrame(this.flyRaf); this.inertia = null;
       const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? this.W : 1;
       const dx = e.deltaX * unit, dy = e.deltaY * unit;
+      const px = e.clientX - this.root.getBoundingClientRect().left;
       if (e.ctrlKey || e.metaKey) {
-        this.zoomAt(e.offsetX ?? this.W / 2, Math.exp(-dy * 0.0085));
+        this.zoomBy(Math.exp(-clamp(dy, -120, 120) * 0.0085), px);
       } else if (e.altKey) {
-        this.zoomAt(this.W / 2, Math.exp(-dy * 0.004));
+        this.zoomBy(Math.exp(-clamp(dy, -120, 120) * 0.004), px);
       } else {
-        // rolar = avançar no tempo
+        // rolar = avançar no tempo (a câmera desliza até o destino)
         const d = Math.abs(dx) > Math.abs(dy) ? dx : dy;
-        this.setView(this.cu + d / this.k, this.k);
+        this.panBy(d);
       }
       this.app.emit('interact');
     }, { passive: false });
 
     el.addEventListener('pointerdown', (e) => {
       if (e.button !== 0 && e.pointerType === 'mouse') return;
+      if (e.target.closest?.('.tl-ctrl')) return;
       pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      cancelAnimationFrame(this.flyRaf); this.inertia = null;
+      this.stopMotion();
       if (pts.size === 1) drag = { x: e.clientX, y: e.clientY, cu: this.cu, moved: 0, t: performance.now(), vx: 0, lx: e.clientX, lt: performance.now() };
       if (pts.size === 2) {
         const [a, b] = [...pts.values()];
@@ -263,7 +317,7 @@ export class Timeline {
     };
     el.addEventListener('pointerup', end);
     el.addEventListener('pointercancel', end);
-    el.addEventListener('pointerleave', () => { if (!pts.size) this.#setHover(null); });
+    el.addEventListener('pointerleave', () => { if (!pts.size) { this.#setHover(null); if (this.hoverPerson) { this.hoverPerson = null; this.personLit = null; this.requestRender(); } } });
     el.addEventListener('dblclick', (e) => {
       if (e.target.closest('.mk')) return;
       const r = el.getBoundingClientRect();
@@ -300,10 +354,26 @@ export class Timeline {
     return best;
   }
 
+  #lifeAt(px, py) { return this.lifeHits?.find((l) => px >= l.x0 && px <= l.x1 && py >= l.y0 && py <= l.y1)?.p; }
+
   #hoverAt(e) {
     const mk = e.target.closest?.('.mk');
     if (mk) { this.#setHover(store.byId.get(mk.dataset.id), mk); return; }
     const r = this.root.getBoundingClientRect();
+    const person = this.#lifeAt(e.clientX - r.left, e.clientY - r.top);
+    if ((person?.id || null) !== (this.hoverPerson || null)) {
+      this.hoverPerson = person?.id || null;
+      this.personLit = person ? new Set(store.eventsOfPerson(person.id).map((x) => x.id)) : null;
+      this.requestRender();
+    }
+    if (person) {
+      this.root.style.cursor = 'pointer';
+      this.#setHover(null);
+      this.tip.replaceChildren(h('span.tl-tip-date', [person.b ? yearLabel(person.b.y) : '?', person.d ? yearLabel(person.d.y) : ''].join('–')), h('strong.tl-tip-title', person.name), h('span.tl-tip-sum', person.summary), h('span.tl-tip-links', 'clique para ver a trajetória'));
+      this.#placeTip(e.clientX - r.left, e.clientY - r.top);
+      this.tip.classList.add('is-on');
+      return;
+    }
     const ev = this.#hitCollapsed(e.clientX - r.left, e.clientY - r.top);
     this.root.style.cursor = ev ? 'pointer' : '';
     this.#setHover(ev, null, e.clientX - r.left, e.clientY - r.top);
@@ -339,8 +409,10 @@ export class Timeline {
   #clickAt(e) {
     if (e.target.closest('.mk, .tl-edge, button, a')) return;
     const r = this.root.getBoundingClientRect();
+    const person = this.#lifeAt(e.clientX - r.left, e.clientY - r.top);
+    if (person) { this.app.open('pessoa', person.id); return; }
     const ev = this.#hitCollapsed(e.clientX - r.left, e.clientY - r.top);
-    if (ev) this.app.open('evento', ev.id);
+    if (ev) { this.app.portalFrom = new DOMRect(e.clientX - 6, e.clientY - 6, 12, 12); this.app.open('evento', ev.id); }
   }
 
   // ------------------------------------------------------------ render
@@ -380,17 +452,26 @@ export class Timeline {
     this.#drawAxis(uL, uR);
     this.#drawSpan();
 
+    this.lod = lodOf(this.k * SEGMENTS.find((s) => uToYear(this.u(this.viewCenterX)) <= s.b || s === SEGMENTS[SEGMENTS.length - 1]).f);
+    this.#drawGiants(uL, uR);
+    this.#drawStrip(uL, uR);
     const placed = this.#layout(uL, uR);
+    this.#drawAmbientLinks(placed);
     this.#drawRanges(placed);
     this.#drawCollapsed();
     this.#drawThread(placed);
+    this.#drawTrail(placed);
     this.#drawArcs(placed);
+    this.#drawPeek(placed);
     this.#syncMarkers(placed);
     const any = placed.some((p) => p.x1 >= 0 && p.x0 <= W - this.inset.right) || this.collapsed.some((c) => c.x >= 0 && c.x <= W);
     this.empty.classList.toggle('is-on', !any);
     this.empty.style.marginLeft = -this.inset.right / 2 + 'px';
 
-    this.app.emit('view', { uL, uR, cu: this.cu, k: this.k, ppy, year: this.year, level: scaleLevel(ppy), placed });
+    // posição de referência: o centro da área útil, não o da tela
+    const uc = this.u(this.viewCenterX), yc = uToYear(uc);
+    const ppyc = this.k * SEGMENTS.find((s) => yc <= s.b || s === SEGMENTS[SEGMENTS.length - 1]).f;
+    this.app.emit('view', { uL, uR, cu: this.cu, k: this.k, ppy: ppyc, year: yc, level: scaleLevel(ppyc), placed });
   }
 
   rgba(tok, a) { return `rgb(${this.tok[tok]} / ${a})`; }
@@ -421,6 +502,105 @@ export class Timeline {
     });
     ctx.fillStyle = this.rgba('ink', 0.5);
     ctx.fillRect(0, geo.bandH - 1, W, 1);
+  }
+
+  /** de longe, os grandes períodos aparecem como regiões no mapa */
+  #drawGiants(uL, uR) {
+    if (this.lod > 0) return;
+    const { ctx, geo } = this;
+    const mid = (geo.top + geo.axisY) / 2;
+    ctx.save();
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    for (const p of store.periods) {
+      if (p.u1 < uL || p.u0 > uR) continue;
+      const x0 = Math.max(this.x(p.u0), 0), x1 = Math.min(this.x(p.u1), this.W - this.inset.right);
+      const w = x1 - x0;
+      if (w < 140) continue;
+      const size = clamp(w / 9, 22, 64);
+      ctx.font = `600 ${size}px Fraunces, Georgia, serif`;
+      ctx.fillStyle = this.rgba('ink', 0.07);
+      const words = p.short.split(' ');
+      const lines = ctx.measureText(p.short).width > w * 0.9 && words.length > 1 ? [words.slice(0, Math.ceil(words.length / 2)).join(' '), words.slice(Math.ceil(words.length / 2)).join(' ')] : [p.short];
+      lines.forEach((ln, i) => ctx.fillText(ln, (x0 + x1) / 2, mid + (i - (lines.length - 1) / 2) * size * 1.05));
+    }
+    ctx.restore();
+  }
+
+  /**
+   * Faixa superior. De longe: as grandes eras (Antes de 1500, Colônia,
+   * Império, República). Mais perto: as vidas dos personagens principais.
+   */
+  #drawStrip(uL, uR) {
+    const { ctx, geo } = this;
+    this.lifeHits = [];
+    if (!geo.stripH) return;
+    const y0 = geo.bandH, H = geo.stripH;
+    ctx.fillStyle = this.rgba('paper2', 0.45);
+    ctx.fillRect(0, y0, this.W, H);
+    ctx.fillStyle = this.rgba('ink', 0.18);
+    ctx.fillRect(0, y0 + H - 1, this.W, 1);
+    ctx.textBaseline = 'middle';
+    if (this.lod === 0) {
+      for (const g of store.groups) {
+        const x0 = this.x(yearToU(g.start)), x1 = this.x(yearToU(g.end));
+        if (x1 < 0 || x0 > this.W) continue;
+        ctx.fillStyle = this.rgba('ink', 0.55);
+        ctx.fillRect(x0, y0 + H - 4, 1.5, 4);
+        ctx.font = '600 10.5px "IBM Plex Mono", monospace';
+        const label = g.name.toUpperCase();
+        const tw = ctx.measureText(label).width;
+        const lx = clamp(Math.max(x0, 0) + 8, x0 + 6, x1 - tw - 8);
+        if (x1 - x0 > tw + 14) { ctx.fillStyle = this.rgba('ink', 0.7); ctx.fillText(label, lx, y0 + H / 2); }
+      }
+      return;
+    }
+    // vidas: pessoas com datas conhecidas e acontecimentos no trecho
+    const score = new Map();
+    store.inRange(uL, uR, (e) => { for (const p of e.people) score.set(p, (score.get(p) || 0) + e.weight); });
+    const people = [...score.entries()].map(([id, sc]) => ({ p: store.personById.get(id), sc }))
+      .filter((x) => x.p && (x.p.b || x.p.d)).sort((a, b) => b.sc - a.sc).slice(0, this.lod === 1 ? 8 : 14);
+    const rows = [[], []];
+    ctx.font = '500 10.5px "IBM Plex Sans Condensed", sans-serif';
+    const focusP = this.focus?.type === 'pessoa' ? this.focus.id : null;
+    for (const { p } of people) {
+      const b = p.b?.y ?? (p.d.y - 60), d = p.d?.y ?? Math.min(new Date().getFullYear(), b + 90);
+      const x0 = this.x(yearToU(b)), x1 = this.x(yearToU(d));
+      const label = p.name;
+      const tw = ctx.measureText(label).width;
+      const lx = clamp(x0, 4, Math.max(4, x1 - tw));
+      const a = Math.min(x0, lx), z = Math.max(x1, lx + tw) + 10;
+      const r = rows.findIndex((row) => row.every(([p0, p1]) => z < p0 || a > p1));
+      if (r < 0) continue;
+      rows[r].push([a, z]);
+      const yy = y0 + 4 + r * 13;
+      const on = focusP === p.id || this.hoverPerson === p.id;
+      ctx.fillStyle = this.rgba('accent', on ? 0.9 : 0.45);
+      ctx.fillRect(x0, yy + 9, Math.max(2, x1 - x0), on ? 2.5 : 1.5);
+      if (!p.b) { ctx.fillStyle = this.rgba('paper2', 1); ctx.fillRect(x0, yy + 8, 12, 4); }
+      ctx.fillStyle = this.rgba('ink', on ? 1 : 0.72);
+      ctx.fillText(label, lx, yy + 3);
+      this.lifeHits.push({ p, x0: a, x1: z, y0: yy - 3, y1: yy + 12 });
+    }
+  }
+
+  /** de perto, as relações entre os acontecimentos visíveis aparecem discretamente */
+  #drawAmbientLinks(placed) {
+    if (this.lod < 2 || this.focus || this.hover) return;
+    const pos = new Map(placed.map((p) => [p.ev.id, p]));
+    const { ctx } = this;
+    ctx.save();
+    ctx.strokeStyle = this.rgba('accent', 0.16); ctx.lineWidth = 1; ctx.setLineDash([2, 3]);
+    for (const p of placed) {
+      for (const ed of store.edgesFrom(p.ev.id)) {
+        if (ed.type !== 'causa') continue;
+        const q = pos.get(ed.to);
+        if (!q) continue;
+        const x1 = p.ev.isRange ? p.lx + 6 : p.x0, x2 = q.ev.isRange ? q.lx + 6 : q.x0;
+        const cx = (x1 + x2) / 2, cy = Math.min(p.y, q.y) - Math.min(90, 16 + Math.abs(x2 - x1) * 0.18);
+        ctx.beginPath(); ctx.moveTo(x1, p.y); ctx.quadraticCurveTo(cx, cy, x2, q.y); ctx.stroke();
+      }
+    }
+    ctx.restore();
   }
 
   #drawLanes() {
@@ -482,15 +662,18 @@ export class Timeline {
       }
     }
     // quebras de escala
+    let lastBreak = -Infinity;
     for (const s of SEGMENTS.slice(1)) {
       const x = this.x(s.u0);
       if (x < -20 || x > W + 20) continue;
+      const crowded = x - lastBreak < 200;
+      lastBreak = x;
       const prev = SEGMENTS[SEGMENTS.indexOf(s) - 1];
       ctx.strokeStyle = this.rgba('accent', 0.85); ctx.lineWidth = 1.2;
       ctx.beginPath();
       for (let i = 0; i <= 8; i++) ctx.lineTo(x + (i % 2 ? 3 : -3), y + (i / 8) * geo.axisH);
       ctx.stroke();
-      if (!this.compact) {
+      if (!this.compact && !crowded) {
         // aviso de compressão, logo acima da régua
         const ratio = Math.round(s.f / prev.f);
         const txt = `← escala ${ratio}× mais comprimida`;
@@ -536,12 +719,12 @@ export class Timeline {
 
   #width(e) {
     const study = this.app.state.study && e.hasStudy;
-    const key = e.id + (this.dateStyle || '') + (study ? 's' : '');
+    const key = e.id + (this.dateStyle || '') + (study ? 's' : '') + (e.weight >= 4 ? currentEra?.id : '');
     let w = this.widths.get(key);
     if (w) return w;
     const m = this.measure;
     m.font = FONT_DATE; const dw = m.measureText(this.#dateText(e)).width;
-    m.font = e.weight >= 4 ? FONT_BIG : FONT_TITLE; const tw = m.measureText(e.title).width;
+    m.font = e.weight >= 4 ? (currentEra?.mk || FONT_BIG) : FONT_TITLE; const tw = m.measureText(e.title).width;
     w = 16 + dw + 7 + tw + 8 + (e.debated ? 14 : 0) + (study ? 16 : 0);
     this.widths.set(key, w);
     return w;
@@ -565,22 +748,38 @@ export class Timeline {
     const byLane = new Map(this.lanes.map((l) => [l.id, []]));
     const f = this.focus?.id;
     const related = this.relatedSet;
+    // filtros enfatizam (o resto vira contexto discreto) ou, se pedido, ocultam
+    const fl = this.app.state.filters;
+    const filtering = fl.cats.size > 0 || fl.region !== 'all';
+    this.emphasis = filtering ? new Set() : null;
     store.inRange(uL - margin, uR + margin, (e) => {
-      if (!this.#visible(e) && e.id !== f) return;
+      const match = this.#visible(e);
+      if (!match && e.id !== f && fl.mode === 'ocultar') return;
+      if (filtering && match) this.emphasis.add(e.id);
       byLane.get(this.laneOf(e))?.push(e);
     });
-    this.dateStyle = this.ppy > 1200 ? 'fine' : '';
+    this.dateStyle = this.lod >= 3 ? 'fine' : '';
+    const card = this.lod >= 3;
+    const minW = LOD_MIN_WEIGHT[this.lod];
     const placed = [];
     this.collapsed = [];
     for (const lane of this.lanes) {
       const list = byLane.get(lane.id);
-      const prio = (e) => (e.id === f ? 100 : 0) + (related?.has(e.id) ? 20 : 0) + (this.highlight?.has(e.id) ? 15 : 0) + e.weight * 2 + (e.isRange ? 0.5 : 0);
+      const prio = (e) => (e.id === f ? 100 : 0) + (related?.has(e.id) ? 20 : 0) + (this.highlight?.has(e.id) || this.preview?.has(e.id) ? 15 : 0) + e.weight * 2 + (e.isRange ? 0.5 : 0);
       list.sort((a, b) => prio(b) - prio(a) || a.u0 - b.u0);
-      const rows = Array.from({ length: lane.rows }, () => []);
+      const rows = Array.from({ length: card ? lane.cardRows : lane.rows }, () => []);
       for (const e of list) {
         const x0 = this.x(e.u0), x1 = this.x(e.u1);
-        const full = this.#width(e);
-        const lx = e.isRange ? clamp(x0, Math.min(8, x1 - full), Math.max(x0, x1 - full)) : x0 - 6;
+        // nível de detalhe: de longe, só os grandes marcos ganham rótulo
+        const vip = e.id === f || related?.has(e.id) || this.highlight?.has(e.id) || this.emphasis?.has(e.id) || this.preview?.has(e.id);
+        const outOfFilter = this.emphasis && !this.emphasis.has(e.id) && e.id !== f;
+        if ((e.weight < minW && !vip) || outOfFilter) {
+          const cx = e.isRange ? clamp(this.x((e.u0 + e.u1) / 2), x0, x1) : x0;
+          if (cx > -10 && cx < this.W + 10) this.collapsed.push({ ev: e, x: cx, y: lane.y0 + lane.h - 6, lane, minor: true });
+          continue;
+        }
+        const full = card ? clamp(this.#width(e) + 24, 230, 330) : this.#width(e);
+        const lx = e.isRange ? clamp(x0, Math.min(8, x1 - full), Math.max(x0, x1 - full)) : x0 - (card ? 12 : 6);
         const a = Math.min(x0, lx) - 4;
         // procura a faixa com espaço; se preciso, o rótulo é abreviado
         let row = -1, w = full, best = 0;
@@ -602,8 +801,8 @@ export class Timeline {
           continue;
         }
         rows[row].push([a, Math.max(x1, lx + w) + 8]);
-        const y = lane.y0 + lane.rowTop + row * this.rowH + this.rowH / 2;
-        placed.push({ ev: e, x0, x1, lx, y, w, lane });
+        const y = card ? lane.y0 + lane.cardTop + row * this.cardH + this.cardH / 2 : lane.y0 + lane.rowTop + row * this.rowH + this.rowH / 2;
+        placed.push({ ev: e, x0, x1, lx, y, w, lane, card });
       }
     }
     return placed;
@@ -618,7 +817,7 @@ export class Timeline {
       const tone = p.lane.world ? 'accent2' : 'accent';
       const dim = this.#dimmed(p.ev);
       ctx.fillStyle = this.rgba(tone, dim ? 0.04 : p.ev.circa ? 0.09 : 0.13);
-      const hgt = this.rowH - 7;
+      const hgt = (p.card ? this.cardH : this.rowH) - 7;
       ctx.fillRect(x0, p.y - hgt / 2, Math.max(2, x1 - x0), hgt);
       ctx.fillStyle = this.rgba(tone, dim ? 0.2 : 0.8);
       if (p.x0 >= -2) ctx.fillRect(p.x0, p.y - hgt / 2, 2, hgt);
@@ -630,14 +829,17 @@ export class Timeline {
     const { ctx } = this;
     for (const c of this.collapsed) {
       const dim = this.#dimmed(c.ev);
-      ctx.fillStyle = this.rgba(c.lane.world ? 'accent2' : 'ink', dim ? 0.15 : 0.55);
-      ctx.beginPath(); ctx.arc(c.x, c.y, c.ev === this.hover ? 3.6 : 2.2, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = this.rgba(c.lane.world ? 'accent2' : 'ink', dim ? 0.15 : c.minor ? 0.35 : 0.55);
+      ctx.beginPath(); ctx.arc(c.x, c.y, c.ev === this.hover ? 3.6 : c.minor ? 1.7 : 2.2, 0, Math.PI * 2); ctx.fill();
     }
   }
 
   #dimmed(e) {
+    if (this.personLit) return !this.personLit.has(e.id);
+    if (this.preview) return !this.preview.has(e.id);
     if (this.focus && this.relatedSet) return !this.relatedSet.has(e.id) && e.id !== this.focus.id;
     if (this.highlight) return !this.highlight.has(e.id);
+    if (this.emphasis) return !this.emphasis.has(e.id);
     return false;
   }
 
@@ -662,6 +864,20 @@ export class Timeline {
     ctx.stroke();
   }
 
+  /** o caminho que o usuário percorreu pela rede, como um rastro no mapa */
+  #drawTrail(placed) {
+    const ids = this.app.trail.filter((t) => t.key.startsWith('evento/')).slice(-7).map((t) => t.key.slice(7));
+    if (ids.length < 2) return;
+    const pts = ids.map((id) => store.byId.get(id)).filter(Boolean).map((e) => this.#posOf(e, placed));
+    const { ctx } = this;
+    ctx.save();
+    ctx.strokeStyle = this.rgba('ink', 0.28); ctx.lineWidth = 1.2; ctx.setLineDash([1, 4]); ctx.lineCap = 'round';
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y + 9) : ctx.moveTo(x, y + 9)));
+    ctx.stroke();
+    ctx.restore();
+  }
+
   #drawArcs(placed) {
     const src = this.focus?.type === 'evento' ? store.byId.get(this.focus.id) : null;
     const hov = this.hover && this.hover !== src ? this.hover : null;
@@ -682,6 +898,26 @@ export class Timeline {
       }
     }
     this.#syncEdges(offscreen);
+  }
+
+  #drawPeek(placed) {
+    if (!this.peekId) return;
+    const ev = store.byId.get(this.peekId);
+    if (!ev) return;
+    const [x, y] = this.#posOf(ev, placed);
+    const { ctx } = this;
+    ctx.save();
+    ctx.strokeStyle = this.rgba('accent', 0.9); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(clamp(x, 8, this.W - this.inset.right - 8), y, 13, 0, Math.PI * 2); ctx.stroke();
+    if (x < 0 || x > this.W - this.inset.right) {
+      // fora da tela: seta na borda indicando a direção
+      const ex = x < 0 ? 14 : this.W - this.inset.right - 14;
+      ctx.fillStyle = this.rgba('accent', 0.95);
+      ctx.font = '600 11px "IBM Plex Mono", monospace'; ctx.textBaseline = 'middle';
+      ctx.textAlign = x < 0 ? 'left' : 'right';
+      ctx.fillText(x < 0 ? `← ${yearLabel(ev.s.y)}` : `${yearLabel(ev.s.y)} →`, x < 0 ? 30 : ex - 16, y);
+    }
+    ctx.restore();
   }
 
   #posOf(e, placed) {
@@ -761,7 +997,7 @@ export class Timeline {
       if (!el) {
         el = h('button.mk', {
           dataset: { id: e.id }, role: 'listitem', type: 'button',
-          onclick: (ev) => { ev.stopPropagation(); this.app.open('evento', e.id); },
+          onclick: (ev) => { ev.stopPropagation(); this.app.portalFrom = el.getBoundingClientRect(); this.app.open('evento', e.id); },
           onfocus: () => this.#setHover(e, el),
           onblur: () => this.#setHover(null),
         }, h('span.mk-dot'), h('span.mk-date'), h('span.mk-title', e.title));
@@ -776,7 +1012,9 @@ export class Timeline {
       }
       const dt = this.#dateText(e);
       if (el.dataset.dt !== dt) { el.children[1].textContent = dt; el.dataset.dt = dt; }
-      el.style.transform = `translate3d(${Math.round(p.lx)}px, ${Math.round(p.y - 11)}px, 0)`;
+      if (p.card && !el.querySelector('.mk-card')) el.append(cardBody(e));
+      el.classList.toggle('is-card', !!p.card);
+      el.style.transform = `translate3d(${Math.round(p.lx)}px, ${Math.round(p.y - (p.card ? 30 : 11))}px, 0)`;
       el.style.maxWidth = Math.round(p.w + (e.id === f ? 16 : 4)) + 'px';
       el.classList.toggle('is-focus', e.id === f);
       el.classList.toggle('is-related', !!this.relatedSet?.has(e.id) && e.id !== f);
@@ -784,6 +1022,7 @@ export class Timeline {
       el.classList.toggle('is-lit', !!this.highlight?.has(e.id));
       el.classList.toggle('has-study', study && !!e.hasStudy);
       el.classList.toggle('is-visited', this.app.visited.has(e.id));
+      el.classList.toggle('is-peek', this.peekId === e.id);
     }
     for (const [id, el] of this.pool) {
       if (!seen.has(id)) { el.remove(); this.pool.delete(id); }
@@ -791,6 +1030,15 @@ export class Timeline {
   }
 
   // ------------------------------------------------------------ estado
+
+  /** destaque passageiro: aponta um acontecimento citado no painel */
+  peek(id) {
+    if (this.peekId === id) return;
+    this.pool.get(this.peekId)?.classList.remove('is-peek');
+    this.peekId = id;
+    this.pool.get(id)?.classList.add('is-peek');
+    this.requestRender();
+  }
 
   setFocus(focus) {
     this.focus = focus;
@@ -819,6 +1067,17 @@ export class Timeline {
     this.edgeKey = null;
     this.requestRender();
   }
+}
+
+/** conteúdo extra do marcador no zoom máximo: resumo e indícios de documentos */
+function cardBody(e) {
+  const badges = [];
+  if (e.nSources) badges.push(`§ ${e.nSources} fonte${e.nSources > 1 ? 's' : ''}`);
+  if (e.hasExcerpt) badges.push('❝ documento da época');
+  if (e.media?.length) badges.push('▣ imagem');
+  if (e.hasMap || e.places.length) badges.push('◎ mapa');
+  if (e.hasStudy) badges.push('✎ estudo');
+  return h('span.mk-card', h('span.mk-sum', e.summary), badges.length ? h('span.mk-badges', badges.join('  ·  ')) : null);
 }
 
 // espaçamento de versaletes para o rótulo dos períodos

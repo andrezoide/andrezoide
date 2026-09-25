@@ -28,6 +28,9 @@ const people = read('people.json');
 const places = read('places.json');
 const sources = read('sources.json');
 const relationships = read('relationships.json');
+const groups = read('groups.json');
+const G = new Set(groups.map((g) => g.id));
+for (const p of periods) if (!G.has(p.group)) errors.push(`período ${p.id}: grupo desconhecido "${p.group}"`);
 
 const ids = (arr, kind) => {
   const s = new Set();
@@ -109,6 +112,9 @@ const light = events.map((e) => {
   if (e.dateLabel) o.dateLabel = e.dateLabel;
   if (e.study) o.hasStudy = true;
   if (e.map) o.hasMap = true;
+  if (e.sources?.length) o.nSources = e.sources.length;
+  if (e.excerpts?.length) o.hasExcerpt = true;
+  if (e.media?.length) o.media = e.media.map((m) => m.type);
   if (e.claims?.some((c) => c.status === 'controversia')) o.debated = true;
   return o;
 });
