@@ -8,6 +8,8 @@ rede de conhecimento (knowledge graph).
 
 ## Como rodar
 
+**No Windows:** dê dois cliques em `iniciar.bat`. Ele usa Node.js (ou, na falta dele, Python), sobe um servidor local e abre o navegador.
+
 Não há build de interface nem dependências. Basta servir a pasta por HTTP (módulos ES e `fetch`
 não funcionam via `file://`):
 
