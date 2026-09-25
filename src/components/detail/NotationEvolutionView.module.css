@@ -1,0 +1,52 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow {
+  color: var(--atlas-accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 18px;
+  background: var(--atlas-surface);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--radius-md);
+  min-width: 160px;
+  text-align: center;
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--atlas-ink-dim);
+}
+
+.display {
+  font-size: 1.15rem;
+  margin: 4px 0;
+}
+
+.note {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+  line-height: 1.4;
+  margin: 0;
+}

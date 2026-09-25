@@ -1,0 +1,81 @@
+.anchor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  background: var(--atlas-surface);
+  border: 1px solid var(--atlas-border);
+  color: var(--atlas-ink);
+  border-radius: 999px;
+  padding: 7px 13px 7px 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px -4px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  transform-origin: center;
+}
+
+.card:hover {
+  border-color: var(--atlas-accent);
+  background: var(--atlas-bg-alt);
+  z-index: 5;
+}
+
+.icon {
+  color: var(--node-color, var(--atlas-accent));
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.title {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--atlas-ink-dim);
+  border-left: 1px solid var(--atlas-border);
+  padding-left: 7px;
+  margin-left: 2px;
+}
+
+.visited {
+  opacity: 0.68;
+}
+.visited::before {
+  content: '';
+}
+
+.compact {
+  padding: 5px 11px;
+  font-size: 12px;
+}
+
+.kind-period {
+  border-color: color-mix(in srgb, var(--atlas-accent) 45%, var(--atlas-border));
+  font-family: var(--font-display);
+}
+
+.kind-civilization {
+  background: color-mix(in srgb, var(--atlas-accent) 10%, var(--atlas-surface));
+  font-weight: 500;
+}
+
+.kind-formula .icon,
+.kind-problem .icon {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.kind-document {
+  border-style: dashed;
+}

@@ -1,0 +1,35 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.arrow {
+  color: var(--atlas-accent);
+  padding-left: 4px;
+}
+
+.conceptName {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 17px;
+  padding: 6px 4px;
+  border-bottom: 2px solid;
+  text-decoration: none;
+  color: var(--atlas-ink);
+}
+.conceptName:hover {
+  color: var(--atlas-accent);
+}
+
+.note {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--atlas-ink-dim);
+  margin: 2px 0 10px;
+}

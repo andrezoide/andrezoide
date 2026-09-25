@@ -1,0 +1,87 @@
+.wrap {
+  background: var(--atlas-bg-alt);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+}
+
+.formulaHead {
+  text-align: center;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--atlas-border);
+}
+
+.mainFormula {
+  font-size: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.controlLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  color: var(--atlas-ink-dim);
+}
+
+.controlValue {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  color: var(--atlas-accent);
+  font-size: 13px;
+}
+
+.controlDesc {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+  opacity: 0.8;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--atlas-accent);
+}
+
+.resultRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: var(--atlas-surface);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+
+.resultLabel {
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--atlas-ink-dim);
+}
+
+.resultTex {
+  font-size: 1.1rem;
+}
+
+.resultNote {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+  font-style: italic;
+}

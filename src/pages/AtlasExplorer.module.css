@@ -1,0 +1,57 @@
+.page {
+  position: absolute;
+  inset: 0;
+}
+
+.lensSwitch {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  background: var(--atlas-surface);
+  border: 1px solid var(--atlas-border);
+  border-radius: 999px;
+  padding: 3px;
+  box-shadow: var(--shadow-card);
+}
+
+.lensBtn,
+.lensBtnActive {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  padding: 7px 15px;
+  border-radius: 999px;
+  border: none;
+  background: none;
+  color: var(--atlas-ink-dim);
+  cursor: pointer;
+}
+
+.lensBtnActive {
+  background: var(--atlas-accent);
+  color: var(--atlas-bg);
+}
+
+.hint {
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+  background: color-mix(in srgb, var(--atlas-bg) 75%, transparent);
+  padding: 5px 12px;
+  border-radius: 999px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .hint {
+    display: none;
+  }
+}

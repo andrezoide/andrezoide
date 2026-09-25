@@ -1,0 +1,121 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--atlas-border);
+  background: color-mix(in srgb, var(--atlas-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  transition: var(--transition-theme);
+  position: relative;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--atlas-ink);
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+
+.brandText {
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.navLink,
+.navLinkActive {
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--atlas-ink-dim);
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--atlas-ink);
+  background: color-mix(in srgb, var(--atlas-ink) 6%, transparent);
+}
+
+.navLinkActive {
+  color: var(--atlas-bg);
+  background: var(--atlas-accent);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton,
+.searchButton {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--atlas-surface);
+  border: 1px solid var(--atlas-border);
+  color: var(--atlas-ink-dim);
+  border-radius: var(--radius-sm);
+  padding: 7px 11px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.iconButton:hover,
+.searchButton:hover {
+  color: var(--atlas-ink);
+  border-color: var(--atlas-accent);
+}
+
+.actionLabel {
+  white-space: nowrap;
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--atlas-border);
+  color: var(--atlas-ink-dim);
+}
+
+@media (max-width: 720px) {
+  .brandText,
+  .actionLabel {
+    display: none;
+  }
+  .nav {
+    gap: 0;
+  }
+  .navLink,
+  .navLinkActive {
+    padding: 7px 9px;
+    font-size: 12.5px;
+  }
+  .bar {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+}

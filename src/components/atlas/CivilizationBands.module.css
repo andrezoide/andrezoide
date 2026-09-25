@@ -1,0 +1,39 @@
+.band {
+  position: absolute;
+  border: 1px solid var(--atlas-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--atlas-accent) 10%, var(--atlas-surface));
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.band:hover {
+  border-color: var(--atlas-accent);
+  background: color-mix(in srgb, var(--atlas-accent) 18%, var(--atlas-surface));
+}
+
+.labelAnchor {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label {
+  transform-origin: left center;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--atlas-ink);
+}
+
+.years {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--atlas-ink-dim);
+}

@@ -1,0 +1,57 @@
+.wrap {
+  background: var(--atlas-bg-alt);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.sliders {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.slider {
+  flex: 1;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--atlas-ink-dim);
+}
+
+.slider input {
+  accent-color: var(--atlas-accent);
+}
+
+.stage {
+  width: 100%;
+  max-width: 340px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.handle {
+  cursor: grab;
+}
+
+.readout {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--atlas-ink);
+  text-align: center;
+}
+
+.hint {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+  margin-top: -8px;
+}

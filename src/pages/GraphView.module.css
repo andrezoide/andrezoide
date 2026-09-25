@@ -1,0 +1,62 @@
+.page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px 24px 12px;
+  max-width: 640px;
+}
+
+.title {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  color: var(--atlas-ink-dim);
+  line-height: 1.5;
+}
+
+.canvas {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+
+.canvas:active {
+  cursor: grabbing;
+}
+
+.svg {
+  display: block;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.areaLabel {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--atlas-ink);
+  paint-order: stroke;
+  stroke: var(--atlas-bg);
+  stroke-width: 3px;
+}
+
+.conceptLabel {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  fill: var(--atlas-ink-dim);
+  paint-order: stroke;
+  stroke: var(--atlas-bg);
+  stroke-width: 3px;
+}

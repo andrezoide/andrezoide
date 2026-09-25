@@ -1,0 +1,41 @@
+.wrap {
+  background: var(--atlas-bg-alt);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.stage {
+  width: 100%;
+  max-width: 300px;
+  touch-action: none;
+}
+
+.handle {
+  cursor: grab;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--atlas-ink-dim);
+}
+
+.readout {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--atlas-ink);
+}
+
+.hint {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+}

@@ -1,0 +1,39 @@
+.ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.band {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.labelAnchor {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label {
+  transform-origin: left center;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+}
+
+.labelName {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--atlas-ink);
+}
+
+.labelYears {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--atlas-ink-dim);
+}

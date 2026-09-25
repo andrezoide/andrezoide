@@ -1,0 +1,28 @@
+.wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  transform: translateY(-50%);
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--atlas-ink-dim);
+  background: color-mix(in srgb, var(--atlas-bg) 80%, transparent);
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--atlas-border);
+  white-space: nowrap;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

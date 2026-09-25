@@ -1,0 +1,97 @@
+.paper {
+  background: var(--atlas-bg-alt);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--atlas-ink-dim);
+  margin-bottom: 14px;
+  font-family: var(--font-ui);
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 60px;
+}
+
+.stepRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tex {
+  font-size: 1.15rem;
+  color: var(--atlas-ink);
+}
+
+.narration {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--atlas-ink-dim);
+  font-style: italic;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--atlas-border);
+  flex-wrap: wrap;
+}
+
+.controls button {
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  background: var(--atlas-surface);
+  border: 1px solid var(--atlas-border);
+  color: var(--atlas-ink);
+  padding: 7px 13px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.controls button:hover:not(:disabled) {
+  border-color: var(--atlas-accent);
+  color: var(--atlas-accent);
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.progress {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--atlas-ink-dim);
+}
+
+.gate {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  border: 1px dashed var(--atlas-border);
+  border-radius: var(--radius-lg);
+}
+
+.gateButton {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--atlas-accent);
+  color: var(--atlas-bg);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 22px;
+  cursor: pointer;
+}

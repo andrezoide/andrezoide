@@ -1,0 +1,69 @@
+.wrap {
+  background: var(--atlas-bg-alt);
+  border: 1px solid var(--atlas-border);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.stage {
+  width: 100%;
+  max-width: 340px;
+  touch-action: none;
+}
+
+.handle {
+  cursor: grab;
+}
+
+.vertexLabel {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  fill: var(--atlas-ink);
+  font-weight: 600;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--atlas-surface);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.statLabel {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--atlas-ink-dim);
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--atlas-accent);
+}
+
+.hint {
+  font-family: var(--font-ui);
+  font-size: 11.5px;
+  color: var(--atlas-ink-dim);
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

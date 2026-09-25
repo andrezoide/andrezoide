@@ -1,0 +1,39 @@
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--atlas-border);
+  background: var(--atlas-surface);
+  color: var(--atlas-ink);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--atlas-accent);
+  color: var(--atlas-accent);
+}
+
+.subtitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--atlas-ink-dim);
+  letter-spacing: 0.04em;
+}
+
+.empty {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--atlas-ink-dim);
+  font-style: italic;
+}
