@@ -1,0 +1,17 @@
+[
+  { "id": "politica", "name": "Política", "lane": "poder" },
+  { "id": "conflitos", "name": "Conflitos", "lane": "poder" },
+  { "id": "territorio", "name": "Território", "lane": "territorio" },
+  { "id": "meio-ambiente", "name": "Meio ambiente", "lane": "territorio" },
+  { "id": "sociedade", "name": "Sociedade", "lane": "sociedade" },
+  { "id": "direitos", "name": "Direitos", "lane": "sociedade" },
+  { "id": "cotidiano", "name": "Cotidiano", "lane": "sociedade" },
+  { "id": "religiao", "name": "Religião", "lane": "sociedade" },
+  { "id": "educacao", "name": "Educação", "lane": "sociedade" },
+  { "id": "saude", "name": "Saúde", "lane": "sociedade" },
+  { "id": "economia", "name": "Economia", "lane": "economia" },
+  { "id": "cultura", "name": "Cultura", "lane": "cultura" },
+  { "id": "ciencia", "name": "Ciência", "lane": "cultura" },
+  { "id": "tecnologia", "name": "Tecnologia", "lane": "cultura" },
+  { "id": "esporte", "name": "Esporte", "lane": "cultura" }
+]

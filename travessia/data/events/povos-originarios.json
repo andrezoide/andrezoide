@@ -1,0 +1,661 @@
+[
+  {
+    "id": "pedra-furada",
+    "title": "Pedra Furada e o debate sobre os primeiros habitantes",
+    "start": "-30000",
+    "circa": true,
+    "dateLabel": "datações de até c. 30 mil anos ou mais (contestadas)",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "ciencia",
+      "sociedade"
+    ],
+    "themes": [
+      "povos-indigenas"
+    ],
+    "weight": 3,
+    "people": [
+      "niede-guidon"
+    ],
+    "places": [
+      "serra-da-capivara"
+    ],
+    "sources": [
+      "guidon-delibrias-1986",
+      "meltzer-1994",
+      "prous-1992"
+    ],
+    "summary": "Escavações no abrigo da Pedra Furada (PI) produziram datações muito antigas para vestígios atribuídos a seres humanos — muito anteriores ao que o modelo dominante da época aceitava para as Américas.",
+    "narrative": [
+      "Em 1986, Niède Guidon e Georgette Delibrias publicaram na revista Nature datações por carbono-14 de cerca de 32 mil anos associadas a fogueiras e artefatos de pedra na Pedra Furada. Se aceitas, essas datas empurravam a chegada humana às Américas para muito antes do que se supunha.",
+      "Outros pesquisadores questionaram se as pedras lascadas e os carvões eram de fato humanos ou produzidos por processos naturais, como quedas de blocos e incêndios. O debate segue aberto e é um bom exemplo de como a arqueologia trabalha: evidências, datações e interpretações concorrentes."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Guidon e Delibrias publicaram em 1986 datações de cerca de 32 mil anos para camadas da Pedra Furada.",
+        "sources": [
+          "guidon-delibrias-1986"
+        ]
+      },
+      {
+        "status": "controversia",
+        "text": "Se os vestígios mais antigos são de origem humana é disputado; críticos propuseram origens naturais para parte do material.",
+        "sources": [
+          "meltzer-1994"
+        ]
+      },
+      {
+        "status": "interpretacao",
+        "text": "Há consenso de que as Américas eram habitadas há mais de 13 mil anos; o quão antes disso é o centro da controvérsia."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Datação por carbono-14",
+          "def": "Método que estima a idade de material orgânico a partir do decaimento radioativo do carbono-14."
+        },
+        {
+          "term": "Artefato lítico",
+          "def": "Objeto de pedra modificado intencionalmente por seres humanos."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Por que datações muito antigas exigem evidências especialmente sólidas?",
+          "hint": "Pense no que elas contrariam e nas explicações alternativas possíveis."
+        }
+      ]
+    }
+  },
+  {
+    "id": "luzia-lagoa-santa",
+    "title": "Luzia e os antigos povos de Lagoa Santa",
+    "start": "-9500",
+    "circa": true,
+    "dateLabel": "c. 11 mil anos atrás (datações variam)",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "sociedade",
+      "ciencia"
+    ],
+    "themes": [
+      "povos-indigenas"
+    ],
+    "weight": 4,
+    "people": [],
+    "places": [
+      "lagoa-santa"
+    ],
+    "sources": [
+      "neves-hubbe-2005",
+      "posth-2018",
+      "moreno-mayar-2018",
+      "prous-1992"
+    ],
+    "summary": "Na região de Lagoa Santa (MG) foi encontrado o esqueleto apelidado de Luzia, um dos mais antigos das Américas. Os povos que ali viveram caçavam, coletavam e enterravam seus mortos em abrigos rochosos.",
+    "narrative": [
+      "O crânio de Luzia foi escavado nos anos 1970, no sítio da Lapa Vermelha, por uma missão franco-brasileira. Décadas depois, tornou-se o centro de uma hipótese sobre o povoamento das Américas.",
+      "Com base na forma dos crânios, Walter Neves e colegas propuseram que os primeiros habitantes teriam vindo numa leva distinta dos ancestrais dos indígenas atuais. Em 2018, estudos de DNA antigo de indivíduos de Lagoa Santa apontaram parentesco genético com outros povos nativos americanos, reabrindo a discussão."
+    ],
+    "context": "Enquanto isso, o mundo saía da última era glacial: o nível dos mares subia e a paisagem do litoral brasileiro era bem diferente da atual.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "O esqueleto de Luzia está entre os mais antigos restos humanos encontrados nas Américas."
+      },
+      {
+        "status": "controversia",
+        "text": "A hipótese de uma população inicial morfologicamente distinta foi contestada por estudos genômicos de 2018, que ligam os antigos habitantes de Lagoa Santa a outros povos nativos americanos.",
+        "sources": [
+          "neves-hubbe-2005",
+          "posth-2018",
+          "moreno-mayar-2018"
+        ]
+      },
+      {
+        "status": "fato",
+        "text": "Fragmentos do crânio foram recuperados dos escombros após o incêndio do Museu Nacional, em 2018."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Povoamento da América",
+          "def": "Processo, ainda debatido, pelo qual grupos humanos chegaram e se espalharam pelo continente."
+        },
+        {
+          "term": "DNA antigo",
+          "def": "Material genético recuperado de restos humanos antigos, usado para reconstruir parentescos e migrações."
+        }
+      ],
+      "dates": [
+        {
+          "date": "c. 11 mil anos atrás",
+          "label": "idade estimada de Luzia"
+        },
+        {
+          "date": "2018",
+          "label": "estudos genômicos e incêndio do Museu Nacional"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Por que formas de crânio e DNA podem levar a conclusões diferentes sobre a origem de um povo?",
+          "hint": "Compare o que cada tipo de evidência consegue medir."
+        }
+      ]
+    }
+  },
+  {
+    "id": "pinturas-capivara",
+    "title": "Pinturas rupestres da Serra da Capivara",
+    "start": "-10000",
+    "end": "-4000",
+    "circa": true,
+    "dateLabel": "milhares de anos (datações debatidas)",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "cultura"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "cultura"
+    ],
+    "weight": 2,
+    "people": [
+      "niede-guidon"
+    ],
+    "places": [
+      "serra-da-capivara"
+    ],
+    "sources": [
+      "prous-1992"
+    ],
+    "summary": "Milhares de figuras pintadas em paredões mostram caça, dança, sexo, animais e cenas coletivas — uma das maiores concentrações de arte rupestre das Américas.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "O Parque Nacional Serra da Capivara é Patrimônio Mundial da UNESCO desde 1991."
+      },
+      {
+        "status": "limitada",
+        "text": "Datar pinturas é difícil; muitas estimativas dependem do contexto das camadas arqueológicas próximas."
+      }
+    ]
+  },
+  {
+    "id": "domesticacao-mandioca",
+    "title": "Domesticação da mandioca",
+    "start": "-7000",
+    "circa": true,
+    "dateLabel": "há cerca de 8 a 10 mil anos (estimativa)",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "ciencia",
+      "economia",
+      "cotidiano"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "meio-ambiente"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "sudoeste-amazonico"
+    ],
+    "sources": [
+      "olsen-schaal-1999",
+      "levis-2017",
+      "neves-2022"
+    ],
+    "summary": "Povos da borda sul da Amazônia transformaram uma planta silvestre na mandioca — base alimentar de muitos povos indígenas e, depois, da colônia inteira.",
+    "narrative": [
+      "Estudos genéticos localizam a origem da mandioca cultivada na borda sul da bacia amazônica. Domesticar uma planta é um processo longo de seleção, feito ao longo de muitas gerações.",
+      "A farinha de mandioca alimentou aldeias, bandeiras, engenhos e navios negreiros. Um conhecimento indígena milenar sustentou, séculos depois, a própria economia colonial."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "A mandioca cultivada descende de populações silvestres da borda sul da Amazônia.",
+        "sources": [
+          "olsen-schaal-1999"
+        ]
+      },
+      {
+        "status": "estimativa",
+        "text": "A data da domesticação é estimada e varia conforme o método."
+      }
+    ]
+  },
+  {
+    "id": "sambaquis",
+    "title": "Sambaquis: montes de conchas no litoral",
+    "start": "-6000",
+    "end": "1000",
+    "circa": true,
+    "dateLabel": "c. 8 mil a 1 mil anos atrás",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "sociedade",
+      "territorio"
+    ],
+    "themes": [
+      "povos-indigenas"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "litoral-sul"
+    ],
+    "sources": [
+      "prous-1992"
+    ],
+    "summary": "Povos pescadores e coletores ergueram, ao longo de séculos, grandes montes de conchas, ossos e terra — alguns com dezenas de metros — que também serviam de cemitérios.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Sambaquis ocorrem em grande parte do litoral brasileiro, com grande concentração no Sul e Sudeste."
+      },
+      {
+        "status": "interpretacao",
+        "text": "A construção deliberada e o uso funerário indicam que eram marcos na paisagem, e não simples depósitos de lixo."
+      }
+    ]
+  },
+  {
+    "id": "terras-pretas",
+    "title": "Terras pretas e florestas manejadas",
+    "start": "-500",
+    "end": "1500",
+    "circa": true,
+    "dateLabel": "sobretudo nos 2 mil anos antes de 1500",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "meio-ambiente",
+      "economia"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "meio-ambiente"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "amazonia-central",
+      "santarem"
+    ],
+    "sources": [
+      "neves-2022",
+      "levis-2017"
+    ],
+    "summary": "Solos escuros e férteis formados pela ocupação humana e a concentração de espécies úteis em partes da floresta indicam que a Amazônia também é, em parte, obra de seus povos.",
+    "narrative": [
+      "A chamada terra preta resulta do acúmulo de carvão, restos de alimentos e cerâmica em áreas de ocupação longa. É fértil até hoje.",
+      "Pesquisas mostram que árvores domesticadas, como castanheira e cacau, aparecem com mais frequência perto de sítios arqueológicos. A ideia de uma floresta 'intocada' vem sendo revista."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Terras pretas estão associadas a sítios arqueológicos de ocupação prolongada."
+      },
+      {
+        "status": "interpretacao",
+        "text": "A composição atual de partes da floresta amazônica reflete manejo indígena de longo prazo.",
+        "sources": [
+          "levis-2017"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expansao-tupi",
+    "title": "Expansão dos povos tupi-guarani",
+    "start": "-500",
+    "end": "1500",
+    "circa": true,
+    "dateLabel": "c. 500 a.C. – 1500 (cronologia debatida)",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "territorio",
+      "sociedade"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "territorio"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "sudoeste-amazonico"
+    ],
+    "sources": [
+      "carneiro-cunha-1992",
+      "rodrigues-1986",
+      "prous-1992"
+    ],
+    "summary": "Povos falantes de línguas tupi-guarani se espalharam por grande parte do litoral e das bacias do Paraná e do Prata. Eram eles que ocupavam a costa quando os portugueses chegaram.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Em 1500, grande parte do litoral era ocupada por povos de línguas tupi-guarani, como Tupinambá e Tupiniquim."
+      },
+      {
+        "status": "hipotese",
+        "text": "A origem amazônica e a cronologia da expansão são hipóteses baseadas em linguística e arqueologia, ainda em discussão."
+      }
+    ]
+  },
+  {
+    "id": "marajoara",
+    "title": "Sociedades marajoaras",
+    "start": "400",
+    "end": "1400",
+    "circa": true,
+    "dateLabel": "c. 400 – 1400",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "cultura",
+      "sociedade"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "cultura"
+    ],
+    "weight": 4,
+    "people": [],
+    "places": [
+      "marajo"
+    ],
+    "sources": [
+      "prous-1992",
+      "neves-2022"
+    ],
+    "summary": "Na Ilha de Marajó, sociedades construíram aterros artificiais (tesos) sobre áreas alagáveis e produziram uma cerâmica policrômica sofisticada, com urnas funerárias decoradas.",
+    "narrative": [
+      "Os tesos elevavam casas e cemitérios acima das cheias. Alguns têm vários metros de altura e ocupam hectares. Construí-los exigia organização coletiva ao longo de gerações.",
+      "A cerâmica marajoara — com pintura em vermelho, preto e branco, figuras humanas e animais estilizados — é hoje um dos patrimônios mais conhecidos da arqueologia brasileira."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Os tesos marajoaras são estruturas de terra construídas intencionalmente."
+      },
+      {
+        "status": "controversia",
+        "text": "O grau de hierarquia social — se eram chefaturas centralizadas ou redes de grupos mais autônomos — é debatido."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Teso",
+          "def": "Aterro artificial construído para elevar moradias e cemitérios acima das áreas alagadas."
+        },
+        {
+          "term": "Cerâmica policrômica",
+          "def": "Cerâmica pintada com várias cores; marca da tradição marajoara."
+        }
+      ],
+      "dates": [
+        {
+          "date": "c. 400–1400",
+          "label": "fase marajoara"
+        }
+      ],
+      "questions": [
+        {
+          "q": "O que a construção de tesos revela sobre a organização dessas sociedades?",
+          "hint": "Pense em planejamento, trabalho coletivo e tempo."
+        },
+        {
+          "q": "Por que é enganoso dizer que a história do Brasil 'começa' em 1500?",
+          "hint": "Relacione com os marajoaras e outros povos deste período."
+        }
+      ]
+    },
+    "media": [
+      {
+        "type": "image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cultura_Marajoara_-_Urna_funer%C3%A1ria_MN_05.jpg/960px-Cultura_Marajoara_-_Urna_funer%C3%A1ria_MN_05.jpg",
+        "width": 900,
+        "height": 940,
+        "url": "https://commons.wikimedia.org/wiki/File:Cultura_Marajoara_-_Urna_funer%C3%A1ria_MN_05.jpg",
+        "title": "Urna funerária marajoara. Acervo do Museu Nacional/UFRJ (foto de 2015).",
+        "author": "Dornicke (fotografia)",
+        "date": "2015",
+        "license": "CC BY-SA 4.0",
+        "institution": "Wikimedia Commons",
+        "alt": "Urna funerária de cerâmica com decoração marajoara."
+      }
+    ]
+  },
+  {
+    "id": "tapajo",
+    "title": "Tapajó: cerâmica e poder na foz do Tapajós",
+    "start": "1000",
+    "end": "1600",
+    "circa": true,
+    "dateLabel": "c. 1000 – 1600",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "cultura",
+      "sociedade"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "cultura"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "santarem"
+    ],
+    "sources": [
+      "neves-2022"
+    ],
+    "summary": "Na região da atual Santarém floresceu uma sociedade populosa, conhecida pela elaborada cerâmica de gargalo e pelas estatuetas — ainda ativa quando europeus desceram o Amazonas.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Cronistas europeus do século XVI e XVII descreveram povos numerosos na região do Tapajós."
+      },
+      {
+        "status": "limitada",
+        "text": "As estimativas de população dependem de relatos europeus e de extrapolações arqueológicas."
+      }
+    ]
+  },
+  {
+    "id": "alto-xingu-aldeias",
+    "title": "Aldeias interligadas do Alto Xingu",
+    "start": "1250",
+    "end": "1650",
+    "circa": true,
+    "dateLabel": "c. 1250 – 1650",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "territorio",
+      "sociedade"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "meio-ambiente"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "alto-xingu"
+    ],
+    "sources": [
+      "heckenberger-2003"
+    ],
+    "summary": "Pesquisas feitas com os Kuikuro identificaram grandes aldeias com valas, praças e estradas largas e retilíneas, conectadas em rede — uma paisagem planejada no sul da Amazônia.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Foram identificados vestígios de grandes assentamentos pré-coloniais conectados por estradas no Alto Xingu.",
+        "sources": [
+          "heckenberger-2003"
+        ]
+      },
+      {
+        "status": "interpretacao",
+        "text": "Classificar esses assentamentos como uma forma de urbanismo é uma interpretação que desafia a imagem de uma Amazônia vazia."
+      }
+    ]
+  },
+  {
+    "id": "tordesilhas",
+    "title": "Tratado de Tordesilhas",
+    "start": "1494-06-07",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "territorio"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "tordesilhas"
+    ],
+    "sources": [
+      "tratado-tordesilhas",
+      "fausto-1994"
+    ],
+    "summary": "Portugal e Castela dividem entre si as terras 'descobertas e por descobrir' por um meridiano a 370 léguas a oeste de Cabo Verde — sem consultar nenhum dos povos que as habitavam.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "O tratado foi assinado em 7 de junho de 1494."
+      },
+      {
+        "status": "controversia",
+        "text": "A posição exata do meridiano nunca foi demarcada no terreno e varia conforme a légua e o ponto de partida adotados."
+      }
+    ],
+    "map": {
+      "lines": [
+        {
+          "label": "Meridiano de Tordesilhas (posição aproximada)",
+          "points": [
+            [
+              -1.2,
+              -48.5
+            ],
+            [
+              -28.5,
+              -48.8
+            ]
+          ],
+          "status": "controversia"
+        }
+      ]
+    }
+  },
+  {
+    "id": "territorio-1500",
+    "title": "Um território habitado, por volta de 1500",
+    "start": "1499",
+    "circa": true,
+    "dateLabel": "c. 1500",
+    "period": "povos-originarios",
+    "region": "brasil",
+    "categories": [
+      "sociedade",
+      "territorio"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "territorio"
+    ],
+    "weight": 5,
+    "people": [],
+    "places": [
+      "amazonia-central",
+      "alto-xingu",
+      "porto-seguro",
+      "marajo",
+      "santarem"
+    ],
+    "sources": [
+      "carneiro-cunha-1992",
+      "rodrigues-1986",
+      "neves-2022"
+    ],
+    "summary": "Antes da chegada dos portugueses, o território era ocupado por centenas de povos, com línguas, economias, guerras, alianças e formas de organização muito diferentes entre si.",
+    "narrative": [
+      "Falar em 'descobrimento' apaga essa realidade. Havia povos agricultores e caçadores, aldeias pequenas e grandes assentamentos, redes de troca que ligavam o litoral ao interior e conflitos entre grupos vizinhos.",
+      "Linguistas estimam que se falavam mais de mil línguas no território que viria a ser o Brasil. O Censo de 2010 registrou 274 línguas indígenas faladas no país — resultado de séculos de perdas, mas também de persistência."
+    ],
+    "context": "Na mesma época, europeus chegavam ao Caribe (1492) e Portugal buscava uma rota marítima para as Índias. Tordesilhas já havia 'dividido' terras que os europeus mal conheciam.",
+    "claims": [
+      {
+        "status": "estimativa",
+        "text": "Estimativas da população indígena em 1500 variam muito — de cerca de um milhão a vários milhões de pessoas — conforme o método.",
+        "sources": [
+          "carneiro-cunha-1992"
+        ]
+      },
+      {
+        "status": "estimativa",
+        "text": "Estima-se que mais de mil línguas eram faladas no território.",
+        "sources": [
+          "rodrigues-1986"
+        ]
+      },
+      {
+        "status": "interpretacao",
+        "text": "O termo 'descobrimento' expressa o ponto de vista europeu; historiadores preferem falar em chegada, conquista ou encontro."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Povos originários",
+          "def": "Povos que habitavam o território antes da colonização europeia e seus descendentes."
+        },
+        {
+          "term": "Eurocentrismo",
+          "def": "Narrar a história tomando a Europa como centro e medida de todas as sociedades."
+        },
+        {
+          "term": "Tronco linguístico",
+          "def": "Grande conjunto de línguas aparentadas, como o tronco tupi e o macro-jê."
+        }
+      ],
+      "dates": [
+        {
+          "date": "c. 1500",
+          "label": "centenas de povos e mais de mil línguas (estimativa)"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Por que o termo 'descobrimento' é criticado por historiadores?",
+          "hint": "Quem já estava aqui? De que ponto de vista a palavra é dita?"
+        },
+        {
+          "q": "Cite duas evidências arqueológicas de sociedades complexas antes de 1500.",
+          "hint": "Marajó, Alto Xingu, terras pretas."
+        }
+      ]
+    }
+  }
+]

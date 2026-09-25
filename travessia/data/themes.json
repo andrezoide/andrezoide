@@ -1,0 +1,56 @@
+[
+  {
+    "id": "escravidao",
+    "name": "Escravidão e liberdade",
+    "keywords": ["escravidão", "escravizados", "escravos", "abolição", "tráfico", "quilombo", "liberdade", "racismo"],
+    "summary": "Por mais de três séculos, o trabalho de africanos e indígenas escravizados sustentou a economia. A escravidão atravessa a Colônia e o Império; a resistência a ela também. Seus efeitos não terminam em 1888."
+  },
+  {
+    "id": "povos-indigenas",
+    "name": "Povos indígenas",
+    "keywords": ["indígenas", "índios", "povos originários", "tupi", "guarani", "aldeamentos", "demarcação"],
+    "summary": "De sociedades milenares a sujeitos de direitos na Constituição de 1988: conquista, escravização, alianças, resistência e reinvenção dos povos indígenas."
+  },
+  {
+    "id": "territorio",
+    "name": "Território e fronteiras",
+    "keywords": ["fronteira", "território", "tratado", "mapa", "expansão", "capital"],
+    "summary": "Como um território habitado por centenas de povos se tornou, por tratados, guerras e ocupação, o mapa atual do Brasil."
+  },
+  {
+    "id": "democracia",
+    "name": "Democracia e autoritarismo",
+    "keywords": ["golpe", "ditadura", "eleição", "voto", "constituição", "democracia", "censura"],
+    "summary": "A alternância entre momentos de abertura e rupturas autoritárias é uma das linhas mais marcantes da história política brasileira."
+  },
+  {
+    "id": "direitos",
+    "name": "Cidadania e direitos",
+    "keywords": ["direitos", "cidadania", "voto feminino", "trabalhistas", "cotas", "igualdade"],
+    "summary": "Quem pôde votar, trabalhar com direitos, estudar e ser protegido pela lei — e como esses limites foram disputados."
+  },
+  {
+    "id": "economia",
+    "name": "Economia e trabalho",
+    "keywords": ["açúcar", "ouro", "café", "indústria", "inflação", "moeda", "trabalho", "greve"],
+    "summary": "Do pau-brasil à industrialização e à estabilização da moeda: o que se produzia, quem trabalhava e quem ganhava."
+  },
+  {
+    "id": "cultura",
+    "name": "Cultura e identidade",
+    "keywords": ["arte", "música", "literatura", "modernismo", "samba", "futebol", "identidade"],
+    "summary": "As disputas sobre o que é ser brasileiro, contadas por artistas, músicas, livros, rádio, televisão e futebol."
+  },
+  {
+    "id": "ciencia-saude",
+    "name": "Ciência e saúde",
+    "keywords": ["vacina", "epidemia", "saúde pública", "ciência", "SUS", "pandemia", "doença"],
+    "summary": "Epidemias, campanhas sanitárias, descobertas científicas e a construção de um sistema público de saúde."
+  },
+  {
+    "id": "meio-ambiente",
+    "name": "Natureza e meio ambiente",
+    "keywords": ["amazônia", "floresta", "desmatamento", "clima", "seringueiros", "ambiental"],
+    "summary": "A floresta como obra também humana, a exploração dos recursos e a emergência do Brasil no debate ambiental global."
+  }
+]

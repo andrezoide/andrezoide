@@ -1,0 +1,347 @@
+[
+  {
+    "id": "constituicao-1988",
+    "title": "Constituição de 1988",
+    "start": "1988-10-05",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica", "direitos"],
+    "themes": ["democracia", "direitos", "povos-indigenas", "escravidao", "ciencia-saude", "meio-ambiente"],
+    "weight": 5,
+    "people": ["ulysses-guimaraes", "ailton-krenak"],
+    "places": ["brasilia"],
+    "sources": ["constituicao-1988", "schwarcz-starling-2015"],
+    "summary": "Depois de 20 meses de Assembleia Constituinte com ampla participação social, o Brasil promulga a 'Constituição Cidadã': direitos sociais, voto dos analfabetos, SUS, racismo como crime, direitos indígenas e quilombolas.",
+    "narrative": [
+      "A Constituinte recebeu emendas populares com milhões de assinaturas. Movimentos indígenas, negros, de mulheres, sindicais e de saúde pressionaram por direitos.",
+      "O texto reconheceu aos povos indígenas os direitos originários sobre as terras que tradicionalmente ocupam e garantiu às comunidades remanescentes de quilombos a propriedade de suas terras."
+    ],
+    "context": "O Muro de Berlim cairia no ano seguinte; na América do Sul, ditaduras davam lugar a democracias.",
+    "claims": [
+      { "status": "fato", "text": "O artigo 231 reconhece os direitos originários dos povos indígenas sobre as terras que tradicionalmente ocupam.", "sources": ["constituicao-1988"] },
+      { "status": "fato", "text": "O artigo 5º define a prática do racismo como crime inafiançável e imprescritível.", "sources": ["constituicao-1988"] },
+      { "status": "interpretacao", "text": "A distância entre os direitos previstos e sua efetivação é um dos grandes temas do Brasil contemporâneo." }
+    ],
+    "excerpts": [
+      { "text": "Temos ódio à ditadura. Ódio e nojo.", "source": "constituicao-1988", "note": "Ulysses Guimarães, discurso na promulgação, 5 out. 1988" }
+    ],
+    "study": {
+      "concepts": [
+        { "term": "Constituinte", "def": "Assembleia eleita para elaborar uma nova Constituição." },
+        { "term": "Direitos sociais", "def": "Direitos como saúde, educação, trabalho e previdência, que exigem ação do Estado." },
+        { "term": "Cláusula pétrea", "def": "Dispositivo constitucional que não pode ser abolido por emenda." }
+      ],
+      "dates": [{ "date": "1º fev. 1987", "label": "instalação da Constituinte" }, { "date": "5 out. 1988", "label": "promulgação" }],
+      "questions": [
+        { "q": "Por que a Constituição de 1988 é chamada de 'Cidadã'?", "hint": "Direitos sociais, participação popular, fim da ditadura." },
+        { "q": "Relacione a Constituição de 1988 a pelo menos dois acontecimentos anteriores.", "hint": "Diretas Já, Lei Áurea, Estado Novo, AI-5." }
+      ]
+    }
+  },
+  {
+    "id": "chico-mendes",
+    "title": "Assassinato de Chico Mendes",
+    "start": "1988-12-22",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["meio-ambiente", "conflitos", "direitos"],
+    "themes": ["meio-ambiente"],
+    "weight": 3,
+    "people": ["chico-mendes"],
+    "places": ["xapuri"],
+    "sources": ["ventura-2003"],
+    "summary": "O líder seringueiro é morto em Xapuri por um fazendeiro. A repercussão internacional impulsiona a criação de reservas extrativistas e coloca a Amazônia no centro do debate global."
+  },
+  {
+    "id": "eleicao-1989",
+    "title": "Primeira eleição direta para presidente desde 1960",
+    "start": "1989-11-15",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": ["lula"],
+    "places": ["brasilia"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Pela primeira vez em 29 anos, brasileiros escolhem o presidente pelo voto direto. Fernando Collor vence Lula no segundo turno."
+  },
+  {
+    "id": "sus",
+    "title": "Lei Orgânica da Saúde e o SUS",
+    "start": "1990-09-19",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["saude", "direitos"],
+    "themes": ["ciencia-saude", "direitos"],
+    "weight": 3,
+    "people": [],
+    "places": ["brasilia"],
+    "sources": ["lei-8080-1990", "constituicao-1988"],
+    "summary": "Regulamenta o Sistema Único de Saúde, previsto na Constituição: saúde como direito de todos e dever do Estado, com atendimento universal e gratuito."
+  },
+  {
+    "id": "rio-92",
+    "title": "Rio-92",
+    "start": "1992-06-03",
+    "end": "1992-06-14",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["meio-ambiente", "politica"],
+    "themes": ["meio-ambiente"],
+    "weight": 3,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": [],
+    "summary": "A Conferência da ONU sobre Meio Ambiente e Desenvolvimento reúne chefes de Estado no Rio e aprova a Agenda 21 e as convenções sobre clima e biodiversidade."
+  },
+  {
+    "id": "impeachment-collor",
+    "title": "Impeachment de Collor",
+    "start": "1992-09-29",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": [],
+    "places": ["brasilia"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Após denúncias de corrupção e protestos dos 'caras-pintadas', a Câmara autoriza o processo. Collor renuncia em dezembro, antes do julgamento no Senado, que mesmo assim suspende seus direitos políticos."
+  },
+  {
+    "id": "plano-real",
+    "title": "Plano Real",
+    "start": "1994-07-01",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["economia"],
+    "themes": ["economia"],
+    "weight": 4,
+    "people": ["fernando-henrique"],
+    "places": ["brasilia"],
+    "sources": ["lei-9069-1995", "schwarcz-starling-2015"],
+    "summary": "Depois de vários planos fracassados, a nova moeda derruba a hiperinflação, que havia superado 2.000% ao ano. A estabilidade muda o cotidiano e a política.",
+    "claims": [
+      { "status": "fato", "text": "A URV (Unidade Real de Valor), introduzida em março de 1994, preparou a transição para o real." },
+      { "status": "interpretacao", "text": "A estabilização teve custos: juros altos, câmbio valorizado e aumento da dívida pública." }
+    ],
+    "study": {
+      "concepts": [
+        { "term": "Hiperinflação", "def": "Aumento extremamente rápido e generalizado dos preços, que corrói o valor da moeda." },
+        { "term": "Indexação", "def": "Correção automática de preços e salários pela inflação passada, que realimentava a inflação." }
+      ],
+      "questions": [
+        { "q": "Por que a inflação alta prejudica mais os mais pobres?", "hint": "Quem consegue se proteger aplicando dinheiro?" }
+      ]
+    }
+  },
+  {
+    "id": "ldb",
+    "title": "Lei de Diretrizes e Bases da Educação",
+    "start": "1996-12-20",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["educacao", "direitos"],
+    "themes": ["direitos"],
+    "weight": 2,
+    "people": [],
+    "places": ["brasilia"],
+    "sources": [],
+    "summary": "Organiza a educação brasileira da educação infantil ao ensino superior. Em 2003, uma alteração tornou obrigatório o ensino de história e cultura afro-brasileira."
+  },
+  {
+    "id": "eleicao-lula-2002",
+    "title": "Eleição de Lula",
+    "start": "2002-10-27",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": ["lula", "fernando-henrique"],
+    "places": ["brasilia"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Um ex-operário e líder sindical é eleito presidente, na primeira transmissão de faixa entre presidentes eleitos de partidos opostos em décadas."
+  },
+  {
+    "id": "bolsa-familia",
+    "title": "Bolsa Família",
+    "start": "2003-10",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["economia", "direitos", "sociedade"],
+    "themes": ["direitos", "economia"],
+    "weight": 3,
+    "people": ["lula"],
+    "places": ["brasilia"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Programa de transferência de renda condicionada à frequência escolar e ao acompanhamento de saúde, unificando programas anteriores."
+  },
+  {
+    "id": "maria-da-penha",
+    "title": "Lei Maria da Penha",
+    "start": "2006-08-07",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["direitos"],
+    "themes": ["direitos"],
+    "weight": 3,
+    "people": [],
+    "places": ["brasilia", "fortaleza"],
+    "sources": ["lei-11340-2006"],
+    "summary": "Cria mecanismos para coibir a violência doméstica contra a mulher. Leva o nome de Maria da Penha Maia Fernandes, cuja luta por justiça chegou à Comissão Interamericana de Direitos Humanos."
+  },
+  {
+    "id": "lei-cotas",
+    "title": "Lei de Cotas nas universidades federais",
+    "start": "2012-08-29",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["educacao", "direitos"],
+    "themes": ["direitos", "escravidao", "povos-indigenas"],
+    "weight": 3,
+    "people": ["dilma-rousseff"],
+    "places": ["brasilia"],
+    "sources": ["lei-12711-2012"],
+    "summary": "Reserva metade das vagas das universidades e institutos federais para estudantes de escolas públicas, com subcotas para pretos, pardos, indígenas e pessoas de baixa renda.",
+    "claims": [
+      { "status": "fato", "text": "Em 2012, o STF já havia declarado constitucionais as cotas raciais adotadas pela UnB." },
+      { "status": "interpretacao", "text": "As cotas são defendidas como reparação histórica ligada à escravidão e seus efeitos." }
+    ]
+  },
+  {
+    "id": "jornadas-junho",
+    "title": "Jornadas de Junho",
+    "start": "2013-06",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica", "sociedade"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": [],
+    "places": ["sao-paulo", "rio-de-janeiro", "brasilia"],
+    "sources": [],
+    "summary": "Protestos contra o aumento das passagens se transformam em manifestações massivas com pautas diversas, organizadas em grande parte pelas redes sociais.",
+    "claims": [
+      { "status": "controversia", "text": "O significado das Jornadas e seus desdobramentos políticos continuam em disputa entre analistas." }
+    ]
+  },
+  {
+    "id": "relatorio-cnv",
+    "title": "Relatório da Comissão Nacional da Verdade",
+    "start": "2014-12-10",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["direitos", "politica"],
+    "themes": ["democracia", "direitos"],
+    "weight": 3,
+    "people": ["dilma-rousseff"],
+    "places": ["brasilia"],
+    "sources": ["cnv-2014"],
+    "summary": "A comissão entrega seu relatório final, documentando graves violações de direitos humanos cometidas por agentes do Estado entre 1946 e 1988, sobretudo durante a ditadura."
+  },
+  {
+    "id": "impeachment-dilma",
+    "title": "Impeachment de Dilma Rousseff",
+    "start": "2016-08-31",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": ["dilma-rousseff"],
+    "places": ["brasilia"],
+    "sources": [],
+    "summary": "O Senado aprova o impeachment da presidente, acusada de crime de responsabilidade por operações fiscais. Michel Temer assume.",
+    "claims": [
+      { "status": "fato", "text": "O Senado condenou a presidente por 61 votos a 20, mas manteve seus direitos políticos em votação separada." },
+      { "status": "controversia", "text": "Se o processo foi um impeachment legítimo ou um golpe parlamentar é objeto de intensa disputa política e acadêmica." }
+    ]
+  },
+  {
+    "id": "covid-brasil",
+    "title": "Pandemia de covid-19 no Brasil",
+    "start": "2020-02-26",
+    "end": "2022-05",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["saude", "cotidiano", "ciencia"],
+    "themes": ["ciencia-saude"],
+    "weight": 4,
+    "people": [],
+    "places": ["sao-paulo", "amazonia-central"],
+    "sources": ["painel-covid"],
+    "summary": "O primeiro caso é confirmado em São Paulo em fevereiro de 2020. O país ultrapassaria 700 mil mortes, com crise de oxigênio em Manaus e disputas políticas sobre isolamento e vacinas.",
+    "claims": [
+      { "status": "fato", "text": "Segundo o Ministério da Saúde, o Brasil registrou mais de 700 mil óbitos por covid-19.", "sources": ["painel-covid"] },
+      { "status": "fato", "text": "Em janeiro de 2021, hospitais de Manaus ficaram sem oxigênio." },
+      { "status": "interpretacao", "text": "O SUS e instituições como Butantan e Fiocruz foram centrais na vacinação em massa." }
+    ]
+  },
+  {
+    "id": "censo-2022",
+    "title": "Censo 2022",
+    "start": "2022-08-01",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["sociedade"],
+    "themes": ["povos-indigenas", "escravidao"],
+    "weight": 3,
+    "people": [],
+    "places": [],
+    "sources": ["censo-2022"],
+    "summary": "O recenseamento conta 203 milhões de habitantes. Pela primeira vez desde 1991, pardos são o maior grupo, e a população indígena recenseada quase dobra em relação a 2010.",
+    "claims": [
+      { "status": "fato", "text": "O Censo 2022 contou cerca de 203,1 milhões de pessoas.", "sources": ["censo-2022"] },
+      { "status": "fato", "text": "Foram recenseadas cerca de 1,7 milhão de pessoas indígenas.", "sources": ["censo-2022"] },
+      { "status": "interpretacao", "text": "Parte do aumento da população indígena reflete mudanças metodológicas e maior autodeclaração, e não só crescimento demográfico." }
+    ]
+  },
+  {
+    "id": "ministerio-povos-indigenas",
+    "title": "Criação do Ministério dos Povos Indígenas",
+    "start": "2023-01-01",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica", "direitos"],
+    "themes": ["povos-indigenas"],
+    "weight": 2,
+    "people": ["sonia-guajajara", "lula"],
+    "places": ["brasilia"],
+    "sources": [],
+    "summary": "Pela primeira vez, um ministério é dedicado aos povos indígenas, chefiado por uma liderança indígena."
+  },
+  {
+    "id": "8-de-janeiro",
+    "title": "Ataques às sedes dos Três Poderes",
+    "start": "2023-01-08",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["politica", "conflitos"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": [],
+    "places": ["brasilia"],
+    "sources": [],
+    "summary": "Uma semana após a posse presidencial, manifestantes que contestavam o resultado das eleições invadem e depredam o Congresso, o Palácio do Planalto e o STF.",
+    "claims": [
+      { "status": "fato", "text": "Centenas de pessoas foram denunciadas e julgadas pelo STF pelos atos." }
+    ]
+  },
+  {
+    "id": "cop30",
+    "title": "COP30 em Belém",
+    "start": "2025-11-10",
+    "end": "2025-11-21",
+    "period": "nova-republica",
+    "region": "brasil",
+    "categories": ["meio-ambiente", "politica"],
+    "themes": ["meio-ambiente"],
+    "weight": 2,
+    "people": [],
+    "places": ["belem"],
+    "sources": [],
+    "summary": "A conferência do clima da ONU é realizada pela primeira vez na Amazônia, trazendo a floresta e seus povos para o centro das negociações climáticas."
+  }
+]

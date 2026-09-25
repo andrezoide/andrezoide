@@ -1,0 +1,1101 @@
+[
+  {
+    "id": "chegada-cabral",
+    "title": "A armada de Cabral chega ao litoral",
+    "start": "1500-04-22",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "territorio"
+    ],
+    "themes": [
+      "territorio",
+      "povos-indigenas"
+    ],
+    "weight": 5,
+    "people": [
+      "pedro-alvares-cabral",
+      "pero-vaz-de-caminha"
+    ],
+    "places": [
+      "porto-seguro"
+    ],
+    "sources": [
+      "carta-caminha",
+      "fausto-1994",
+      "schwarcz-starling-2015"
+    ],
+    "summary": "Uma armada portuguesa a caminho das Índias avista terra no atual sul da Bahia e faz contato com os Tupiniquim. Para Portugal, o início de uma posse; para os povos do litoral, o início de uma conquista.",
+    "narrative": [
+      "A frota de treze navios comandada por Pedro Álvares Cabral avistou o monte que chamou de Pascoal em 22 de abril de 1500. Nos dias seguintes, ancorou na região de Porto Seguro e trocou objetos com os Tupiniquim.",
+      "Os portugueses ficaram cerca de dez dias. Deixaram dois degredados, seguiram viagem para as Índias e enviaram um navio de volta a Lisboa com a notícia — e com a carta de Pero Vaz de Caminha."
+    ],
+    "context": "Portugal disputava com Castela as rotas oceânicas. Oito anos antes, Colombo havia chegado ao Caribe; dois anos antes, Vasco da Gama alcançara a Índia pelo mar.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "A armada avistou terra em 22 de abril de 1500 e permaneceu na costa até o início de maio.",
+        "sources": [
+          "carta-caminha"
+        ]
+      },
+      {
+        "status": "controversia",
+        "text": "Se a chegada foi casual ou intencional é um debate antigo; não há documento que comprove uma instrução secreta."
+      },
+      {
+        "status": "limitada",
+        "text": "Navegadores castelhanos, como Vicente Yáñez Pinzón, podem ter tocado o litoral norte meses antes; as fontes são escassas e discutidas."
+      },
+      {
+        "status": "interpretacao",
+        "text": "Chamar o episódio de 'descobrimento' reflete o olhar europeu sobre uma terra já habitada."
+      }
+    ],
+    "excerpts": [
+      {
+        "text": "Águas são muitas; infindas. E em tal maneira é graciosa que, querendo-a aproveitar, dar-se-á nela tudo, por causa das águas que tem.",
+        "source": "carta-caminha",
+        "note": "grafia modernizada"
+      }
+    ],
+    "map": {
+      "routes": [
+        {
+          "label": "Chegada da armada vinda de Cabo Verde (esquemático)",
+          "points": [
+            [
+              4,
+              -27
+            ],
+            [
+              -8,
+              -33
+            ],
+            [
+              -14.5,
+              -38.2
+            ],
+            [
+              -16.4,
+              -39.0
+            ]
+          ]
+        }
+      ]
+    },
+    "study": {
+      "concepts": [
+        {
+          "term": "Expansão marítima",
+          "def": "Processo de exploração oceânica europeia dos séculos XV e XVI em busca de rotas comerciais e territórios."
+        },
+        {
+          "term": "Degredado",
+          "def": "Condenado enviado como punição a terras distantes; alguns foram deixados para aprender línguas e costumes locais."
+        }
+      ],
+      "dates": [
+        {
+          "date": "22 abr. 1500",
+          "label": "avistamento do Monte Pascoal"
+        },
+        {
+          "date": "1º mai. 1500",
+          "label": "data da carta de Caminha"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Que interesses levavam Portugal ao Atlântico Sul em 1500?",
+          "hint": "Rota das Índias, especiarias, disputa com Castela."
+        },
+        {
+          "q": "Como o episódio pode ser narrado do ponto de vista dos Tupiniquim?",
+          "hint": "O que viram, o que trocaram, o que não podiam prever."
+        }
+      ]
+    }
+  },
+  {
+    "id": "carta-caminha",
+    "title": "A carta de Pero Vaz de Caminha",
+    "start": "1500-05-01",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "cultura",
+      "politica"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "cultura"
+    ],
+    "weight": 2,
+    "people": [
+      "pero-vaz-de-caminha"
+    ],
+    "places": [
+      "porto-seguro"
+    ],
+    "sources": [
+      "carta-caminha"
+    ],
+    "summary": "O escrivão da armada descreve ao rei a terra, os habitantes, as trocas e as possibilidades de exploração e de catequese. Uma fonte preciosa — e um olhar europeu.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "O manuscrito original está no Arquivo Nacional da Torre do Tombo, em Lisboa.",
+        "sources": [
+          "carta-caminha"
+        ]
+      },
+      {
+        "status": "interpretacao",
+        "text": "A carta revela tanto sobre as expectativas portuguesas (ouro, conversão) quanto sobre os povos que descreve."
+      }
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Carta-caminha-folio01r.png",
+        "width": 900,
+        "height": 1250,
+        "url": "https://commons.wikimedia.org/wiki/File:Carta-caminha-folio01r.png",
+        "title": "Primeira folha da carta de Pero Vaz de Caminha (fac-símile). O original está na Torre do Tombo.",
+        "author": "Pero Vaz de Caminha",
+        "date": "1500",
+        "license": "Domínio público",
+        "institution": "Wikimedia Commons",
+        "alt": "Página manuscrita da carta, em letra do século XVI."
+      }
+    ]
+  },
+  {
+    "id": "pau-brasil",
+    "title": "Extração do pau-brasil",
+    "start": "1501",
+    "end": "1540",
+    "circa": true,
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "economia",
+      "meio-ambiente"
+    ],
+    "themes": [
+      "economia",
+      "povos-indigenas",
+      "meio-ambiente"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "porto-seguro",
+      "recife"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "A madeira que dava tinta vermelha foi a primeira riqueza explorada, com trabalho indígena obtido por escambo e feitorias no litoral. A árvore acabaria dando nome à terra.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "A exploração foi arrendada pela Coroa a comerciantes e dependia do trabalho indígena."
+      },
+      {
+        "status": "interpretacao",
+        "text": "O escambo não era uma troca entre iguais: com o tempo, deu lugar à escravização."
+      }
+    ]
+  },
+  {
+    "id": "sao-vicente",
+    "title": "Fundação de São Vicente",
+    "start": "1532-01-22",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "territorio",
+      "politica"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "sao-vicente"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "A expedição de Martim Afonso de Sousa funda a primeira vila portuguesa oficial na costa, marcando o início da colonização sistemática."
+  },
+  {
+    "id": "capitanias",
+    "title": "Capitanias hereditárias",
+    "start": "1534",
+    "end": "1536",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "territorio"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "recife",
+      "sao-vicente",
+      "porto-seguro"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "A Coroa divide o litoral em faixas entregues a donatários, que deveriam ocupá-las e defendê-las com recursos próprios. Poucas prosperaram — Pernambuco e São Vicente foram exceções.",
+    "claims": [
+      {
+        "status": "interpretacao",
+        "text": "O mapa com faixas horizontais perfeitas é uma simplificação; os limites eram imprecisos e mudaram ao longo do tempo."
+      }
+    ]
+  },
+  {
+    "id": "governo-geral",
+    "title": "Governo-geral e fundação de Salvador",
+    "start": "1549-03-29",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "religiao"
+    ],
+    "themes": [
+      "territorio",
+      "povos-indigenas"
+    ],
+    "weight": 4,
+    "people": [
+      "tome-de-sousa",
+      "manuel-da-nobrega"
+    ],
+    "places": [
+      "salvador"
+    ],
+    "sources": [
+      "fausto-1994",
+      "carneiro-cunha-1992"
+    ],
+    "summary": "Tomé de Sousa chega à Bahia como primeiro governador-geral e funda Salvador, capital da colônia até 1763. Com ele vêm os primeiros jesuítas.",
+    "narrative": [
+      "O governo-geral centralizou a administração sem extinguir as capitanias. Salvador foi planejada como cidade-fortaleza, sede política e porto do açúcar.",
+      "Os jesuítas, liderados por Manuel da Nóbrega, organizaram aldeamentos, onde indígenas eram catequizados e usados como mão de obra — uma política que protegia contra parte da escravização e, ao mesmo tempo, destruía modos de vida."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Salvador foi a sede do governo colonial de 1549 a 1763."
+      },
+      {
+        "status": "interpretacao",
+        "text": "O papel dos jesuítas junto aos indígenas é avaliado de forma ambivalente pela historiografia."
+      }
+    ]
+  },
+  {
+    "id": "fundacao-sao-paulo",
+    "title": "Colégio de São Paulo de Piratininga",
+    "start": "1554-01-25",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "religiao",
+      "territorio",
+      "educacao"
+    ],
+    "themes": [
+      "territorio",
+      "povos-indigenas"
+    ],
+    "weight": 2,
+    "people": [
+      "manuel-da-nobrega",
+      "jose-de-anchieta"
+    ],
+    "places": [
+      "sao-paulo"
+    ],
+    "sources": [
+      "monteiro-1994"
+    ],
+    "summary": "Jesuítas fundam um colégio no planalto, com apoio de lideranças indígenas aliadas. Dali surgiria a vila de São Paulo, ponto de partida das bandeiras."
+  },
+  {
+    "id": "confederacao-tamoios",
+    "title": "Confederação dos Tamoios",
+    "start": "1554",
+    "end": "1567",
+    "circa": true,
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "conflitos"
+    ],
+    "themes": [
+      "povos-indigenas"
+    ],
+    "weight": 2,
+    "people": [
+      "jose-de-anchieta"
+    ],
+    "places": [
+      "rio-de-janeiro",
+      "sao-vicente"
+    ],
+    "sources": [
+      "carneiro-cunha-1992"
+    ],
+    "summary": "Povos tupinambá do litoral entre São Vicente e Cabo Frio se aliam contra a escravização portuguesa, com apoio francês. A derrota abriu caminho para o domínio português da Guanabara.",
+    "claims": [
+      {
+        "status": "interpretacao",
+        "text": "O nome 'confederação' foi consagrado pela historiografia; a aliança era mais fluida do que o termo sugere."
+      }
+    ]
+  },
+  {
+    "id": "fundacao-rio",
+    "title": "Fundação do Rio de Janeiro",
+    "start": "1565-03-01",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "territorio",
+      "conflitos"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "Estácio de Sá funda a cidade durante a luta para expulsar os franceses da Guanabara e seus aliados tamoios."
+  },
+  {
+    "id": "economia-acucar",
+    "title": "Engenhos: a economia do açúcar",
+    "start": "1530",
+    "end": "1680",
+    "circa": true,
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "economia"
+    ],
+    "themes": [
+      "economia",
+      "escravidao"
+    ],
+    "weight": 4,
+    "people": [],
+    "places": [
+      "recife",
+      "reconcavo",
+      "salvador"
+    ],
+    "sources": [
+      "schwartz-1988",
+      "alencastro-2000"
+    ],
+    "summary": "Grandes propriedades no litoral nordestino produzem açúcar para a Europa com trabalho escravizado — primeiro indígena, depois majoritariamente africano.",
+    "narrative": [
+      "O engenho era ao mesmo tempo fazenda, fábrica e comunidade hierarquizada. Senhores, lavradores, trabalhadores livres e, sobretudo, escravizados compunham esse mundo.",
+      "O açúcar vinculou a colônia ao comércio atlântico e à África, de onde vinha a maior parte da força de trabalho."
+    ],
+    "claims": [
+      {
+        "status": "interpretacao",
+        "text": "A ideia de 'ciclos econômicos' sucessivos (pau-brasil, açúcar, ouro) é uma simplificação: o açúcar continuou importante durante e após a mineração."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Plantation",
+          "def": "Grande propriedade monocultora voltada à exportação, baseada em trabalho compulsório."
+        },
+        {
+          "term": "Engenho",
+          "def": "Unidade produtiva de açúcar, incluindo terras, moenda, casa de purgar e a população que trabalhava nela."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Por que o açúcar e o tráfico de africanos estão diretamente ligados?",
+          "hint": "Quem trabalhava nos engenhos? De onde vinham?"
+        }
+      ]
+    }
+  },
+  {
+    "id": "trafico-atlantico",
+    "title": "Tráfico transatlântico de africanos escravizados",
+    "start": "1550",
+    "end": "1856",
+    "circa": true,
+    "dateLabel": "c. 1550 – 1856",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "economia",
+      "sociedade",
+      "direitos"
+    ],
+    "themes": [
+      "escravidao",
+      "economia"
+    ],
+    "weight": 5,
+    "people": [],
+    "places": [
+      "salvador",
+      "rio-de-janeiro",
+      "recife"
+    ],
+    "sources": [
+      "slavevoyages",
+      "alencastro-2000",
+      "schwarcz-starling-2015"
+    ],
+    "summary": "Durante três séculos, milhões de africanos foram capturados, transportados à força e escravizados no Brasil — o maior destino do tráfico atlântico nas Américas.",
+    "narrative": [
+      "Traficantes atuando no Brasil e em Portugal mantinham rotas diretas com a África Central e a Costa da Mina. O tráfico não era um apêndice da economia colonial: era um de seus negócios centrais.",
+      "Os africanos trouxeram línguas, religiões, técnicas agrícolas e metalúrgicas, música e formas de organização que marcam profundamente a sociedade brasileira. E resistiram: em fugas, quilombos, revoltas, irmandades, negociações cotidianas."
+    ],
+    "context": "O tráfico ligava Brasil, Portugal e diversas regiões africanas num sistema atlântico. Angola e o Rio de Janeiro, por exemplo, estavam mais conectados entre si do que muitas regiões da própria colônia.",
+    "claims": [
+      {
+        "status": "estimativa",
+        "text": "Estimativas da base SlaveVoyages indicam que cerca de 4,8 milhões de africanos desembarcaram no Brasil — perto de 40% de todo o tráfico para as Américas.",
+        "sources": [
+          "slavevoyages"
+        ]
+      },
+      {
+        "status": "fato",
+        "text": "O Brasil foi o último país das Américas a abolir a escravidão (1888)."
+      },
+      {
+        "status": "interpretacao",
+        "text": "Alencastro argumenta que a colônia se formou 'fora' de seu território, no Atlântico Sul, na conexão com Angola.",
+        "sources": [
+          "alencastro-2000"
+        ]
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Tráfico negreiro",
+          "def": "Comércio de seres humanos capturados na África e vendidos como escravizados nas Américas."
+        },
+        {
+          "term": "Atlântico Sul",
+          "def": "Espaço de circulação que conectava Brasil e África por rotas diretas."
+        },
+        {
+          "term": "Escravizado",
+          "def": "Termo que enfatiza a condição imposta à pessoa, e não uma identidade natural ('escravo')."
+        }
+      ],
+      "dates": [
+        {
+          "date": "c. 1550",
+          "label": "tráfico se intensifica com o açúcar"
+        },
+        {
+          "date": "1850",
+          "label": "Lei Eusébio de Queirós"
+        },
+        {
+          "date": "1888",
+          "label": "abolição"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Por que historiadores preferem o termo 'escravizado' a 'escravo'?",
+          "hint": "Condição imposta versus identidade."
+        },
+        {
+          "q": "Como o tráfico conectava a economia colonial à África?",
+          "hint": "Rotas diretas, mercadorias trocadas, comerciantes no Rio e em Luanda."
+        }
+      ]
+    },
+    "media": [
+      {
+        "type": "image",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Debret%2C_Mercado_de_escravos.jpg/960px-Debret%2C_Mercado_de_escravos.jpg",
+        "width": 900,
+        "height": 668,
+        "url": "https://commons.wikimedia.org/wiki/File:Debret,_Mercado_de_escravos.jpg",
+        "title": "Mercado de escravos da rua do Valongo, Rio de Janeiro, por Jean-Baptiste Debret (século XIX).",
+        "author": "Jean-Baptiste Debret",
+        "date": "século XIX",
+        "license": "Domínio público",
+        "institution": "Wikimedia Commons",
+        "alt": "Gravura de Debret sobre o mercado de pessoas escravizadas no Valongo."
+      }
+    ]
+  },
+  {
+    "id": "uniao-iberica",
+    "title": "União Ibérica",
+    "start": "1580",
+    "end": "1640",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "territorio"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "lisboa"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "Portugal e seu império passam a ter o mesmo rei que a Espanha. A linha de Tordesilhas perde força na prática, e os inimigos da Espanha — como os holandeses — tornam-se inimigos do Brasil."
+  },
+  {
+    "id": "brasil-holandes",
+    "title": "Brasil holandês",
+    "start": "1630",
+    "end": "1654",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "conflitos",
+      "economia",
+      "politica"
+    ],
+    "themes": [
+      "territorio",
+      "economia"
+    ],
+    "weight": 3,
+    "people": [
+      "mauricio-de-nassau"
+    ],
+    "places": [
+      "recife"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "A Companhia das Índias Ocidentais ocupa Pernambuco, centro do açúcar. Sob Nassau, o Recife ganha obras, artistas e naturalistas. A Insurreição Pernambucana expulsa os holandeses em 1654.",
+    "claims": [
+      {
+        "status": "interpretacao",
+        "text": "A expulsão dos holandeses foi mais tarde usada como mito de origem de um 'sentimento nativista'; historiadores relativizam essa leitura."
+      }
+    ]
+  },
+  {
+    "id": "palmares",
+    "title": "Quilombo dos Palmares",
+    "start": "1605",
+    "end": "1695-11-20",
+    "circa": true,
+    "dateLabel": "c. 1600 – 1695",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "conflitos",
+      "sociedade",
+      "direitos"
+    ],
+    "themes": [
+      "escravidao"
+    ],
+    "weight": 4,
+    "people": [
+      "ganga-zumba",
+      "zumbi",
+      "domingos-jorge-velho"
+    ],
+    "places": [
+      "serra-da-barriga"
+    ],
+    "sources": [
+      "gomes-2005",
+      "schwarcz-starling-2015"
+    ],
+    "summary": "Na Serra da Barriga, pessoas que fugiram da escravidão formaram uma confederação de mocambos que resistiu por quase um século a expedições portuguesas e holandesas.",
+    "narrative": [
+      "Palmares reuniu milhares de pessoas — africanos, crioulos, indígenas e outros — em vários núcleos, com agricultura, comércio com vizinhos e liderança política própria.",
+      "Em 1678, Ganga Zumba aceitou um acordo com o governo de Pernambuco. Zumbi e outros recusaram. Em 1694, a capital Macaco caiu diante das tropas do bandeirante Domingos Jorge Velho; Zumbi foi morto em 20 de novembro de 1695."
+    ],
+    "claims": [
+      {
+        "status": "limitada",
+        "text": "A data de origem e a população de Palmares são incertas; as fontes são em grande parte documentos de quem o combatia.",
+        "sources": [
+          "gomes-2005"
+        ]
+      },
+      {
+        "status": "fato",
+        "text": "Zumbi foi morto em 20 de novembro de 1695; a data é hoje o Dia Nacional de Zumbi e da Consciência Negra."
+      },
+      {
+        "status": "interpretacao",
+        "text": "Palmares tornou-se símbolo do movimento negro no século XX, que deslocou a memória da abolição de 13 de maio para 20 de novembro."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Quilombo / mocambo",
+          "def": "Comunidade formada por pessoas que escaparam da escravidão."
+        },
+        {
+          "term": "Resistência escrava",
+          "def": "Conjunto de ações — fugas, revoltas, negociações, preservação cultural — contra a escravidão."
+        }
+      ],
+      "dates": [
+        {
+          "date": "1678",
+          "label": "acordo de Ganga Zumba"
+        },
+        {
+          "date": "1694",
+          "label": "queda do Macaco"
+        },
+        {
+          "date": "20 nov. 1695",
+          "label": "morte de Zumbi"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Por que a maior parte das fontes sobre Palmares foi produzida por seus inimigos, e o que isso implica?",
+          "hint": "Pense em como ler criticamente um documento."
+        },
+        {
+          "q": "Por que 20 de novembro se tornou uma data de memória?",
+          "hint": "Compare com o 13 de maio."
+        }
+      ]
+    }
+  },
+  {
+    "id": "bandeiras",
+    "title": "Bandeiras e o avanço para o interior",
+    "start": "1600",
+    "end": "1750",
+    "circa": true,
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "territorio",
+      "conflitos"
+    ],
+    "themes": [
+      "territorio",
+      "povos-indigenas"
+    ],
+    "weight": 3,
+    "people": [
+      "domingos-jorge-velho"
+    ],
+    "places": [
+      "sao-paulo",
+      "missoes",
+      "minas-gerais"
+    ],
+    "sources": [
+      "monteiro-1994"
+    ],
+    "summary": "Expedições partidas de São Paulo percorrem o interior para capturar indígenas, buscar metais e combater quilombos, empurrando a ocupação portuguesa muito além de Tordesilhas.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "A captura e escravização de indígenas foi um dos principais objetivos das bandeiras do século XVII.",
+        "sources": [
+          "monteiro-1994"
+        ]
+      },
+      {
+        "status": "interpretacao",
+        "text": "A imagem heroica do bandeirante foi construída sobretudo no século XX, em São Paulo; a historiografia recente enfatiza a violência das expedições."
+      }
+    ],
+    "map": {
+      "routes": [
+        {
+          "label": "Rumo às missões do sul (esquemático)",
+          "points": [
+            [
+              -23.55,
+              -46.63
+            ],
+            [
+              -24.8,
+              -50.5
+            ],
+            [
+              -27.0,
+              -53.5
+            ],
+            [
+              -28.55,
+              -54.55
+            ]
+          ]
+        },
+        {
+          "label": "Rumo às Minas (esquemático)",
+          "points": [
+            [
+              -23.55,
+              -46.63
+            ],
+            [
+              -22.3,
+              -45.2
+            ],
+            [
+              -20.39,
+              -43.5
+            ]
+          ]
+        },
+        {
+          "label": "Rumo a Cuiabá, pelas monções (esquemático)",
+          "points": [
+            [
+              -23.55,
+              -46.63
+            ],
+            [
+              -22.0,
+              -50.0
+            ],
+            [
+              -20.5,
+              -54.0
+            ],
+            [
+              -15.6,
+              -56.1
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ouro-minas",
+    "title": "Ouro nas Minas Gerais",
+    "start": "1693",
+    "end": "1770",
+    "circa": true,
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "economia",
+      "territorio",
+      "sociedade"
+    ],
+    "themes": [
+      "economia",
+      "escravidao",
+      "territorio"
+    ],
+    "weight": 4,
+    "people": [],
+    "places": [
+      "minas-gerais",
+      "vila-rica"
+    ],
+    "sources": [
+      "boxer-1962",
+      "fausto-1994"
+    ],
+    "summary": "A descoberta de ouro no interior provoca a primeira grande corrida migratória da colônia, desloca o eixo econômico para o Centro-Sul e aprofunda o tráfico de africanos escravizados.",
+    "narrative": [
+      "Vilas surgiram rapidamente — Vila Rica, Mariana, Sabará. Portugal montou uma máquina fiscal para cobrar o quinto e controlar a circulação do ouro.",
+      "O barroco mineiro, as irmandades negras e uma sociedade urbana mais diversa nasceram desse contexto. O ouro também financiou, em parte, a economia portuguesa e, através dela, a britânica."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "A Coroa cobrava o 'quinto', um quinto do ouro extraído, por diferentes sistemas ao longo do século XVIII."
+      },
+      {
+        "status": "interpretacao",
+        "text": "Parte do ouro brasileiro teria fluído para a Inglaterra por meio de tratados comerciais com Portugal — tese clássica, discutida quanto à sua escala."
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Quinto",
+          "def": "Imposto de 20% sobre o ouro extraído, cobrado pela Coroa portuguesa."
+        },
+        {
+          "term": "Derrama",
+          "def": "Cobrança forçada de impostos atrasados sobre toda a população da capitania."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Como a mineração mudou o mapa econômico e populacional da colônia?",
+          "hint": "Do litoral nordestino para o Centro-Sul; capital transferida em 1763."
+        }
+      ]
+    }
+  },
+  {
+    "id": "guerra-emboabas",
+    "title": "Guerra dos Emboabas",
+    "start": "1707",
+    "end": "1709",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "conflitos"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "minas-gerais"
+    ],
+    "sources": [
+      "boxer-1962"
+    ],
+    "summary": "Paulistas e forasteiros ('emboabas') disputam o controle das minas. A Coroa aproveita para reforçar sua presença administrativa na região."
+  },
+  {
+    "id": "tratado-madri",
+    "title": "Tratado de Madri",
+    "start": "1750-01-13",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "territorio",
+      "politica"
+    ],
+    "themes": [
+      "territorio",
+      "povos-indigenas"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "missoes"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "Portugal e Espanha redefinem fronteiras com base no princípio de que a terra pertence a quem a ocupa (uti possidetis), aproximando o desenho do território do mapa atual.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "O tratado previa a troca da Colônia do Sacramento pelos Sete Povos das Missões."
+      },
+      {
+        "status": "interpretacao",
+        "text": "O princípio da ocupação legitimou, na diplomacia, a expansão feita pelas bandeiras e pela mineração."
+      }
+    ]
+  },
+  {
+    "id": "guerra-guaranitica",
+    "title": "Guerra Guaranítica",
+    "start": "1753",
+    "end": "1756",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "conflitos",
+      "territorio"
+    ],
+    "themes": [
+      "povos-indigenas",
+      "territorio"
+    ],
+    "weight": 2,
+    "people": [],
+    "places": [
+      "missoes"
+    ],
+    "sources": [
+      "carneiro-cunha-1992"
+    ],
+    "summary": "Guaranis das missões resistem à ordem de abandonar suas terras, prevista no Tratado de Madri, e são derrotados por tropas portuguesas e espanholas."
+  },
+  {
+    "id": "capital-rio",
+    "title": "A capital vai para o Rio de Janeiro",
+    "start": "1763",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "territorio"
+    ],
+    "themes": [
+      "territorio"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "rio-de-janeiro",
+      "salvador"
+    ],
+    "sources": [
+      "fausto-1994"
+    ],
+    "summary": "A sede do vice-reinado passa de Salvador para o Rio, porto de saída do ouro e ponto estratégico para as disputas no Sul."
+  },
+  {
+    "id": "inconfidencia-mineira",
+    "title": "Inconfidência Mineira",
+    "start": "1789",
+    "end": "1792-04-21",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "conflitos"
+    ],
+    "themes": [
+      "democracia"
+    ],
+    "weight": 4,
+    "people": [
+      "tiradentes"
+    ],
+    "places": [
+      "vila-rica",
+      "rio-de-janeiro"
+    ],
+    "sources": [
+      "maxwell-1973",
+      "fausto-1994"
+    ],
+    "summary": "Membros da elite mineira, endividados e inspirados em ideias ilustradas e na independência dos EUA, conspiram contra o domínio português. Denunciados, são presos; Tiradentes é enforcado no Rio.",
+    "narrative": [
+      "A conspiração se organizou quando a Coroa ameaçava decretar a derrama. Um dos conspiradores, Joaquim Silvério dos Reis, denunciou o grupo em troca do perdão de suas dívidas.",
+      "Os réus mais ricos tiveram penas comutadas para o degredo na África. Tiradentes, de menor posição social, foi executado em 21 de abril de 1792 e teve o corpo esquartejado e exposto."
+    ],
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Tiradentes foi o único condenado executado."
+      },
+      {
+        "status": "interpretacao",
+        "text": "A transformação de Tiradentes em herói nacional foi obra da República, depois de 1889, que buscava símbolos não monárquicos."
+      },
+      {
+        "status": "controversia",
+        "text": "Até que ponto o movimento era 'nacional' ou defendia interesses de uma elite regional é debatido.",
+        "sources": [
+          "maxwell-1973"
+        ]
+      }
+    ],
+    "study": {
+      "concepts": [
+        {
+          "term": "Iluminismo",
+          "def": "Movimento intelectual europeu do século XVIII que defendia razão, direitos e críticas ao absolutismo."
+        },
+        {
+          "term": "Derrama",
+          "def": "Cobrança forçada dos impostos atrasados do ouro."
+        }
+      ],
+      "dates": [
+        {
+          "date": "1789",
+          "label": "conspiração e denúncia"
+        },
+        {
+          "date": "21 abr. 1792",
+          "label": "execução de Tiradentes"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Quais fatores econômicos e ideológicos explicam a conspiração?",
+          "hint": "Derrama, dívidas, Iluminismo, independência dos EUA."
+        },
+        {
+          "q": "Por que a República transformou Tiradentes em herói?",
+          "hint": "Pense em que símbolos um novo regime precisa."
+        }
+      ]
+    }
+  },
+  {
+    "id": "conjuracao-baiana",
+    "title": "Conjuração Baiana",
+    "start": "1798-08-12",
+    "end": "1799-11-08",
+    "period": "colonia",
+    "region": "brasil",
+    "categories": [
+      "politica",
+      "direitos",
+      "conflitos"
+    ],
+    "themes": [
+      "democracia",
+      "escravidao"
+    ],
+    "weight": 3,
+    "people": [],
+    "places": [
+      "salvador"
+    ],
+    "sources": [
+      "fausto-1994",
+      "schwarcz-starling-2015"
+    ],
+    "summary": "Em Salvador, panfletos manuscritos pregam república, igualdade e fim de privilégios. Entre os envolvidos há alfaiates, soldados e pessoas escravizadas e libertas; quatro homens pardos são enforcados.",
+    "claims": [
+      {
+        "status": "fato",
+        "text": "Em 8 de novembro de 1799 foram executados Lucas Dantas, Luís Gonzaga das Virgens, João de Deus Nascimento e Manuel Faustino."
+      },
+      {
+        "status": "interpretacao",
+        "text": "A participação de setores populares e a defesa da igualdade tornam o movimento mais radical que a Inconfidência Mineira."
+      }
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR" data-era="originarios">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Travessia — atlas navegável da história do Brasil</title>
+  <meta name="description" content="Atravesse a história do Brasil — dos povos originários ao presente — explorando acontecimentos, pessoas, lugares, fontes e as conexões entre eles.">
+  <meta name="theme-color" content="#e7dac2">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e7dac2'/%3E%3Cpath d='M3 22 C10 22 12 10 16 10 S22 22 29 22' fill='none' stroke='%232b1d14' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='10' r='3' fill='%23a4412a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/panel.css">
+  <link rel="stylesheet" href="css/chrome.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div id="app">
+    <a id="skip" class="skip" href="#/lista">Pular para a lista de acontecimentos do trecho visível</a>
+    <header class="top">
+      <a id="brand" class="brand" href="./" aria-label="Travessia — voltar à visão geral">
+        <span class="brand-name">Travessia</span>
+        <span class="brand-sub">história do Brasil · atlas navegável</span>
+      </a>
+      <div id="plate" class="plate"></div>
+      <nav class="tools" aria-label="Ferramentas">
+        <button id="btn-search" class="tool tool-search" type="button" aria-label="Buscar (atalho /)">
+          <span aria-hidden="true">⌕</span><span class="tool-l">Buscar</span><kbd>/</kbd>
+        </button>
+        <button id="btn-filters" class="tool" type="button" aria-expanded="false"><span aria-hidden="true">≡</span><span class="tool-l">Filtros</span></button>
+        <button id="btn-atlas" class="tool" type="button" aria-pressed="false"><span aria-hidden="true">◎</span><span class="tool-l">Atlas</span></button>
+        <div class="mode-seg" role="group" aria-label="Modo">
+          <button class="mode-b" type="button" data-mode="explorar" aria-pressed="true" title="Explorar livremente"><span aria-hidden="true">◇</span><span class="tool-l">Explorar</span></button>
+          <button id="btn-study" class="mode-b" type="button" data-mode="estudar" aria-pressed="false" title="Estudar: fichas, conceitos e checkpoints"><span aria-hidden="true">✎</span><span class="tool-l">Estudar</span></button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="stage" class="stage" tabindex="-1" aria-label="Linha do tempo navegável. Role para avançar no tempo; use + e − para mudar a escala.">
+      <div id="loading" class="loading"><p>Preparando a travessia…</p></div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-row">
+        <div id="travel" class="travel"></div>
+        <div id="clues" class="clues"></div>
+      </div>
+      <div id="overview" class="overview" aria-label="Visão geral de toda a história"></div>
+    </footer>
+  </div>
+  <noscript><p class="noscript">Esta experiência precisa de JavaScript para funcionar.</p></noscript>
+</body>
+</html>

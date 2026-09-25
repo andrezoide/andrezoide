@@ -1,0 +1,6 @@
+[
+  { "id": "antes-1500", "name": "Antes de 1500", "start": -50000, "end": 1500 },
+  { "id": "colonia", "name": "Colônia", "start": 1500, "end": 1808 },
+  { "id": "monarquia", "name": "Corte e Império", "start": 1808, "end": 1889 },
+  { "id": "republica", "name": "República", "start": 1889, "end": 2031 }
+]
