@@ -1,0 +1,568 @@
+[
+  {
+    "id": "chegada-corte",
+    "title": "A corte portuguesa chega ao Brasil",
+    "start": "1808-01-22",
+    "end": "1808-03-07",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["politica", "territorio"],
+    "themes": ["territorio"],
+    "weight": 5,
+    "people": ["dom-joao-vi"],
+    "places": ["salvador", "rio-de-janeiro", "lisboa"],
+    "sources": ["oliveira-lima-1908", "schwarcz-starling-2015", "fausto-1994"],
+    "summary": "Escoltada pela marinha britânica, a família real foge da invasão francesa, passa por Salvador e se instala no Rio de Janeiro. Pela primeira vez, uma metrópole europeia passa a ser governada a partir de sua colônia.",
+    "narrative": [
+      "A frota deixou Lisboa no fim de novembro de 1807, dias antes da chegada das tropas de Junot. Milhares de pessoas — número ainda discutido — acompanharam a corte.",
+      "No Rio, casas foram requisitadas para os recém-chegados, e a cidade mudou de escala: ministérios, tribunais, Banco do Brasil, Jardim Botânico, Imprensa Régia, Biblioteca."
+    ],
+    "context": "Napoleão impunha o Bloqueio Continental contra a Grã-Bretanha. Portugal, aliado britânico, foi invadido. Na América espanhola, a ausência do rei espanhol, preso por Napoleão, abriria caminho para as independências.",
+    "claims": [
+      { "status": "fato", "text": "A corte desembarcou em Salvador em janeiro e chegou ao Rio de Janeiro em março de 1808." },
+      { "status": "estimativa", "text": "O número de pessoas que acompanharam a corte é incerto; estimativas variam de cerca de 10 a 15 mil." },
+      { "status": "interpretacao", "text": "Para muitos historiadores, a transferência da corte preparou uma independência diferente da hispano-americana: monárquica e com unidade territorial." }
+    ],
+    "map": { "routes": [{ "label": "Chegada da frota (esquemático)", "points": [[0, -29], [-8, -33], [-12.97, -38.51], [-18, -38.5], [-22.91, -43.17]] }] },
+    "study": {
+      "concepts": [
+        { "term": "Bloqueio Continental", "def": "Proibição imposta por Napoleão ao comércio europeu com a Grã-Bretanha." },
+        { "term": "Inversão metropolitana", "def": "Situação em que a colônia passa a sediar o governo do império." }
+      ],
+      "dates": [{ "date": "nov. 1807", "label": "partida de Lisboa" }, { "date": "jan. 1808", "label": "Salvador e abertura dos portos" }, { "date": "mar. 1808", "label": "chegada ao Rio" }],
+      "questions": [
+        { "q": "Como acontecimentos na Europa causaram uma transformação profunda no Brasil?", "hint": "Napoleão → invasão de Portugal → corte no Rio." },
+        { "q": "Por que a chegada da corte é vista como um passo para a independência?", "hint": "Instituições, abertura dos portos, elevação a Reino Unido." }
+      ]
+    }
+  },
+  {
+    "id": "abertura-portos",
+    "title": "Abertura dos portos",
+    "start": "1808-01-28",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["economia", "politica"],
+    "themes": ["economia"],
+    "weight": 4,
+    "people": ["dom-joao-vi"],
+    "places": ["salvador"],
+    "sources": ["fausto-1994"],
+    "summary": "Ainda em Salvador, o príncipe regente abre os portos às nações amigas, encerrando na prática o monopólio comercial português. A grande beneficiada é a Grã-Bretanha.",
+    "claims": [
+      { "status": "fato", "text": "A carta régia foi assinada em Salvador em 28 de janeiro de 1808." },
+      { "status": "interpretacao", "text": "A medida é vista como o fim do 'pacto colonial', embora os tratados de 1810 tenham dado privilégios aos britânicos." }
+    ]
+  },
+  {
+    "id": "imprensa-regia",
+    "title": "Imprensa Régia e a Gazeta do Rio de Janeiro",
+    "start": "1808-09-10",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["cultura", "tecnologia"],
+    "themes": ["cultura"],
+    "weight": 2,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": ["hemeroteca-bn"],
+    "summary": "Até 1808, a impressão era proibida na colônia. Com a corte, surge a Imprensa Régia, e circula o primeiro jornal impresso no Brasil, a oficial Gazeta do Rio de Janeiro.",
+    "claims": [
+      { "status": "fato", "text": "A Gazeta do Rio de Janeiro circulou a partir de 10 de setembro de 1808." },
+      { "status": "fato", "text": "O Correio Braziliense, crítico ao governo, era impresso em Londres desde junho de 1808." }
+    ]
+  },
+  {
+    "id": "reino-unido",
+    "title": "Reino Unido de Portugal, Brasil e Algarves",
+    "start": "1815-12-16",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": ["territorio"],
+    "weight": 3,
+    "people": ["dom-joao-vi"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "O Brasil deixa formalmente de ser colônia e é elevado a reino, com o Rio como sede da monarquia."
+  },
+  {
+    "id": "revolucao-pernambucana",
+    "title": "Revolução Pernambucana",
+    "start": "1817-03-06",
+    "end": "1817-05-20",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["politica", "conflitos"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": ["frei-caneca"],
+    "places": ["recife"],
+    "sources": ["fausto-1994"],
+    "summary": "Pernambuco proclama uma república por cerca de dois meses, em reação aos impostos e à centralização no Rio. O movimento é duramente reprimido.",
+    "claims": [
+      { "status": "interpretacao", "text": "Mostra que a independência poderia ter tomado outros caminhos, republicanos e regionais." }
+    ]
+  },
+  {
+    "id": "retorno-joao-vi",
+    "title": "D. João VI retorna a Portugal",
+    "start": "1821-04-26",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": [],
+    "weight": 2,
+    "people": ["dom-joao-vi", "dom-pedro-i"],
+    "places": ["rio-de-janeiro", "lisboa"],
+    "sources": ["fausto-1994"],
+    "summary": "Pressionado pelas Cortes de Lisboa, o rei volta a Portugal e deixa D. Pedro como príncipe regente no Brasil."
+  },
+  {
+    "id": "dia-do-fico",
+    "title": "Dia do Fico",
+    "start": "1822-01-09",
+    "period": "periodo-joanino",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": [],
+    "weight": 3,
+    "people": ["dom-pedro-i", "jose-bonifacio"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "D. Pedro desobedece às Cortes, que exigiam seu retorno, e decide permanecer no Brasil — com apoio de elites do Rio, São Paulo e Minas."
+  },
+  {
+    "id": "independencia",
+    "title": "Independência do Brasil",
+    "start": "1822-09-07",
+    "period": "primeiro-reinado",
+    "region": "brasil",
+    "categories": ["politica", "territorio"],
+    "themes": ["territorio", "democracia"],
+    "weight": 5,
+    "people": ["dom-pedro-i", "maria-leopoldina", "jose-bonifacio", "maria-quiteria", "pedro-americo"],
+    "places": ["sao-paulo", "rio-de-janeiro", "salvador"],
+    "sources": ["schwarcz-starling-2015", "fausto-1994", "americo-1888"],
+    "summary": "D. Pedro declara a separação de Portugal às margens do Ipiranga e é aclamado imperador. A independência mantém a monarquia, a escravidão e a unidade territorial — e só se completa com guerras em várias províncias.",
+    "narrative": [
+      "Em 2 de setembro de 1822, o Conselho de Estado, presidido pela princesa Leopoldina como regente interina, decidiu pela ruptura. D. Pedro, em viagem a São Paulo, recebeu as notícias em 7 de setembro.",
+      "A independência não foi um ato único nem pacífico. Bahia, Maranhão, Grão-Pará e Cisplatina tinham tropas e grupos fiéis a Lisboa. Na Bahia, a guerra só terminou em 2 de julho de 1823.",
+      "O novo país manteve a escravidão e um monarca da casa de Bragança. Para muitos historiadores, foi uma independência feita para preservar a ordem social."
+    ],
+    "context": "Entre 1810 e 1825 quase toda a América espanhola se tornou independente, em regra como repúblicas e com fragmentação territorial. O Brasil seguiu outro caminho.",
+    "claims": [
+      { "status": "fato", "text": "O Conselho de Estado reunido em 2 de setembro de 1822 foi presidido por Maria Leopoldina." },
+      { "status": "interpretacao", "text": "A cena do quadro de Pedro Américo (1888) é uma construção idealizada, pintada 66 anos depois, e não um registro do momento.", "sources": ["americo-1888"] },
+      { "status": "interpretacao", "text": "A independência como 'transição conservadora' — mudança política que preserva a estrutura social — é uma leitura historiográfica influente, mas não única." },
+      { "status": "fato", "text": "Portugal reconheceu a independência em 1825, mediante pagamento de indenização." }
+    ],
+    "excerpts": [
+      { "text": "Independência ou morte!", "source": "americo-1888", "note": "frase tradicionalmente atribuída a D. Pedro e título do quadro de Pedro Américo; os relatos da cena variam" }
+    ],
+    "study": {
+      "concepts": [
+        { "term": "Emancipação política", "def": "Separação formal de uma colônia em relação à metrópole." },
+        { "term": "Poder Moderador", "def": "Quarto poder, exclusivo do imperador, criado pela Constituição de 1824." },
+        { "term": "Transição conservadora", "def": "Mudança de regime que preserva as bases sociais e econômicas anteriores." }
+      ],
+      "dates": [{ "date": "9 jan. 1822", "label": "Dia do Fico" }, { "date": "2 set. 1822", "label": "Conselho de Estado decide pela ruptura" }, { "date": "7 set. 1822", "label": "Ipiranga" }, { "date": "2 jul. 1823", "label": "fim da guerra na Bahia" }, { "date": "1825", "label": "reconhecimento por Portugal" }],
+      "questions": [
+        { "q": "Quais fatores contribuíram para a independência?", "hint": "Crise do sistema colonial, corte no Rio, Revolução do Porto, interesses das elites." },
+        { "q": "O que mudou e o que permaneceu depois de 1822?", "hint": "Governo, monarquia, escravidão, estrutura agrária." },
+        { "q": "Por que a independência do Brasil é diferente da hispano-americana?", "hint": "Monarquia, unidade territorial, papel da corte." }
+      ]
+    }
+  },
+  {
+    "id": "independencia-bahia",
+    "title": "Guerra de independência na Bahia",
+    "start": "1822-02-19",
+    "end": "1823-07-02",
+    "period": "primeiro-reinado",
+    "region": "brasil",
+    "categories": ["conflitos", "politica"],
+    "themes": ["territorio"],
+    "weight": 3,
+    "people": ["maria-quiteria"],
+    "places": ["salvador", "reconcavo"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Tropas portuguesas ocupam Salvador; forças do Recôncavo, com ampla participação popular, cercam a cidade até a retirada portuguesa em 2 de julho de 1823 — data celebrada até hoje na Bahia."
+  },
+  {
+    "id": "constituicao-1824",
+    "title": "Constituição de 1824",
+    "start": "1824-03-25",
+    "period": "primeiro-reinado",
+    "region": "brasil",
+    "categories": ["politica", "direitos"],
+    "themes": ["democracia", "direitos"],
+    "weight": 4,
+    "people": ["dom-pedro-i"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["constituicao-1824", "fausto-1994"],
+    "summary": "Depois de dissolver a Assembleia Constituinte, D. Pedro I outorga uma Constituição que cria o Poder Moderador e um voto censitário. Vigorou até 1889 — a mais longa da história do país.",
+    "claims": [
+      { "status": "fato", "text": "A Assembleia Constituinte foi dissolvida por tropas em novembro de 1823." },
+      { "status": "fato", "text": "O voto era censitário e indireto; escravizados não eram cidadãos." }
+    ]
+  },
+  {
+    "id": "confederacao-equador",
+    "title": "Confederação do Equador",
+    "start": "1824-07-02",
+    "end": "1824-11-29",
+    "period": "primeiro-reinado",
+    "region": "brasil",
+    "categories": ["conflitos", "politica"],
+    "themes": ["democracia"],
+    "weight": 3,
+    "people": ["frei-caneca"],
+    "places": ["recife", "fortaleza"],
+    "sources": ["fausto-1994"],
+    "summary": "Províncias do Nordeste, lideradas por Pernambuco, rompem com o Rio contra o autoritarismo da Constituição outorgada. A repressão leva à execução de Frei Caneca."
+  },
+  {
+    "id": "guerra-cisplatina",
+    "title": "Guerra da Cisplatina",
+    "start": "1825-12-10",
+    "end": "1828-08-27",
+    "period": "primeiro-reinado",
+    "region": "brasil",
+    "categories": ["conflitos", "territorio"],
+    "themes": ["territorio"],
+    "weight": 2,
+    "people": ["dom-pedro-i"],
+    "places": ["montevideu"],
+    "sources": ["fausto-1994"],
+    "summary": "O Império perde a guerra contra as Províncias Unidas do Rio da Prata, e a antiga província Cisplatina torna-se o Uruguai, com mediação britânica."
+  },
+  {
+    "id": "abdicacao",
+    "title": "Abdicação de D. Pedro I",
+    "start": "1831-04-07",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": [],
+    "weight": 4,
+    "people": ["dom-pedro-i", "dom-pedro-ii", "jose-bonifacio"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "Desgastado pela guerra perdida, pela crise econômica e pelo conflito com liberais, o imperador abdica em favor do filho de cinco anos e parte para Portugal."
+  },
+  {
+    "id": "ato-adicional",
+    "title": "Ato Adicional",
+    "start": "1834-08-12",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": ["democracia"],
+    "weight": 2,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "Reforma constitucional que dá mais autonomia às províncias, com assembleias próprias — uma experiência descentralizadora revertida anos depois."
+  },
+  {
+    "id": "cabanagem",
+    "title": "Cabanagem",
+    "start": "1835-01-07",
+    "end": "1840",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["conflitos", "sociedade"],
+    "themes": ["povos-indigenas", "democracia"],
+    "weight": 3,
+    "people": [],
+    "places": ["belem"],
+    "sources": ["fausto-1994", "schwarcz-starling-2015"],
+    "summary": "No Grão-Pará, indígenas, mestiços pobres e escravizados tomam Belém. A repressão foi devastadora.",
+    "claims": [
+      { "status": "estimativa", "text": "Estima-se que dezenas de milhares de pessoas morreram — uma parcela significativa da população da província." }
+    ]
+  },
+  {
+    "id": "revolta-males",
+    "title": "Revolta dos Malês",
+    "start": "1835-01-25",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["conflitos", "religiao", "direitos"],
+    "themes": ["escravidao"],
+    "weight": 3,
+    "people": [],
+    "places": ["salvador"],
+    "sources": ["reis-2003"],
+    "summary": "Africanos muçulmanos, escravizados e libertos, se levantam em Salvador na madrugada de 25 de janeiro. Derrotada em horas, a revolta assustou as elites de todo o Império.",
+    "claims": [
+      { "status": "fato", "text": "A revolta foi organizada principalmente por africanos muçulmanos de origem nagô (iorubá) e haussá.", "sources": ["reis-2003"] },
+      { "status": "interpretacao", "text": "O medo de 'um novo Haiti' marcou a política escravista brasileira por décadas." }
+    ]
+  },
+  {
+    "id": "farroupilha",
+    "title": "Guerra dos Farrapos",
+    "start": "1835-09-20",
+    "end": "1845-03-01",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["conflitos", "politica", "economia"],
+    "themes": ["territorio"],
+    "weight": 3,
+    "people": ["bento-goncalves", "caxias"],
+    "places": ["porto-alegre"],
+    "sources": ["fausto-1994"],
+    "summary": "Estancieiros gaúchos, em conflito com a política fiscal do Império, proclamam a República Rio-Grandense. A guerra termina com um acordo em 1845.",
+    "claims": [
+      { "status": "fato", "text": "Lanceiros negros, muitos deles escravizados a quem se prometeu liberdade, lutaram do lado farroupilha." },
+      { "status": "controversia", "text": "O episódio de Porongos (1844), em que lanceiros negros foram massacrados, é objeto de debate sobre uma possível traição." }
+    ]
+  },
+  {
+    "id": "balaiada",
+    "title": "Balaiada",
+    "start": "1838-12",
+    "end": "1841",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["conflitos", "sociedade"],
+    "themes": ["escravidao"],
+    "weight": 2,
+    "people": ["caxias"],
+    "places": ["sao-luis"],
+    "sources": ["fausto-1994"],
+    "summary": "No Maranhão, vaqueiros, artesãos e escravizados aquilombados se rebelam. A revolta é reprimida por tropas comandadas por Luís Alves de Lima e Silva, futuro Caxias."
+  },
+  {
+    "id": "ihgb",
+    "title": "Criação do Instituto Histórico e Geográfico Brasileiro",
+    "start": "1838-10-21",
+    "period": "regencias",
+    "region": "brasil",
+    "categories": ["cultura", "ciencia"],
+    "themes": ["cultura"],
+    "weight": 1,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Instituição criada para escrever uma história oficial da nação — e definir quem fazia parte dela. Um lembrete de que a própria história do Brasil também tem história."
+  },
+  {
+    "id": "golpe-maioridade",
+    "title": "Golpe da Maioridade",
+    "start": "1840-07-23",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["politica"],
+    "themes": [],
+    "weight": 4,
+    "people": ["dom-pedro-ii"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "Liberais antecipam a maioridade de D. Pedro II, aos 14 anos, apostando que a figura do imperador acalmaria as revoltas provinciais."
+  },
+  {
+    "id": "lei-eusebio",
+    "title": "Lei Eusébio de Queirós",
+    "start": "1850-09-04",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["economia", "direitos", "politica"],
+    "themes": ["escravidao", "economia"],
+    "weight": 4,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": ["lei-581-1850", "alencastro-2000"],
+    "summary": "Sob forte pressão britânica, o Império proíbe efetivamente o tráfico de africanos. O fim do tráfico reorienta capitais e trabalho — mas a escravidão continua.",
+    "narrative": [
+      "Uma lei de 1831 já havia proibido o tráfico, mas não foi cumprida: centenas de milhares de africanos entraram ilegalmente nas décadas seguintes.",
+      "Depois de 1850, o tráfico declinou rapidamente. Os capitais antes investidos no comércio de pessoas se voltaram para outras atividades, e cresceu o tráfico interno de escravizados, do Nordeste para as fazendas de café do Sudeste."
+    ],
+    "claims": [
+      { "status": "fato", "text": "A lei de 7 de novembro de 1831 proibia o tráfico, mas foi amplamente desrespeitada." },
+      { "status": "interpretacao", "text": "O peso relativo da pressão britânica e de fatores internos na decisão de 1850 é discutido." }
+    ],
+    "study": {
+      "concepts": [
+        { "term": "Lei 'para inglês ver'", "def": "Expressão associada à lei de 1831, aprovada mas não aplicada." },
+        { "term": "Tráfico interprovincial", "def": "Venda de escravizados entre províncias do Império após 1850." }
+      ],
+      "questions": [
+        { "q": "Por que o fim do tráfico não significou o fim da escravidão?", "hint": "Tráfico interno, reprodução, interesses dos cafeicultores." }
+      ]
+    }
+  },
+  {
+    "id": "lei-terras",
+    "title": "Lei de Terras",
+    "start": "1850-09-18",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["economia", "territorio", "direitos"],
+    "themes": ["territorio", "economia", "escravidao", "povos-indigenas"],
+    "weight": 4,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": ["lei-601-1850", "fausto-1994"],
+    "summary": "Duas semanas depois do fim do tráfico, a lei determina que terras públicas só podem ser adquiridas por compra. O acesso à terra fica mais difícil para pobres, libertos e imigrantes.",
+    "claims": [
+      { "status": "interpretacao", "text": "Muitos historiadores relacionam a lei ao fim do tráfico: sem terra acessível, futuros libertos e imigrantes seriam mão de obra para os grandes proprietários." }
+    ]
+  },
+  {
+    "id": "ferrovia-maua",
+    "title": "Primeira ferrovia do Brasil",
+    "start": "1854-04-30",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["tecnologia", "economia"],
+    "themes": ["economia"],
+    "weight": 2,
+    "people": ["maua", "dom-pedro-ii"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "A Estrada de Ferro Mauá, com cerca de 14 km, liga a Baía de Guanabara à raiz da serra de Petrópolis. As ferrovias seguintes seguirão, sobretudo, as rotas do café."
+  },
+  {
+    "id": "guerra-paraguai",
+    "title": "Guerra do Paraguai",
+    "start": "1864-12",
+    "end": "1870-03-01",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["conflitos", "territorio", "politica"],
+    "themes": ["territorio", "escravidao"],
+    "weight": 4,
+    "people": ["dom-pedro-ii", "caxias"],
+    "places": ["assuncao", "montevideu"],
+    "sources": ["doratioto-2002", "fausto-1994"],
+    "summary": "O maior conflito armado da América do Sul opõe Paraguai à Tríplice Aliança (Brasil, Argentina e Uruguai). O Paraguai é devastado; no Brasil, a guerra fortalece o Exército e expõe a contradição de soldados escravizados lutando por um país escravista.",
+    "claims": [
+      { "status": "controversia", "text": "O número de mortos paraguaios é muito debatido; as estimativas variam amplamente.", "sources": ["doratioto-2002"] },
+      { "status": "controversia", "text": "A tese de que o imperialismo britânico teria provocado a guerra, popular nos anos 1970, foi contestada por pesquisas posteriores.", "sources": ["doratioto-2002"] },
+      { "status": "fato", "text": "Escravizados foram enviados à guerra, muitos com promessa de alforria." }
+    ]
+  },
+  {
+    "id": "ventre-livre",
+    "title": "Lei do Ventre Livre",
+    "start": "1871-09-28",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["direitos", "politica"],
+    "themes": ["escravidao", "direitos"],
+    "weight": 3,
+    "people": ["princesa-isabel"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["lei-2040-1871", "chalhoub-1990"],
+    "summary": "Filhos de mulheres escravizadas nascidos a partir da lei seriam livres — mas podiam permanecer sob tutela do senhor até os 21 anos. A lei também criou o fundo de emancipação e reconheceu o pecúlio.",
+    "claims": [
+      { "status": "fato", "text": "A lei reconheceu o direito do escravizado de formar pecúlio e comprar a própria liberdade." },
+      { "status": "interpretacao", "text": "Chalhoub mostra como escravizados usaram a lei e os tribunais para disputar a liberdade.", "sources": ["chalhoub-1990"] }
+    ]
+  },
+  {
+    "id": "bras-cubas",
+    "title": "Memórias póstumas de Brás Cubas",
+    "start": "1881",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["cultura"],
+    "themes": ["cultura"],
+    "weight": 2,
+    "people": ["machado-de-assis"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["machado-1881"],
+    "summary": "Machado de Assis publica em livro o romance narrado por um defunto, uma crítica irônica à elite escravista do Império."
+  },
+  {
+    "id": "movimento-abolicionista",
+    "title": "A campanha abolicionista",
+    "start": "1880",
+    "end": "1888-05-13",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["direitos", "sociedade", "politica"],
+    "themes": ["escravidao", "direitos"],
+    "weight": 3,
+    "people": ["luiz-gama", "joaquim-nabuco", "andre-reboucas", "jose-do-patrocinio"],
+    "places": ["rio-de-janeiro", "sao-paulo", "fortaleza"],
+    "sources": ["nabuco-1883", "chalhoub-1990", "schwarcz-starling-2015"],
+    "summary": "Jornais, conferências, associações, advogados, jangadeiros e fugas em massa transformam a abolição em causa pública. Escravizados foram protagonistas, não espectadores.",
+    "claims": [
+      { "status": "fato", "text": "Fugas em massa de fazendas paulistas, apoiadas por abolicionistas, se intensificaram em 1887–1888." },
+      { "status": "interpretacao", "text": "A historiografia recente enfatiza a ação dos próprios escravizados e libertos na derrubada da escravidão." }
+    ]
+  },
+  {
+    "id": "abolicao-ceara",
+    "title": "Abolição no Ceará",
+    "start": "1884-03-25",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["direitos"],
+    "themes": ["escravidao"],
+    "weight": 2,
+    "people": [],
+    "places": ["fortaleza"],
+    "sources": ["schwarcz-starling-2015"],
+    "summary": "Depois que jangadeiros liderados por Francisco José do Nascimento, o Dragão do Mar, se recusaram a embarcar escravizados, o Ceará declara extinta a escravidão na província."
+  },
+  {
+    "id": "sexagenarios",
+    "title": "Lei dos Sexagenários",
+    "start": "1885-09-28",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["direitos", "politica"],
+    "themes": ["escravidao"],
+    "weight": 2,
+    "people": [],
+    "places": ["rio-de-janeiro"],
+    "sources": ["fausto-1994"],
+    "summary": "Liberta escravizados com mais de 60 anos, mas exige deles anos adicionais de trabalho como indenização. Vista por abolicionistas como uma manobra para adiar a abolição."
+  },
+  {
+    "id": "lei-aurea",
+    "title": "Lei Áurea: fim legal da escravidão",
+    "start": "1888-05-13",
+    "period": "segundo-reinado",
+    "region": "brasil",
+    "categories": ["direitos", "politica", "sociedade"],
+    "themes": ["escravidao", "direitos"],
+    "weight": 5,
+    "people": ["princesa-isabel", "joaquim-nabuco", "andre-reboucas", "jose-do-patrocinio"],
+    "places": ["rio-de-janeiro"],
+    "sources": ["lei-3353-1888", "chalhoub-1990", "schwarcz-starling-2015"],
+    "summary": "Com dois artigos, a lei declara extinta a escravidão no Brasil, o último país das Américas a fazê-lo. Não houve indenização aos senhores — nem reparação, terra ou políticas de integração para os libertos.",
+    "narrative": [
+      "Em 1888, a escravidão já estava em colapso: fugas em massa, províncias abolicionistas, pressão pública. A lei foi aprovada rapidamente pelo Parlamento e sancionada pela princesa regente em 13 de maio.",
+      "Cerca de 700 mil pessoas ainda estavam escravizadas. A liberdade veio sem acesso à terra, à educação ou a garantias de trabalho — e a abolição conviveu com teorias racistas e políticas que favoreceram a imigração europeia."
+    ],
+    "context": "Os Estados Unidos haviam abolido a escravidão em 1865, após a Guerra Civil; Cuba, em 1886. No ano seguinte à Lei Áurea, a monarquia cairia.",
+    "claims": [
+      { "status": "fato", "text": "A lei tinha dois artigos e não previa indenização nem medidas para os libertos.", "sources": ["lei-3353-1888"] },
+      { "status": "estimativa", "text": "Cerca de 700 mil pessoas estavam escravizadas em 1888." },
+      { "status": "interpretacao", "text": "A narrativa da abolição como 'dádiva' da princesa foi criticada; historiadores enfatizam a luta dos escravizados e do movimento abolicionista." },
+      { "status": "interpretacao", "text": "A ausência de políticas de integração é apontada como uma das raízes das desigualdades raciais no Brasil." }
+    ],
+    "excerpts": [
+      { "text": "Art. 1º É declarada extincta desde a data desta lei a escravidão no Brazil. Art. 2º Revogam-se as disposições em contrario.", "source": "lei-3353-1888", "note": "grafia original" }
+    ],
+    "study": {
+      "concepts": [
+        { "term": "Abolicionismo", "def": "Movimento social e político pelo fim da escravidão." },
+        { "term": "Pós-abolição", "def": "Período e campo de estudo sobre a vida dos libertos e seus descendentes após 1888." },
+        { "term": "Racismo estrutural", "def": "Desigualdades raciais reproduzidas por instituições e práticas sociais, não apenas por atitudes individuais." }
+      ],
+      "dates": [{ "date": "1850", "label": "fim do tráfico" }, { "date": "1871", "label": "Ventre Livre" }, { "date": "1884", "label": "Ceará" }, { "date": "1885", "label": "Sexagenários" }, { "date": "13 mai. 1888", "label": "Lei Áurea" }],
+      "questions": [
+        { "q": "Por que a escravidão durou tanto tempo no Brasil?", "hint": "Peso econômico, interesses das elites, estrutura política do Império." },
+        { "q": "Quais foram os limites da abolição?", "hint": "Terra, educação, trabalho, racismo." },
+        { "q": "Quem foram os agentes da abolição?", "hint": "Parlamento, princesa, abolicionistas — e os próprios escravizados." }
+      ]
+    }
+  }
+]

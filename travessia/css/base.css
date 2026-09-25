@@ -1,0 +1,139 @@
+/* Travessia — base, tokens e estrutura
+   As cores são tokens atualizados em tempo real pela posição no tempo
+   (js/timeline/atmosphere.js). Os valores abaixo são o ponto de partida. */
+
+:root {
+  --paper: rgb(231 218 194);
+  --paper-rgb: 231 218 194;
+  --paper2: rgb(220 203 173);
+  --paper2-rgb: 220 203 173;
+  --ink: rgb(43 29 20);
+  --ink-rgb: 43 29 20;
+  --muted: rgb(111 90 71);
+  --muted-rgb: 111 90 71;
+  --accent: rgb(164 65 42);
+  --accent-rgb: 164 65 42;
+  --accent2: rgb(47 93 80);
+  --accent2-rgb: 47 93 80;
+
+  --f-display: Fraunces, Georgia, 'Times New Roman', serif;
+  --f-text: Fraunces, Georgia, serif;
+  --f-ui: 'IBM Plex Sans', system-ui, sans-serif;
+  --f-cond: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --rule: 1px solid rgb(var(--ink-rgb) / .9);
+  --rule-soft: 1px solid rgb(var(--ink-rgb) / .16);
+  --shadow-print: 4px 4px 0 rgb(var(--ink-rgb) / .14);
+  --top-h: 56px;
+  --foot-h: 84px;
+  --gutter: 16px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; overflow: clip; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 var(--f-text);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  overscroll-behavior: none;
+  transition: background-color .3s linear;
+}
+/* papel: grão sutil e constante */
+body::after {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 100;
+  opacity: .22; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .4 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+button { font: inherit; color: inherit; }
+a { color: inherit; }
+kbd { font: 500 10px/1 var(--f-mono); border: 1px solid rgb(var(--ink-rgb) / .35); padding: 2px 4px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+#app {
+  position: fixed; inset: 0; overflow: clip;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: var(--top-h) minmax(0, 1fr) var(--foot-h);
+  grid-template-columns: minmax(0, 1fr);
+  position: relative;
+}
+
+/* ------------------------------------------------------------ topo */
+.top {
+  display: flex; align-items: center; gap: 20px;
+  padding: 0 var(--gutter);
+  border-bottom: 1.5px solid var(--ink);
+  background: rgb(var(--paper-rgb) / .94);
+  position: relative; z-index: 30;
+}
+.brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1; min-width: max-content; }
+.brand-name { font: italic 600 25px/1 var(--f-display); letter-spacing: -.01em; font-variation-settings: 'opsz' 96; }
+.brand-sub { font: 500 9.5px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+
+.plate { flex: 1; min-width: 0; display: flex; justify-content: center; }
+
+.tools { display: flex; gap: 2px; }
+.tool {
+  display: inline-flex; align-items: center; gap: 7px;
+  height: 34px; padding: 0 11px;
+  background: none; border: 1px solid transparent; border-radius: 2px;
+  font: 500 13px/1 var(--f-cond); letter-spacing: .02em;
+  cursor: pointer; position: relative;
+}
+.tool:hover { border-color: rgb(var(--ink-rgb) / .35); }
+.tool[aria-pressed='true'], .tool[aria-expanded='true'] { background: var(--ink); color: var(--paper); }
+.tool span[aria-hidden] { font-size: 15px; }
+.tool-search { border-color: rgb(var(--ink-rgb) / .5); min-width: 150px; justify-content: flex-start; }
+.tool-search kbd { margin-left: auto; }
+.tool[data-count]:not([data-count=''])::after {
+  content: attr(data-count); position: absolute; top: 2px; right: 2px;
+  font: 600 9px/14px var(--f-mono); min-width: 14px; text-align: center;
+  background: var(--accent); color: var(--paper); border-radius: 7px;
+}
+
+/* ------------------------------------------------------------ palco */
+.stage { position: relative; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; outline: none; }
+.stage.is-dragging { cursor: grabbing; }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font: italic 20px var(--f-display); }
+.loading .small { font: 12px var(--f-mono); }
+
+/* ------------------------------------------------------------ rodapé */
+.foot { border-top: 1.5px solid var(--ink); display: grid; grid-template-rows: 32px 1fr; background: rgb(var(--paper-rgb) / .96); position: relative; z-index: 20; }
+.clues { display: flex; align-items: center; gap: 4px; padding: 0 var(--gutter); overflow-x: auto; scrollbar-width: none; border-bottom: var(--rule-soft); white-space: nowrap; }
+.clues::-webkit-scrollbar { display: none; }
+.overview { position: relative; cursor: pointer; touch-action: none; overflow: hidden; }
+.overview canvas { display: block; }
+.ov-window {
+  position: absolute; top: 0; bottom: 0;
+  border: 2px solid var(--ink); background: rgb(var(--paper-rgb) / .25);
+  box-shadow: 0 0 0 999px rgb(var(--paper-rgb) / .35);
+  cursor: grab; min-width: 6px;
+}
+.ov-window:focus-visible { outline-offset: -4px; }
+
+.noscript { padding: 40px; font: 18px var(--f-display); }
+
+@media (max-width: 719px) {
+  :root { --top-h: 96px; --foot-h: 76px; --gutter: 12px; }
+  .top { flex-wrap: wrap; gap: 6px 10px; padding-top: 8px; align-content: flex-start; }
+  .brand-name { font-size: 21px; }
+  .brand-sub { display: none; }
+  .tools { margin-left: auto; }
+  .tool { padding: 0 9px; height: 32px; }
+  .tool-l, .tool kbd { display: none; }
+  .tool-search { min-width: 0; }
+  .plate { order: 3; flex-basis: 100%; justify-content: flex-start; }
+  .foot { grid-template-rows: 32px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
