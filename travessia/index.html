@@ -32,7 +32,10 @@
         </button>
         <button id="btn-filters" class="tool" type="button" aria-expanded="false"><span aria-hidden="true">≡</span><span class="tool-l">Filtros</span></button>
         <button id="btn-atlas" class="tool" type="button" aria-pressed="false"><span aria-hidden="true">◎</span><span class="tool-l">Atlas</span></button>
-        <button id="btn-study" class="tool" type="button" aria-pressed="false"><span aria-hidden="true">✎</span><span class="tool-l">Modo estudo</span></button>
+        <div class="mode-seg" role="group" aria-label="Modo">
+          <button class="mode-b" type="button" data-mode="explorar" aria-pressed="true" title="Explorar livremente"><span aria-hidden="true">◇</span><span class="tool-l">Explorar</span></button>
+          <button id="btn-study" class="mode-b" type="button" data-mode="estudar" aria-pressed="false" title="Estudar: fichas, conceitos e checkpoints"><span aria-hidden="true">✎</span><span class="tool-l">Estudar</span></button>
+        </div>
       </nav>
     </header>
 

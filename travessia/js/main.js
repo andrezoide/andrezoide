@@ -86,16 +86,19 @@ class App extends Emitter {
     this.btnFilters.addEventListener('click', () => this.filters.toggle());
     this.btnAtlas = $('#btn-atlas');
     this.btnAtlas.addEventListener('click', () => this.atlas.toggle());
-    const study = $('#btn-study');
-    study.setAttribute('aria-pressed', String(this.state.study));
-    study.addEventListener('click', () => {
-      this.state.study = !this.state.study;
-      storage.set('study', this.state.study);
-      study.setAttribute('aria-pressed', String(this.state.study));
-      document.body.classList.toggle('is-study', this.state.study);
+    const modeBtns = [...document.querySelectorAll('.mode-b')];
+    const setStudy = (on) => {
+      if (on === this.state.study) return;
+      this.state.study = on;
+      storage.set('study', on);
+      document.body.classList.toggle('is-study', on);
       this.timeline.requestRender();
       if (this.focus) this.#render(this.focus.type, this.focus.id, { keepCamera: true });
-    });
+      sync();
+    };
+    const sync = () => modeBtns.forEach((b) => b.setAttribute('aria-pressed', String((b.dataset.mode === 'estudar') === this.state.study)));
+    modeBtns.forEach((b) => b.addEventListener('click', () => setStudy(b.dataset.mode === 'estudar')));
+    sync();
     $('#brand').addEventListener('click', (e) => { e.preventDefault(); this.close(); this.goOverview(); });
   }
 
