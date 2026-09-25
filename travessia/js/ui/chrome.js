@@ -35,6 +35,8 @@ export class Panel {
     this.el.classList.remove('is-peek');
     requestAnimationFrame(() => this.el.classList.add('is-open'));
     this.#pushTrail(key, view);
+    // aberto pelo teclado: leva o foco ao conteúdo, sem rolar
+    if (document.activeElement?.closest?.('.mk, .sr, .tl-edge, .pn')) this.body.focus({ preventScroll: true });
     view.node.animate?.([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 260, easing: 'cubic-bezier(.2,.7,.2,1)' });
   }
 

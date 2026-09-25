@@ -47,12 +47,27 @@ class App extends Emitter {
     // começa vendo o todo: do tempo profundo até hoje
     this.timeline.setView(U_MAX / 2, this.timeline.kMin);
     if (location.hash.length > 2) this.route();
-    else if (!storage.get('introSeen', false)) intro(this, (guided) => guided && this.#guidedStart());
+    else if (!storage.get('introSeen', false)) intro(this, (guided) => (guided ? this.#guidedStart() : this.#coach()));
     else this.#guidedStart(true);
     if (storage.get('atlas', false) && !this.timeline.compact) this.atlas.toggle(true);
   }
 
+  /** dica de gesto até a primeira interação */
+  #coach() {
+    if (storage.get('coached', false)) return;
+    const touch = matchMedia('(pointer: coarse)').matches;
+    const el = h('div.coach', { role: 'status' },
+      touch ? 'Arraste para atravessar o tempo · pinça para mudar a escala' : 'Role para atravessar o tempo · Ctrl + roda para mudar a escala',
+      h('span.coach-arrow', { 'aria-hidden': 'true' }, '→'));
+    this.stage.append(el);
+    const off = this.on('interact', () => {
+      off(); storage.set('coached', true);
+      el.classList.add('is-out'); setTimeout(() => el.remove(), 450);
+    });
+  }
+
   #guidedStart(quiet) {
+    if (!quiet) this.#coach();
     // aproxima dos séculos anteriores a 1500 — a travessia não começa com Cabral
     setTimeout(() => this.timeline.frameYears(-600, 1560, 0.04), quiet ? 50 : 350);
   }

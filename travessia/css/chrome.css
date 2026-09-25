@@ -26,10 +26,10 @@
 @media (max-width: 980px) and (min-width: 720px) { .tool-l { display: none; } }
 @media (max-width: 719px) {
   .ep { gap: 8px; width: 100%; }
-  .ep-where { font-size: 16px; }
+  .ep-where { font-size: 16px; max-width: 34vw; overflow: hidden; text-overflow: ellipsis; }
   .ep-year { font-size: 13px; }
   .ep-scale { margin-left: auto; }
-  .ep-lvl { padding: 5px 7px; font-size: 11.5px; }
+  .ep-lvl { padding: 5px 6px; font-size: 11px; }
   .ep-long { display: none; }
   .ep-short { display: inline; }
 }
@@ -140,3 +140,20 @@
 .intro-btn { padding: 14px 22px; background: var(--ink); color: var(--paper); border: 0; border-radius: 2px; font: 600 16px var(--f-cond); letter-spacing: .03em; cursor: pointer; }
 .intro-btn:hover { background: var(--accent); }
 .intro-skip { background: none; border: 0; font: italic 16px var(--f-text); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+
+/* ----------------------------------------------------------- dica de gesto */
+.coach {
+  position: absolute; z-index: 15; left: 50%; bottom: 18%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; pointer-events: none;
+  background: var(--ink); color: var(--paper);
+  font: 500 14px/1.3 var(--f-cond); letter-spacing: .02em; white-space: nowrap;
+  box-shadow: var(--shadow-print);
+  animation: coachIn .5s var(--ease) .6s both;
+  transition: opacity .4s linear;
+}
+.coach.is-out { opacity: 0; }
+.coach-arrow { display: inline-block; animation: nudge 1.4s ease-in-out infinite; }
+@keyframes nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+@keyframes coachIn { from { opacity: 0; transform: translate(-50%, 8px); } }
+@media (max-width: 719px) { .coach { white-space: normal; width: max-content; max-width: calc(100% - 32px); font-size: 13px; } }
